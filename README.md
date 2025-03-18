@@ -1,4 +1,4 @@
-# Computational analyses for: Rapid UPF1 depletion illuminates the temporal dynamics of the NMD-regulated human transcriptome
+# Computational analyses and plots for: Rapid UPF1 depletion illuminates the temporal dynamics of the NMD-regulated human transcriptome
 
 ------------------------------------------------------------------------
 
@@ -6,7 +6,9 @@ This repository contains the analyses scripts for the project: <br/> [**Rapid UP
 
 ## Scope
 
-This repository primarily aims to provide transparent insight into the high-throughput analysis steps used in the study of UPF1 depletion via conditional degron tags (CDT) in human cells. :warning: **NOTE:** The complete pipeline is currently not optimized to run on different computing infrastructures in a standardized/portable manner. This means that all required packages have to be installed manually and configured accordingly to reproduce the results.
+-   This repository primarily aims to provide transparent insight into the high-throughput analysis steps used in the study of UPF1 depletion via conditional degron tags (CDT) in human cells. :warning: **NOTE:** The complete pipeline and individual scripts are currently not optimized to run on different computing infrastructures in a standardized/portable manner. This means that all required packages have to be installed manually and configured accordingly to reproduce the results.
+
+-   Additionally, all R scripts used for analyses and to create the plots are available. [UPF1_NMDRHT_Analysis.R](https://github.com/boehmv/2025_UPF1_NMDRHT/blob/main/UPF1_NMDRHT_Analysis.R) is the top level file.
 
 ## Features / Requirements
 
@@ -45,7 +47,7 @@ This repository primarily aims to provide transparent insight into the high-thro
 
     -   [DESeq2](https://github.com/mikelove/DESeq2) - version 1.40.1 was used for the analyses. The tx2gene file used for the analyses can be found [here](https://uni-koeln.sciebo.de/s/RFID1U3YYBZmkkE)
     -   [IsoformSwitchAnalyzeR](https://github.com/kvittingseerup/IsoformSwitchAnalyzeR) - version 1.18.0 was used for the analyses.
-    -   [LeafCutter](https://github.com/davidaknowles/leafcutter) - version v0.2.9 was used for the analyse. :memo: **NOTE:** small changes in the /scripts of LeafCutter maintained gene IDs from Gencode (changed in [gtf_to_exons_vb.R](https://github.com/boehmv/2024-UPF1-degron/blob/main/scripts/LeafCutter/scripts/gtf_to_exons.R) and [leafcutter_ds.R](https://github.com/boehmv/2024-UPF1-degron/blob/main/scripts/LeafCutter/scripts/leafcutter_ds.R))
+    -   [LeafCutter](https://github.com/davidaknowles/leafcutter) - version v0.2.9 was used for the analyse. :memo: **NOTE:** small changes in the /scripts of LeafCutter maintained gene IDs from Gencode (changed in [gtf_to_exons_vb.R](https://github.com/boehmv/2025_UPF1_NMDRHT/blob/main/Analyses/LeafCutter/scripts/gtf_to_exons.R) and [leafcutter_ds.R](https://github.com/boehmv/2025_UPF1_NMDRHT/blob/main/Analyses/LeafCutter/scripts/leafcutter_ds.R))
     -   [FastQC](https://github.com/s-andrews/FastQC) - version 0.11.9 was used for the analyses
     -   [MultiQC](https://github.com/ewels/MultiQC) - version v1.14 was used for the analyses
 
