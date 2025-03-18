@@ -1,16 +1,19 @@
-# Computational analyses and plots for: Rapid UPF1 depletion illuminates the temporal dynamics of the NMD-regulated human transcriptome
+# Code for: Rapid UPF1 depletion illuminates the temporal dynamics of the NMD-regulated human transcriptome
 
 ------------------------------------------------------------------------
 
-This repository contains the analyses scripts for the project: <br/> [**Rapid UPF1 depletion illuminates the temporal dynamics of the NMD-regulated human transcriptome**](https://doi.org/10.1101/2024.03.04.583328) <br/> (available as bioRxiv preprint)
+This repository contains the scripts for the project: <br/> [**Rapid UPF1 depletion illuminates the temporal dynamics of the NMD-regulated human transcriptome**](https://doi.org/10.1101/2024.03.04.583328) <br/> (available as bioRxiv preprint)
 
 ## Scope
 
 -   This repository primarily aims to provide transparent insight into the high-throughput analysis steps used in the study of UPF1 depletion via conditional degron tags (CDT) in human cells. :warning: **NOTE:** The complete pipeline and individual scripts are currently not optimized to run on different computing infrastructures in a standardized/portable manner. This means that all required packages have to be installed manually and configured accordingly to reproduce the results.
+-   Additionally, all R scripts used for analyses and to create the plots are available. [UPF1_NMDRHT_Analysis.R](https://github.com/boehmv/2025_UPF1_NMDRHT/blob/main/UPF1_NMDRHT_Analysis.R) is the top level file. 
+-   Combined with the "Resources", which can be obtained from [Zenodo](https://doi.org/10.5281/zenodo.15047819), the R scripts should allow reproducing all intermediate analyses and plots.
+    -    **NOTE:** The Resources were obmitted from this repository due to their large filesize.
+    -    The Resources contain pre-analyzed and intermediate output data.
+-   For immediate exploration, the finalized and styled Excel MainTables for Gene- and Transcript-level analyses can be used, which are found [here](https://github.com/boehmv/2025_UPF1_NMDRHT/blob/main/Tables).
 
--   Additionally, all R scripts used for analyses and to create the plots are available. [UPF1_NMDRHT_Analysis.R](https://github.com/boehmv/2025_UPF1_NMDRHT/blob/main/UPF1_NMDRHT_Analysis.R) is the top level file.
-
-## Features / Requirements
+## Features / Requirements for raw data analysis
 
 -   Complete analysis of multiple RNA-Seq datasets (provided in FASTQ format; see [here](https://github.com/boehmv/2025_UPF1_NMDRHT/blob/main/Analyses/Metadata/UPF1_NMDRHT_datasets_forGitHub.csv) for dataset overview and [here](https://github.com/boehmv/2025_UPF1_NMDRHT/blob/main/Analyses/Metadata/UPF1_NMDRHT_datasets_experiments_forGitHub.csv) for individual sample identification), mapped to [Gencode v42](https://www.gencodegenes.org/human/release_42.html) / GRCh38.primary_assembly supplemented with SIRVomeERCCome (from Lexogen; [download](https://www.lexogen.com/wp-content/uploads/2018/08/SIRV_Set3_Sequences_170612a-ZIP.zip)) using STAR (short-read) or minimap2 (long-read).
 
@@ -75,4 +78,4 @@ TBD
 
 ### bioRxiv preprint
 
-Volker Boehm, Damaris Wallmeroth, Paul O. Wulf, Luiz Gustavo Teixeira Alves, Oliver Popp, Maximilian Riedel, Emanuel Wyler, Marek Franitza, Jennifer V. Gerbracht, Kerstin Becker, Karina Polkovnychenko, Simone Del Giudice, Nouhad Benlasfer, Philipp Mertins, Markus Landthaler, Niels H. Gehring (2024) **Rapid UPF1 depletion illuminates the temporal dynamics of the NMD-regulated transcriptome in human cells**. bioRxiv 2024.03.04.583328; doi: [https://doi.org/10.1101/2020.07.07.191437](https://doi.org/10.1101/2024.03.04.583328)
+Volker Boehm, Damaris Wallmeroth, Paul O. Wulf, Luiz Gustavo Teixeira Alves, Oliver Popp, Maximilian Riedel, Emanuel Wyler, Marek Franitza, Jennifer V. Gerbracht, Kerstin Becker, Karina Polkovnychenko, Simone Del Giudice, Nouhad Benlasfer, Philipp Mertins, Markus Landthaler, Niels H. Gehring (2024) **Rapid UPF1 depletion illuminates the temporal dynamics of the NMD-regulated transcriptome in human cells**. bioRxiv 2024.03.04.583328; doi: [https://doi.org/10.1101/2024.03.04.583328](https://doi.org/10.1101/2024.03.04.583328)
