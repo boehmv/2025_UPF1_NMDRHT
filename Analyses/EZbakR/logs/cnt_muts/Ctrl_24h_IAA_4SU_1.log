@@ -1,0 +1,134 @@
+* The number of fragments for sample Ctrl_24h_IAA_4SU_1 is 32
+* The fragment size is set to 1222468 alignments per fragment
+* Aligned .sam file fragmented for sample Ctrl_24h_IAA_4SU_1
+Start: 2024-10-24 12:19:13.268059
+end: 2024-10-24 12:25:58.824589
+cU: 2024-10-24 12:25:58.824822
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/9_Ctrl_24h_IAA_4SU_1_frag.bam'
+Start: 2024-10-24 12:19:13.159246
+end: 2024-10-24 12:26:03.284836
+cU: 2024-10-24 12:26:03.285325
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/21_Ctrl_24h_IAA_4SU_1_frag.bam'
+Start: 2024-10-24 12:19:13.221683
+end: 2024-10-24 12:26:04.165380
+cU: 2024-10-24 12:26:04.165600
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/3_Ctrl_24h_IAA_4SU_1_frag.bam'
+Start: 2024-10-24 12:19:13.237644
+end: 2024-10-24 12:26:07.366301
+cU: 2024-10-24 12:26:07.366454
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/5_Ctrl_24h_IAA_4SU_1_frag.bam'
+Start: 2024-10-24 12:19:13.119496
+end: 2024-10-24 12:26:07.835292
+cU: 2024-10-24 12:26:07.835442
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/17_Ctrl_24h_IAA_4SU_1_frag.bam'
+Start: 2024-10-24 12:19:13.227299
+end: 2024-10-24 12:26:11.238725
+cU: 2024-10-24 12:26:11.238778
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/32_Ctrl_24h_IAA_4SU_1_frag.bam'
+Start: 2024-10-24 12:19:13.151288
+end: 2024-10-24 12:26:11.314395
+cU: 2024-10-24 12:26:11.314574
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/20_Ctrl_24h_IAA_4SU_1_frag.bam'
+Start: 2024-10-24 12:19:13.202266
+end: 2024-10-24 12:26:12.331522
+cU: 2024-10-24 12:26:12.331664
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/30_Ctrl_24h_IAA_4SU_1_frag.bam'
+Start: 2024-10-24 12:19:13.213950
+end: 2024-10-24 12:26:12.497996
+cU: 2024-10-24 12:26:12.498135
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/31_Ctrl_24h_IAA_4SU_1_frag.bam'
+Start: 2024-10-24 12:19:13.191676
+end: 2024-10-24 12:26:12.804939
+cU: 2024-10-24 12:26:12.805104
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/28_Ctrl_24h_IAA_4SU_1_frag.bam'
+Start: 2024-10-24 12:19:13.129883
+end: 2024-10-24 12:26:13.931783
+cU: 2024-10-24 12:26:13.932015
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/19_Ctrl_24h_IAA_4SU_1_frag.bam'
+Start: 2024-10-24 12:19:13.181374
+end: 2024-10-24 12:26:14.003107
+cU: 2024-10-24 12:26:14.003237
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/26_Ctrl_24h_IAA_4SU_1_frag.bam'
+Start: 2024-10-24 12:19:13.170874
+end: 2024-10-24 12:26:14.819464
+cU: 2024-10-24 12:26:14.819638
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/23_Ctrl_24h_IAA_4SU_1_frag.bam'
+Start: 2024-10-24 12:19:13.203157
+end: 2024-10-24 12:26:14.910555
+cU: 2024-10-24 12:26:14.910647
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/2_Ctrl_24h_IAA_4SU_1_frag.bam'
+Start: 2024-10-24 12:19:13.094023
+end: 2024-10-24 12:26:15.107028
+cU: 2024-10-24 12:26:15.107164
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/15_Ctrl_24h_IAA_4SU_1_frag.bam'
+Start: 2024-10-24 12:19:13.121824
+end: 2024-10-24 12:26:15.881045
+cU: 2024-10-24 12:26:15.881194
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/16_Ctrl_24h_IAA_4SU_1_frag.bam'
+Start: 2024-10-24 12:19:13.116727
+end: 2024-10-24 12:26:15.911157
+cU: 2024-10-24 12:26:15.911304
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/12_Ctrl_24h_IAA_4SU_1_frag.bam'
+Start: 2024-10-24 12:19:13.068984
+end: 2024-10-24 12:26:16.286797
+cU: 2024-10-24 12:26:16.286953
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/11_Ctrl_24h_IAA_4SU_1_frag.bam'
+Start: 2024-10-24 12:19:13.185336
+end: 2024-10-24 12:26:16.561497
+cU: 2024-10-24 12:26:16.561614
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/27_Ctrl_24h_IAA_4SU_1_frag.bam'
+Start: 2024-10-24 12:19:13.230459
+end: 2024-10-24 12:26:17.077671
+cU: 2024-10-24 12:26:17.077792
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/6_Ctrl_24h_IAA_4SU_1_frag.bam'
+Start: 2024-10-24 12:19:13.135955
+end: 2024-10-24 12:26:17.348797
+cU: 2024-10-24 12:26:17.348865
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/14_Ctrl_24h_IAA_4SU_1_frag.bam'
+Start: 2024-10-24 12:19:13.136985
+end: 2024-10-24 12:26:17.582122
+cU: 2024-10-24 12:26:17.582258
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/24_Ctrl_24h_IAA_4SU_1_frag.bam'
+Start: 2024-10-24 12:19:13.153041
+end: 2024-10-24 12:26:17.714155
+cU: 2024-10-24 12:26:17.714275
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/22_Ctrl_24h_IAA_4SU_1_frag.bam'
+Start: 2024-10-24 12:19:13.110204
+end: 2024-10-24 12:26:17.784046
+cU: 2024-10-24 12:26:17.784194
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/18_Ctrl_24h_IAA_4SU_1_frag.bam'
+Start: 2024-10-24 12:19:13.223468
+end: 2024-10-24 12:26:17.791064
+cU: 2024-10-24 12:26:17.791187
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/4_Ctrl_24h_IAA_4SU_1_frag.bam'
+Start: 2024-10-24 12:19:13.068942
+end: 2024-10-24 12:26:17.845261
+cU: 2024-10-24 12:26:17.845417
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/10_Ctrl_24h_IAA_4SU_1_frag.bam'
+Start: 2024-10-24 12:19:13.183806
+end: 2024-10-24 12:26:17.915650
+cU: 2024-10-24 12:26:17.915774
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/25_Ctrl_24h_IAA_4SU_1_frag.bam'
+Start: 2024-10-24 12:19:13.118282
+end: 2024-10-24 12:26:18.035320
+cU: 2024-10-24 12:26:18.035388
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/1_Ctrl_24h_IAA_4SU_1_frag.bam'
+Start: 2024-10-24 12:19:13.191715
+end: 2024-10-24 12:26:18.952842
+cU: 2024-10-24 12:26:18.952987
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/29_Ctrl_24h_IAA_4SU_1_frag.bam'
+Start: 2024-10-24 12:19:13.113584
+end: 2024-10-24 12:26:19.401739
+cU: 2024-10-24 12:26:19.401812
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/13_Ctrl_24h_IAA_4SU_1_frag.bam'
+Start: 2024-10-24 12:19:13.337070
+end: 2024-10-24 12:26:19.411278
+cU: 2024-10-24 12:26:19.411379
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/8_Ctrl_24h_IAA_4SU_1_frag.bam'
+Start: 2024-10-24 12:19:13.239152
+end: 2024-10-24 12:26:20.115777
+cU: 2024-10-24 12:26:20.115932
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/7_Ctrl_24h_IAA_4SU_1_frag.bam'
+** Mutations called for sample Ctrl_24h_IAA_4SU_1
+** Results fragments merged into final files
+* Cleaning up fragmented .bam files

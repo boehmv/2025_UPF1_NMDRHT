@@ -1,0 +1,1268 @@
+* Creating files for each level of counting.
+* Sorting bam files by coordiantes
+[bam_sort_core] merging from 0 files and 32 in-memory blocks...
+* Making .chrom.sizes file
+* Making track headers
+* Filtering reads
+*making tracks with STAR
+May 27 02:05:27 ..... reading from BAM, output wiggle
+May 27 02:06:52 ..... done
+May 27 02:05:27 ..... reading from BAM, output wiggle
+May 27 02:06:54 ..... done
+May 27 02:05:27 ..... reading from BAM, output wiggle
+May 27 02:06:54 ..... done
+May 27 02:05:27 ..... reading from BAM, output wiggle
+May 27 02:06:58 ..... done
+May 27 02:05:27 ..... reading from BAM, output wiggle
+May 27 02:07:02 ..... done
+May 27 02:05:27 ..... reading from BAM, output wiggle
+May 27 02:07:44 ..... done
+* Taking only unique components of tracks
+* Make tdf files from tracks
+INFO [2023-05-27 02:07:58,720]  [IgvTools.java:667] [main]  toTDF.  File = ./results/tracks/Nter_24h_IAA_4SU_3.TC.5.min.bedGraph
+toTDF.  File = ./results/tracks/Nter_24h_IAA_4SU_3.TC.5.min.bedGraph
+INFO [2023-05-27 02:07:58,722]  [IgvTools.java:668] [main]  Max zoom = 7
+Max zoom = 7
+INFO [2023-05-27 02:07:58,723]  [IgvTools.java:676] [main]  Window functions: mean max 
+Window functions: mean max 
+INFO [2023-05-27 02:07:58,729]  [GenomeManager.java:145] [main]  Loading genome: /srv/2023_UPF1_4SU/bam2bakR/./results/tracks/GRCh38.chrom.sizes
+Loading genome: /srv/2023_UPF1_4SU/bam2bakR/./results/tracks/GRCh38.chrom.sizes
+INFO [2023-05-27 02:07:58,902]  [DirectoryManager.java:169] [main]  IGV Directory: /home/volker/igv
+IGV Directory: /home/volker/igv
+INFO [2023-05-27 02:07:58,940]  [GenomeManager.java:192] [main]  Genome loaded.  id= /srv/2023_UPF1_4SU/bam2bakR/
+Genome loaded.  id= /srv/2023_UPF1_4SU/bam2bakR/
+INFO [2023-05-27 02:07:58,954]  [Preprocessor.java:125] [main]  track type=bedGraph name=" Nter_24h_IAA_4SU_3 TC 5 minus " description=" Nter_24h_IAA_4SU_3 TC 5 minus strand" visibility=full negateValues=on autoScale=off windowingFunction=mean viewLimits=-10:0 color=10,10,10 altColor=50,0,0  priority=20
+track type=bedGraph name=" Nter_24h_IAA_4SU_3 TC 5 minus " description=" Nter_24h_IAA_4SU_3 TC 5 minus strand" visibility=full negateValues=on autoScale=off windowingFunction=mean viewLimits=-10:0 color=10,10,10 altColor=50,0,0  priority=20
+INFO [2023-05-27 02:07:58,967]  [Preprocessor.java:255] [main]  Processing chromosome chr1
+Processing chromosome chr1
+.....INFO [2023-05-27 02:07:59,685]  [Preprocessor.java:255] [main]  Processing chromosome chr2
+Processing chromosome chr2
+...INFO [2023-05-27 02:08:00,116]  [Preprocessor.java:255] [main]  Processing chromosome chr3
+Processing chromosome chr3
+.10.0% 
+.INFO [2023-05-27 02:08:00,894]  [Preprocessor.java:255] [main]  Processing chromosome chr4
+Processing chromosome chr4
+..INFO [2023-05-27 02:08:00,971]  [Preprocessor.java:255] [main]  Processing chromosome chr5
+Processing chromosome chr5
+..INFO [2023-05-27 02:08:01,069]  [Preprocessor.java:255] [main]  Processing chromosome chr6
+Processing chromosome chr6
+....INFO [2023-05-27 02:08:01,186]  [Preprocessor.java:255] [main]  Processing chromosome chr7
+Processing chromosome chr7
+20.0% 
+.INFO [2023-05-27 02:08:01,317]  [Preprocessor.java:255] [main]  Processing chromosome chr8
+Processing chromosome chr8
+..INFO [2023-05-27 02:08:01,678]  [Preprocessor.java:255] [main]  Processing chromosome chr9
+Processing chromosome chr9
+..INFO [2023-05-27 02:08:01,744]  [Preprocessor.java:255] [main]  Processing chromosome chr10
+Processing chromosome chr10
+...INFO [2023-05-27 02:08:01,863]  [Preprocessor.java:255] [main]  Processing chromosome chr11
+Processing chromosome chr11
+.30.0% 
+.INFO [2023-05-27 02:08:01,990]  [Preprocessor.java:255] [main]  Processing chromosome chr12
+Processing chromosome chr12
+....INFO [2023-05-27 02:08:02,377]  [Preprocessor.java:255] [main]  Processing chromosome chr13
+Processing chromosome chr13
+.INFO [2023-05-27 02:08:02,426]  [Preprocessor.java:255] [main]  Processing chromosome chr14
+Processing chromosome chr14
+.INFO [2023-05-27 02:08:02,500]  [Preprocessor.java:255] [main]  Processing chromosome chr15
+Processing chromosome chr15
+..INFO [2023-05-27 02:08:02,555]  [Preprocessor.java:255] [main]  Processing chromosome chr16
+Processing chromosome chr16
+40.0% 
+..INFO [2023-05-27 02:08:02,623]  [Preprocessor.java:255] [main]  Processing chromosome chr17
+Processing chromosome chr17
+...INFO [2023-05-27 02:08:02,952]  [Preprocessor.java:255] [main]  Processing chromosome chr18
+Processing chromosome chr18
+.INFO [2023-05-27 02:08:02,980]  [Preprocessor.java:255] [main]  Processing chromosome chr19
+Processing chromosome chr19
+...50.0% 
+.INFO [2023-05-27 02:08:03,096]  [Preprocessor.java:255] [main]  Processing chromosome chr20
+Processing chromosome chr20
+..INFO [2023-05-27 02:08:03,152]  [Preprocessor.java:255] [main]  Processing chromosome chr21
+Processing chromosome chr21
+INFO [2023-05-27 02:08:03,167]  [Preprocessor.java:255] [main]  Processing chromosome chr22
+Processing chromosome chr22
+.INFO [2023-05-27 02:08:03,210]  [Preprocessor.java:255] [main]  Processing chromosome chrX
+Processing chromosome chrX
+.INFO [2023-05-27 02:08:03,491]  [Preprocessor.java:255] [main]  Processing chromosome chrY
+Processing chromosome chrY
+INFO [2023-05-27 02:08:03,493]  [Preprocessor.java:255] [main]  Processing chromosome chrM
+Processing chromosome chrM
+.INFO [2023-05-27 02:08:03,617]  [Preprocessor.java:255] [main]  Processing chromosome GL000195.1
+Processing chromosome GL000195.1
+INFO [2023-05-27 02:08:03,630]  [Preprocessor.java:255] [main]  Processing chromosome GL000219.1
+Processing chromosome GL000219.1
+INFO [2023-05-27 02:08:03,631]  [Preprocessor.java:255] [main]  Processing chromosome KI270442.1
+Processing chromosome KI270442.1
+INFO [2023-05-27 02:08:03,632]  [Preprocessor.java:255] [main]  Processing chromosome KI270711.1
+Processing chromosome KI270711.1
+INFO [2023-05-27 02:08:03,633]  [Preprocessor.java:255] [main]  Processing chromosome KI270713.1
+Processing chromosome KI270713.1
+INFO [2023-05-27 02:08:03,636]  [Preprocessor.java:255] [main]  Processing chromosome KI270721.1
+Processing chromosome KI270721.1
+INFO [2023-05-27 02:08:03,638]  [Preprocessor.java:255] [main]  Processing chromosome KI270733.1
+Processing chromosome KI270733.1
+INFO [2023-05-27 02:08:03,643]  [Preprocessor.java:255] [main]  Processing chromosome KI270734.1
+Processing chromosome KI270734.1
+INFO [2023-05-27 02:08:03,644]  [Preprocessor.java:255] [main]  Processing chromosome KI270738.1
+Processing chromosome KI270738.1
+INFO [2023-05-27 02:08:03,645]  [Preprocessor.java:255] [main]  Processing chromosome KI270755.1
+Processing chromosome KI270755.1
+INFO [2023-05-27 02:08:03,662]  [TDFWriter.java:318] [main]  Group idx: 1
+Group idx: 1
+100.0% 
+Done
+INFO [2023-05-27 02:07:58,695]  [IgvTools.java:667] [main]  toTDF.  File = ./results/tracks/Nter_24h_IAA_4SU_3.TC.5.pos.bedGraph
+toTDF.  File = ./results/tracks/Nter_24h_IAA_4SU_3.TC.5.pos.bedGraph
+INFO [2023-05-27 02:07:58,698]  [IgvTools.java:668] [main]  Max zoom = 7
+Max zoom = 7
+INFO [2023-05-27 02:07:58,699]  [IgvTools.java:676] [main]  Window functions: mean max 
+Window functions: mean max 
+INFO [2023-05-27 02:07:58,706]  [GenomeManager.java:145] [main]  Loading genome: /srv/2023_UPF1_4SU/bam2bakR/./results/tracks/GRCh38.chrom.sizes
+Loading genome: /srv/2023_UPF1_4SU/bam2bakR/./results/tracks/GRCh38.chrom.sizes
+INFO [2023-05-27 02:07:58,906]  [DirectoryManager.java:169] [main]  IGV Directory: /home/volker/igv
+IGV Directory: /home/volker/igv
+INFO [2023-05-27 02:07:59,036]  [GenomeManager.java:192] [main]  Genome loaded.  id= /srv/2023_UPF1_4SU/bam2bakR/
+Genome loaded.  id= /srv/2023_UPF1_4SU/bam2bakR/
+INFO [2023-05-27 02:07:59,050]  [Preprocessor.java:125] [main]  track type=bedGraph name=" Nter_24h_IAA_4SU_3 TC 5 plus " description=" Nter_24h_IAA_4SU_3 TC 5 positive strand" visibility=full autoScale=off windowingFunction=mean viewLimits=0:10 color=50,0,0  altColor=10,10,10 priority=20
+track type=bedGraph name=" Nter_24h_IAA_4SU_3 TC 5 plus " description=" Nter_24h_IAA_4SU_3 TC 5 positive strand" visibility=full autoScale=off windowingFunction=mean viewLimits=0:10 color=50,0,0  altColor=10,10,10 priority=20
+INFO [2023-05-27 02:07:59,063]  [Preprocessor.java:255] [main]  Processing chromosome chr1
+Processing chromosome chr1
+......INFO [2023-05-27 02:08:00,117]  [Preprocessor.java:255] [main]  Processing chromosome chr2
+Processing chromosome chr2
+...INFO [2023-05-27 02:08:00,414]  [Preprocessor.java:255] [main]  Processing chromosome chr3
+Processing chromosome chr3
+10.0% 
+..INFO [2023-05-27 02:08:01,251]  [Preprocessor.java:255] [main]  Processing chromosome chr4
+Processing chromosome chr4
+..INFO [2023-05-27 02:08:01,336]  [Preprocessor.java:255] [main]  Processing chromosome chr5
+Processing chromosome chr5
+..INFO [2023-05-27 02:08:01,464]  [Preprocessor.java:255] [main]  Processing chromosome chr6
+Processing chromosome chr6
+...INFO [2023-05-27 02:08:01,571]  [Preprocessor.java:255] [main]  Processing chromosome chr7
+Processing chromosome chr7
+20.0% 
+.INFO [2023-05-27 02:08:01,653]  [Preprocessor.java:255] [main]  Processing chromosome chr8
+Processing chromosome chr8
+..INFO [2023-05-27 02:08:01,974]  [Preprocessor.java:255] [main]  Processing chromosome chr9
+Processing chromosome chr9
+...INFO [2023-05-27 02:08:02,051]  [Preprocessor.java:255] [main]  Processing chromosome chr10
+Processing chromosome chr10
+..INFO [2023-05-27 02:08:02,129]  [Preprocessor.java:255] [main]  Processing chromosome chr11
+Processing chromosome chr11
+.30.0% 
+..INFO [2023-05-27 02:08:02,273]  [Preprocessor.java:255] [main]  Processing chromosome chr12
+Processing chromosome chr12
+....INFO [2023-05-27 02:08:02,633]  [Preprocessor.java:255] [main]  Processing chromosome chr13
+Processing chromosome chr13
+.INFO [2023-05-27 02:08:02,667]  [Preprocessor.java:255] [main]  Processing chromosome chr14
+Processing chromosome chr14
+.INFO [2023-05-27 02:08:02,724]  [Preprocessor.java:255] [main]  Processing chromosome chr15
+Processing chromosome chr15
+.40.0% 
+INFO [2023-05-27 02:08:02,774]  [Preprocessor.java:255] [main]  Processing chromosome chr16
+Processing chromosome chr16
+..INFO [2023-05-27 02:08:02,837]  [Preprocessor.java:255] [main]  Processing chromosome chr17
+Processing chromosome chr17
+......INFO [2023-05-27 02:08:03,298]  [Preprocessor.java:255] [main]  Processing chromosome chr18
+Processing chromosome chr18
+INFO [2023-05-27 02:08:03,321]  [Preprocessor.java:255] [main]  Processing chromosome chr19
+Processing chromosome chr19
+.50.0% 
+..INFO [2023-05-27 02:08:03,403]  [Preprocessor.java:255] [main]  Processing chromosome chr20
+Processing chromosome chr20
+.INFO [2023-05-27 02:08:03,449]  [Preprocessor.java:255] [main]  Processing chromosome chr21
+Processing chromosome chr21
+.INFO [2023-05-27 02:08:03,466]  [Preprocessor.java:255] [main]  Processing chromosome chr22
+Processing chromosome chr22
+.INFO [2023-05-27 02:08:03,503]  [Preprocessor.java:255] [main]  Processing chromosome chrX
+Processing chromosome chrX
+.INFO [2023-05-27 02:08:03,535]  [Preprocessor.java:255] [main]  Processing chromosome chrY
+Processing chromosome chrY
+INFO [2023-05-27 02:08:03,536]  [Preprocessor.java:255] [main]  Processing chromosome chrM
+Processing chromosome chrM
+INFO [2023-05-27 02:08:03,583]  [Preprocessor.java:255] [main]  Processing chromosome GL000194.1
+Processing chromosome GL000194.1
+INFO [2023-05-27 02:08:03,587]  [Preprocessor.java:255] [main]  Processing chromosome GL000195.1
+Processing chromosome GL000195.1
+INFO [2023-05-27 02:08:03,590]  [Preprocessor.java:255] [main]  Processing chromosome GL000205.2
+Processing chromosome GL000205.2
+INFO [2023-05-27 02:08:03,591]  [Preprocessor.java:255] [main]  Processing chromosome GL000218.1
+Processing chromosome GL000218.1
+INFO [2023-05-27 02:08:03,599]  [Preprocessor.java:255] [main]  Processing chromosome GL000219.1
+Processing chromosome GL000219.1
+INFO [2023-05-27 02:08:03,603]  [Preprocessor.java:255] [main]  Processing chromosome GL000220.1
+Processing chromosome GL000220.1
+INFO [2023-05-27 02:08:03,604]  [Preprocessor.java:255] [main]  Processing chromosome KI270711.1
+Processing chromosome KI270711.1
+INFO [2023-05-27 02:08:03,612]  [Preprocessor.java:255] [main]  Processing chromosome KI270713.1
+Processing chromosome KI270713.1
+INFO [2023-05-27 02:08:03,616]  [Preprocessor.java:255] [main]  Processing chromosome KI270714.1
+Processing chromosome KI270714.1
+INFO [2023-05-27 02:08:03,622]  [Preprocessor.java:255] [main]  Processing chromosome KI270733.1
+Processing chromosome KI270733.1
+INFO [2023-05-27 02:08:03,790]  [TDFWriter.java:318] [main]  Group idx: 1
+Group idx: 1
+100.0% 
+Done
+INFO [2023-05-27 02:07:58,721]  [IgvTools.java:667] [main]  toTDF.  File = ./results/tracks/Nter_24h_IAA_4SU_3.TC.4.min.bedGraph
+toTDF.  File = ./results/tracks/Nter_24h_IAA_4SU_3.TC.4.min.bedGraph
+INFO [2023-05-27 02:07:58,724]  [IgvTools.java:668] [main]  Max zoom = 7
+Max zoom = 7
+INFO [2023-05-27 02:07:58,725]  [IgvTools.java:676] [main]  Window functions: mean max 
+Window functions: mean max 
+INFO [2023-05-27 02:07:58,731]  [GenomeManager.java:145] [main]  Loading genome: /srv/2023_UPF1_4SU/bam2bakR/./results/tracks/GRCh38.chrom.sizes
+Loading genome: /srv/2023_UPF1_4SU/bam2bakR/./results/tracks/GRCh38.chrom.sizes
+INFO [2023-05-27 02:07:58,968]  [DirectoryManager.java:169] [main]  IGV Directory: /home/volker/igv
+IGV Directory: /home/volker/igv
+INFO [2023-05-27 02:07:59,034]  [GenomeManager.java:192] [main]  Genome loaded.  id= /srv/2023_UPF1_4SU/bam2bakR/
+Genome loaded.  id= /srv/2023_UPF1_4SU/bam2bakR/
+INFO [2023-05-27 02:07:59,044]  [Preprocessor.java:125] [main]  track type=bedGraph name=" Nter_24h_IAA_4SU_3 TC 4 minus " description=" Nter_24h_IAA_4SU_3 TC 4 minus strand" visibility=full negateValues=on autoScale=off windowingFunction=mean viewLimits=-10:0 color=10,10,10 altColor=100,0,0  priority=20
+track type=bedGraph name=" Nter_24h_IAA_4SU_3 TC 4 minus " description=" Nter_24h_IAA_4SU_3 TC 4 minus strand" visibility=full negateValues=on autoScale=off windowingFunction=mean viewLimits=-10:0 color=10,10,10 altColor=100,0,0  priority=20
+INFO [2023-05-27 02:07:59,055]  [Preprocessor.java:255] [main]  Processing chromosome chr1
+Processing chromosome chr1
+.....INFO [2023-05-27 02:08:00,432]  [Preprocessor.java:255] [main]  Processing chromosome chr2
+Processing chromosome chr2
+...INFO [2023-05-27 02:08:01,337]  [Preprocessor.java:255] [main]  Processing chromosome chr3
+Processing chromosome chr3
+.10.0% 
+.INFO [2023-05-27 02:08:01,476]  [Preprocessor.java:255] [main]  Processing chromosome chr4
+Processing chromosome chr4
+..INFO [2023-05-27 02:08:01,565]  [Preprocessor.java:255] [main]  Processing chromosome chr5
+Processing chromosome chr5
+..INFO [2023-05-27 02:08:01,990]  [Preprocessor.java:255] [main]  Processing chromosome chr6
+Processing chromosome chr6
+....INFO [2023-05-27 02:08:02,173]  [Preprocessor.java:255] [main]  Processing chromosome chr7
+Processing chromosome chr7
+20.0% 
+.INFO [2023-05-27 02:08:02,317]  [Preprocessor.java:255] [main]  Processing chromosome chr8
+Processing chromosome chr8
+..INFO [2023-05-27 02:08:02,644]  [Preprocessor.java:255] [main]  Processing chromosome chr9
+Processing chromosome chr9
+..INFO [2023-05-27 02:08:02,730]  [Preprocessor.java:255] [main]  Processing chromosome chr10
+Processing chromosome chr10
+...INFO [2023-05-27 02:08:02,858]  [Preprocessor.java:255] [main]  Processing chromosome chr11
+Processing chromosome chr11
+.30.0% 
+.INFO [2023-05-27 02:08:03,271]  [Preprocessor.java:255] [main]  Processing chromosome chr12
+Processing chromosome chr12
+....INFO [2023-05-27 02:08:03,452]  [Preprocessor.java:255] [main]  Processing chromosome chr13
+Processing chromosome chr13
+.INFO [2023-05-27 02:08:03,485]  [Preprocessor.java:255] [main]  Processing chromosome chr14
+Processing chromosome chr14
+.INFO [2023-05-27 02:08:03,658]  [Preprocessor.java:255] [main]  Processing chromosome chr15
+Processing chromosome chr15
+..INFO [2023-05-27 02:08:03,728]  [Preprocessor.java:255] [main]  Processing chromosome chr16
+Processing chromosome chr16
+40.0% 
+.INFO [2023-05-27 02:08:03,828]  [Preprocessor.java:255] [main]  Processing chromosome chr17
+Processing chromosome chr17
+....INFO [2023-05-27 02:08:04,069]  [Preprocessor.java:255] [main]  Processing chromosome chr18
+Processing chromosome chr18
+.INFO [2023-05-27 02:08:04,108]  [Preprocessor.java:255] [main]  Processing chromosome chr19
+Processing chromosome chr19
+...50.0% 
+.INFO [2023-05-27 02:08:04,280]  [Preprocessor.java:255] [main]  Processing chromosome chr20
+Processing chromosome chr20
+..INFO [2023-05-27 02:08:04,542]  [Preprocessor.java:255] [main]  Processing chromosome chr21
+Processing chromosome chr21
+INFO [2023-05-27 02:08:04,561]  [Preprocessor.java:255] [main]  Processing chromosome chr22
+Processing chromosome chr22
+.INFO [2023-05-27 02:08:04,620]  [Preprocessor.java:255] [main]  Processing chromosome chrX
+Processing chromosome chrX
+..INFO [2023-05-27 02:08:04,671]  [Preprocessor.java:255] [main]  Processing chromosome chrY
+Processing chromosome chrY
+INFO [2023-05-27 02:08:04,672]  [Preprocessor.java:255] [main]  Processing chromosome chrM
+Processing chromosome chrM
+INFO [2023-05-27 02:08:04,820]  [Preprocessor.java:255] [main]  Processing chromosome GL000194.1
+Processing chromosome GL000194.1
+INFO [2023-05-27 02:08:04,833]  [Preprocessor.java:255] [main]  Processing chromosome GL000195.1
+Processing chromosome GL000195.1
+INFO [2023-05-27 02:08:04,834]  [Preprocessor.java:255] [main]  Processing chromosome GL000219.1
+Processing chromosome GL000219.1
+INFO [2023-05-27 02:08:04,835]  [Preprocessor.java:255] [main]  Processing chromosome GL000220.1
+Processing chromosome GL000220.1
+INFO [2023-05-27 02:08:04,837]  [Preprocessor.java:255] [main]  Processing chromosome KI270442.1
+Processing chromosome KI270442.1
+INFO [2023-05-27 02:08:04,837]  [Preprocessor.java:255] [main]  Processing chromosome KI270711.1
+Processing chromosome KI270711.1
+INFO [2023-05-27 02:08:04,838]  [Preprocessor.java:255] [main]  Processing chromosome KI270713.1
+Processing chromosome KI270713.1
+INFO [2023-05-27 02:08:04,842]  [Preprocessor.java:255] [main]  Processing chromosome KI270721.1
+Processing chromosome KI270721.1
+INFO [2023-05-27 02:08:04,846]  [Preprocessor.java:255] [main]  Processing chromosome KI270733.1
+Processing chromosome KI270733.1
+INFO [2023-05-27 02:08:04,852]  [Preprocessor.java:255] [main]  Processing chromosome KI270734.1
+Processing chromosome KI270734.1
+INFO [2023-05-27 02:08:04,853]  [Preprocessor.java:255] [main]  Processing chromosome KI270738.1
+Processing chromosome KI270738.1
+INFO [2023-05-27 02:08:04,854]  [Preprocessor.java:255] [main]  Processing chromosome KI270745.1
+Processing chromosome KI270745.1
+INFO [2023-05-27 02:08:04,855]  [Preprocessor.java:255] [main]  Processing chromosome KI270755.1
+Processing chromosome KI270755.1
+INFO [2023-05-27 02:08:04,916]  [TDFWriter.java:318] [main]  Group idx: 1
+Group idx: 1
+100.0% 
+Done
+INFO [2023-05-27 02:07:58,739]  [IgvTools.java:667] [main]  toTDF.  File = ./results/tracks/Nter_24h_IAA_4SU_3.TC.4.pos.bedGraph
+toTDF.  File = ./results/tracks/Nter_24h_IAA_4SU_3.TC.4.pos.bedGraph
+INFO [2023-05-27 02:07:58,742]  [IgvTools.java:668] [main]  Max zoom = 7
+Max zoom = 7
+INFO [2023-05-27 02:07:58,742]  [IgvTools.java:676] [main]  Window functions: mean max 
+Window functions: mean max 
+INFO [2023-05-27 02:07:58,763]  [GenomeManager.java:145] [main]  Loading genome: /srv/2023_UPF1_4SU/bam2bakR/./results/tracks/GRCh38.chrom.sizes
+Loading genome: /srv/2023_UPF1_4SU/bam2bakR/./results/tracks/GRCh38.chrom.sizes
+INFO [2023-05-27 02:07:58,961]  [DirectoryManager.java:169] [main]  IGV Directory: /home/volker/igv
+IGV Directory: /home/volker/igv
+INFO [2023-05-27 02:07:59,037]  [GenomeManager.java:192] [main]  Genome loaded.  id= /srv/2023_UPF1_4SU/bam2bakR/
+Genome loaded.  id= /srv/2023_UPF1_4SU/bam2bakR/
+INFO [2023-05-27 02:07:59,051]  [Preprocessor.java:125] [main]  track type=bedGraph name=" Nter_24h_IAA_4SU_3 TC 4 plus " description=" Nter_24h_IAA_4SU_3 TC 4 positive strand" visibility=full autoScale=off windowingFunction=mean viewLimits=0:10 color=100,0,0  altColor=10,10,10 priority=20
+track type=bedGraph name=" Nter_24h_IAA_4SU_3 TC 4 plus " description=" Nter_24h_IAA_4SU_3 TC 4 positive strand" visibility=full autoScale=off windowingFunction=mean viewLimits=0:10 color=100,0,0  altColor=10,10,10 priority=20
+INFO [2023-05-27 02:07:59,065]  [Preprocessor.java:255] [main]  Processing chromosome chr1
+Processing chromosome chr1
+......INFO [2023-05-27 02:08:00,210]  [Preprocessor.java:255] [main]  Processing chromosome chr2
+Processing chromosome chr2
+...INFO [2023-05-27 02:08:01,266]  [Preprocessor.java:255] [main]  Processing chromosome chr3
+Processing chromosome chr3
+10.0% 
+..INFO [2023-05-27 02:08:01,425]  [Preprocessor.java:255] [main]  Processing chromosome chr4
+Processing chromosome chr4
+..INFO [2023-05-27 02:08:01,514]  [Preprocessor.java:255] [main]  Processing chromosome chr5
+Processing chromosome chr5
+..INFO [2023-05-27 02:08:02,121]  [Preprocessor.java:255] [main]  Processing chromosome chr6
+Processing chromosome chr6
+...INFO [2023-05-27 02:08:02,258]  [Preprocessor.java:255] [main]  Processing chromosome chr7
+Processing chromosome chr7
+20.0% 
+.INFO [2023-05-27 02:08:02,380]  [Preprocessor.java:255] [main]  Processing chromosome chr8
+Processing chromosome chr8
+..INFO [2023-05-27 02:08:02,750]  [Preprocessor.java:255] [main]  Processing chromosome chr9
+Processing chromosome chr9
+...INFO [2023-05-27 02:08:02,886]  [Preprocessor.java:255] [main]  Processing chromosome chr10
+Processing chromosome chr10
+..INFO [2023-05-27 02:08:03,027]  [Preprocessor.java:255] [main]  Processing chromosome chr11
+Processing chromosome chr11
+.30.0% 
+.INFO [2023-05-27 02:08:03,443]  [Preprocessor.java:255] [main]  Processing chromosome chr12
+Processing chromosome chr12
+....INFO [2023-05-27 02:08:03,646]  [Preprocessor.java:255] [main]  Processing chromosome chr13
+Processing chromosome chr13
+.INFO [2023-05-27 02:08:03,696]  [Preprocessor.java:255] [main]  Processing chromosome chr14
+Processing chromosome chr14
+..INFO [2023-05-27 02:08:03,769]  [Preprocessor.java:255] [main]  Processing chromosome chr15
+Processing chromosome chr15
+.40.0% 
+INFO [2023-05-27 02:08:03,920]  [Preprocessor.java:255] [main]  Processing chromosome chr16
+Processing chromosome chr16
+..INFO [2023-05-27 02:08:04,007]  [Preprocessor.java:255] [main]  Processing chromosome chr17
+Processing chromosome chr17
+.....INFO [2023-05-27 02:08:04,383]  [Preprocessor.java:255] [main]  Processing chromosome chr18
+Processing chromosome chr18
+.INFO [2023-05-27 02:08:04,415]  [Preprocessor.java:255] [main]  Processing chromosome chr19
+Processing chromosome chr19
+.50.0% 
+.INFO [2023-05-27 02:08:04,540]  [Preprocessor.java:255] [main]  Processing chromosome chr20
+Processing chromosome chr20
+..INFO [2023-05-27 02:08:04,603]  [Preprocessor.java:255] [main]  Processing chromosome chr21
+Processing chromosome chr21
+.INFO [2023-05-27 02:08:04,626]  [Preprocessor.java:255] [main]  Processing chromosome chr22
+Processing chromosome chr22
+.INFO [2023-05-27 02:08:04,815]  [Preprocessor.java:255] [main]  Processing chromosome chrX
+Processing chromosome chrX
+.INFO [2023-05-27 02:08:04,859]  [Preprocessor.java:255] [main]  Processing chromosome chrY
+Processing chromosome chrY
+INFO [2023-05-27 02:08:04,860]  [Preprocessor.java:255] [main]  Processing chromosome chrM
+Processing chromosome chrM
+INFO [2023-05-27 02:08:04,917]  [Preprocessor.java:255] [main]  Processing chromosome GL000009.2
+Processing chromosome GL000009.2
+INFO [2023-05-27 02:08:04,920]  [Preprocessor.java:255] [main]  Processing chromosome GL000194.1
+Processing chromosome GL000194.1
+INFO [2023-05-27 02:08:04,921]  [Preprocessor.java:255] [main]  Processing chromosome GL000195.1
+Processing chromosome GL000195.1
+INFO [2023-05-27 02:08:04,924]  [Preprocessor.java:255] [main]  Processing chromosome GL000205.2
+Processing chromosome GL000205.2
+INFO [2023-05-27 02:08:04,926]  [Preprocessor.java:255] [main]  Processing chromosome GL000218.1
+Processing chromosome GL000218.1
+INFO [2023-05-27 02:08:04,930]  [Preprocessor.java:255] [main]  Processing chromosome GL000219.1
+Processing chromosome GL000219.1
+INFO [2023-05-27 02:08:04,935]  [Preprocessor.java:255] [main]  Processing chromosome GL000220.1
+Processing chromosome GL000220.1
+INFO [2023-05-27 02:08:04,935]  [Preprocessor.java:255] [main]  Processing chromosome KI270711.1
+Processing chromosome KI270711.1
+INFO [2023-05-27 02:08:04,943]  [Preprocessor.java:255] [main]  Processing chromosome KI270713.1
+Processing chromosome KI270713.1
+INFO [2023-05-27 02:08:04,946]  [Preprocessor.java:255] [main]  Processing chromosome KI270714.1
+Processing chromosome KI270714.1
+INFO [2023-05-27 02:08:04,951]  [Preprocessor.java:255] [main]  Processing chromosome KI270728.1
+Processing chromosome KI270728.1
+INFO [2023-05-27 02:08:04,952]  [Preprocessor.java:255] [main]  Processing chromosome KI270733.1
+Processing chromosome KI270733.1
+INFO [2023-05-27 02:08:04,979]  [TDFWriter.java:318] [main]  Group idx: 1
+Group idx: 1
+100.0% 
+Done
+INFO [2023-05-27 02:07:58,710]  [IgvTools.java:667] [main]  toTDF.  File = ./results/tracks/Nter_24h_IAA_4SU_3.TC.3.pos.bedGraph
+toTDF.  File = ./results/tracks/Nter_24h_IAA_4SU_3.TC.3.pos.bedGraph
+INFO [2023-05-27 02:07:58,713]  [IgvTools.java:668] [main]  Max zoom = 7
+Max zoom = 7
+INFO [2023-05-27 02:07:58,713]  [IgvTools.java:676] [main]  Window functions: mean max 
+Window functions: mean max 
+INFO [2023-05-27 02:07:58,720]  [GenomeManager.java:145] [main]  Loading genome: /srv/2023_UPF1_4SU/bam2bakR/./results/tracks/GRCh38.chrom.sizes
+Loading genome: /srv/2023_UPF1_4SU/bam2bakR/./results/tracks/GRCh38.chrom.sizes
+INFO [2023-05-27 02:07:58,940]  [DirectoryManager.java:169] [main]  IGV Directory: /home/volker/igv
+IGV Directory: /home/volker/igv
+INFO [2023-05-27 02:07:59,037]  [GenomeManager.java:192] [main]  Genome loaded.  id= /srv/2023_UPF1_4SU/bam2bakR/
+Genome loaded.  id= /srv/2023_UPF1_4SU/bam2bakR/
+INFO [2023-05-27 02:07:59,050]  [Preprocessor.java:125] [main]  track type=bedGraph name=" Nter_24h_IAA_4SU_3 TC 3 plus " description=" Nter_24h_IAA_4SU_3 TC 3 positive strand" visibility=full autoScale=off windowingFunction=mean viewLimits=0:10 color=150,0,0  altColor=10,10,10 priority=20
+track type=bedGraph name=" Nter_24h_IAA_4SU_3 TC 3 plus " description=" Nter_24h_IAA_4SU_3 TC 3 positive strand" visibility=full autoScale=off windowingFunction=mean viewLimits=0:10 color=150,0,0  altColor=10,10,10 priority=20
+INFO [2023-05-27 02:07:59,064]  [Preprocessor.java:255] [main]  Processing chromosome chr1
+Processing chromosome chr1
+......INFO [2023-05-27 02:08:01,018]  [Preprocessor.java:255] [main]  Processing chromosome chr2
+Processing chromosome chr2
+...INFO [2023-05-27 02:08:01,320]  [Preprocessor.java:255] [main]  Processing chromosome chr3
+Processing chromosome chr3
+10.0% 
+..INFO [2023-05-27 02:08:01,748]  [Preprocessor.java:255] [main]  Processing chromosome chr4
+Processing chromosome chr4
+..INFO [2023-05-27 02:08:01,947]  [Preprocessor.java:255] [main]  Processing chromosome chr5
+Processing chromosome chr5
+..INFO [2023-05-27 02:08:02,120]  [Preprocessor.java:255] [main]  Processing chromosome chr6
+Processing chromosome chr6
+...INFO [2023-05-27 02:08:02,370]  [Preprocessor.java:255] [main]  Processing chromosome chr7
+Processing chromosome chr7
+20.0% 
+.INFO [2023-05-27 02:08:02,514]  [Preprocessor.java:255] [main]  Processing chromosome chr8
+Processing chromosome chr8
+..INFO [2023-05-27 02:08:02,886]  [Preprocessor.java:255] [main]  Processing chromosome chr9
+Processing chromosome chr9
+...INFO [2023-05-27 02:08:03,034]  [Preprocessor.java:255] [main]  Processing chromosome chr10
+Processing chromosome chr10
+..INFO [2023-05-27 02:08:03,297]  [Preprocessor.java:255] [main]  Processing chromosome chr11
+Processing chromosome chr11
+.30.0% 
+.INFO [2023-05-27 02:08:03,471]  [Preprocessor.java:255] [main]  Processing chromosome chr12
+Processing chromosome chr12
+....INFO [2023-05-27 02:08:03,768]  [Preprocessor.java:255] [main]  Processing chromosome chr13
+Processing chromosome chr13
+.INFO [2023-05-27 02:08:03,818]  [Preprocessor.java:255] [main]  Processing chromosome chr14
+Processing chromosome chr14
+..INFO [2023-05-27 02:08:03,913]  [Preprocessor.java:255] [main]  Processing chromosome chr15
+Processing chromosome chr15
+.INFO [2023-05-27 02:08:04,131]  [Preprocessor.java:255] [main]  Processing chromosome chr16
+Processing chromosome chr16
+40.0% 
+..INFO [2023-05-27 02:08:04,249]  [Preprocessor.java:255] [main]  Processing chromosome chr17
+Processing chromosome chr17
+.....INFO [2023-05-27 02:08:04,650]  [Preprocessor.java:255] [main]  Processing chromosome chr18
+Processing chromosome chr18
+.INFO [2023-05-27 02:08:04,693]  [Preprocessor.java:255] [main]  Processing chromosome chr19
+Processing chromosome chr19
+.50.0% 
+.INFO [2023-05-27 02:08:05,014]  [Preprocessor.java:255] [main]  Processing chromosome chr20
+Processing chromosome chr20
+..INFO [2023-05-27 02:08:05,098]  [Preprocessor.java:255] [main]  Processing chromosome chr21
+Processing chromosome chr21
+INFO [2023-05-27 02:08:05,127]  [Preprocessor.java:255] [main]  Processing chromosome chr22
+Processing chromosome chr22
+..INFO [2023-05-27 02:08:05,275]  [Preprocessor.java:255] [main]  Processing chromosome chrX
+Processing chromosome chrX
+.INFO [2023-05-27 02:08:05,333]  [Preprocessor.java:255] [main]  Processing chromosome chrY
+Processing chromosome chrY
+INFO [2023-05-27 02:08:05,335]  [Preprocessor.java:255] [main]  Processing chromosome chrM
+Processing chromosome chrM
+INFO [2023-05-27 02:08:05,401]  [Preprocessor.java:255] [main]  Processing chromosome GL000009.2
+Processing chromosome GL000009.2
+INFO [2023-05-27 02:08:05,404]  [Preprocessor.java:255] [main]  Processing chromosome GL000194.1
+Processing chromosome GL000194.1
+INFO [2023-05-27 02:08:05,406]  [Preprocessor.java:255] [main]  Processing chromosome GL000195.1
+Processing chromosome GL000195.1
+INFO [2023-05-27 02:08:05,409]  [Preprocessor.java:255] [main]  Processing chromosome GL000205.2
+Processing chromosome GL000205.2
+INFO [2023-05-27 02:08:05,412]  [Preprocessor.java:255] [main]  Processing chromosome GL000218.1
+Processing chromosome GL000218.1
+INFO [2023-05-27 02:08:05,417]  [Preprocessor.java:255] [main]  Processing chromosome GL000219.1
+Processing chromosome GL000219.1
+INFO [2023-05-27 02:08:05,422]  [Preprocessor.java:255] [main]  Processing chromosome GL000220.1
+Processing chromosome GL000220.1
+INFO [2023-05-27 02:08:05,423]  [Preprocessor.java:255] [main]  Processing chromosome KI270711.1
+Processing chromosome KI270711.1
+INFO [2023-05-27 02:08:05,433]  [Preprocessor.java:255] [main]  Processing chromosome KI270713.1
+Processing chromosome KI270713.1
+INFO [2023-05-27 02:08:05,436]  [Preprocessor.java:255] [main]  Processing chromosome KI270714.1
+Processing chromosome KI270714.1
+INFO [2023-05-27 02:08:05,442]  [Preprocessor.java:255] [main]  Processing chromosome KI270728.1
+Processing chromosome KI270728.1
+INFO [2023-05-27 02:08:05,443]  [Preprocessor.java:255] [main]  Processing chromosome KI270733.1
+Processing chromosome KI270733.1
+INFO [2023-05-27 02:08:05,444]  [Preprocessor.java:255] [main]  Processing chromosome KI270744.1
+Processing chromosome KI270744.1
+INFO [2023-05-27 02:08:05,463]  [TDFWriter.java:318] [main]  Group idx: 1
+Group idx: 1
+100.0% 
+Done
+INFO [2023-05-27 02:07:58,711]  [IgvTools.java:667] [main]  toTDF.  File = ./results/tracks/Nter_24h_IAA_4SU_3.TC.3.min.bedGraph
+toTDF.  File = ./results/tracks/Nter_24h_IAA_4SU_3.TC.3.min.bedGraph
+INFO [2023-05-27 02:07:58,715]  [IgvTools.java:668] [main]  Max zoom = 7
+Max zoom = 7
+INFO [2023-05-27 02:07:58,716]  [IgvTools.java:676] [main]  Window functions: mean max 
+Window functions: mean max 
+INFO [2023-05-27 02:07:58,722]  [GenomeManager.java:145] [main]  Loading genome: /srv/2023_UPF1_4SU/bam2bakR/./results/tracks/GRCh38.chrom.sizes
+Loading genome: /srv/2023_UPF1_4SU/bam2bakR/./results/tracks/GRCh38.chrom.sizes
+INFO [2023-05-27 02:07:58,942]  [DirectoryManager.java:169] [main]  IGV Directory: /home/volker/igv
+IGV Directory: /home/volker/igv
+INFO [2023-05-27 02:07:59,036]  [GenomeManager.java:192] [main]  Genome loaded.  id= /srv/2023_UPF1_4SU/bam2bakR/
+Genome loaded.  id= /srv/2023_UPF1_4SU/bam2bakR/
+INFO [2023-05-27 02:07:59,047]  [Preprocessor.java:125] [main]  track type=bedGraph name=" Nter_24h_IAA_4SU_3 TC 3 minus " description=" Nter_24h_IAA_4SU_3 TC 3 minus strand" visibility=full negateValues=on autoScale=off windowingFunction=mean viewLimits=-10:0 color=10,10,10 altColor=150,0,0  priority=20
+track type=bedGraph name=" Nter_24h_IAA_4SU_3 TC 3 minus " description=" Nter_24h_IAA_4SU_3 TC 3 minus strand" visibility=full negateValues=on autoScale=off windowingFunction=mean viewLimits=-10:0 color=10,10,10 altColor=150,0,0  priority=20
+INFO [2023-05-27 02:07:59,059]  [Preprocessor.java:255] [main]  Processing chromosome chr1
+Processing chromosome chr1
+.....INFO [2023-05-27 02:08:01,098]  [Preprocessor.java:255] [main]  Processing chromosome chr2
+Processing chromosome chr2
+...INFO [2023-05-27 02:08:01,557]  [Preprocessor.java:255] [main]  Processing chromosome chr3
+Processing chromosome chr3
+.10.0% 
+.INFO [2023-05-27 02:08:01,914]  [Preprocessor.java:255] [main]  Processing chromosome chr4
+Processing chromosome chr4
+..INFO [2023-05-27 02:08:02,037]  [Preprocessor.java:255] [main]  Processing chromosome chr5
+Processing chromosome chr5
+..INFO [2023-05-27 02:08:02,204]  [Preprocessor.java:255] [main]  Processing chromosome chr6
+Processing chromosome chr6
+...INFO [2023-05-27 02:08:02,518]  [Preprocessor.java:255] [main]  Processing chromosome chr7
+Processing chromosome chr7
+.20.0% 
+.INFO [2023-05-27 02:08:02,804]  [Preprocessor.java:255] [main]  Processing chromosome chr8
+Processing chromosome chr8
+..INFO [2023-05-27 02:08:02,909]  [Preprocessor.java:255] [main]  Processing chromosome chr9
+Processing chromosome chr9
+..INFO [2023-05-27 02:08:03,009]  [Preprocessor.java:255] [main]  Processing chromosome chr10
+Processing chromosome chr10
+..INFO [2023-05-27 02:08:03,244]  [Preprocessor.java:255] [main]  Processing chromosome chr11
+Processing chromosome chr11
+..30.0% 
+.INFO [2023-05-27 02:08:03,402]  [Preprocessor.java:255] [main]  Processing chromosome chr12
+Processing chromosome chr12
+....INFO [2023-05-27 02:08:03,698]  [Preprocessor.java:255] [main]  Processing chromosome chr13
+Processing chromosome chr13
+INFO [2023-05-27 02:08:03,740]  [Preprocessor.java:255] [main]  Processing chromosome chr14
+Processing chromosome chr14
+..INFO [2023-05-27 02:08:03,910]  [Preprocessor.java:255] [main]  Processing chromosome chr15
+Processing chromosome chr15
+.INFO [2023-05-27 02:08:04,001]  [Preprocessor.java:255] [main]  Processing chromosome chr16
+Processing chromosome chr16
+.40.0% 
+.INFO [2023-05-27 02:08:04,136]  [Preprocessor.java:255] [main]  Processing chromosome chr17
+Processing chromosome chr17
+....INFO [2023-05-27 02:08:04,485]  [Preprocessor.java:255] [main]  Processing chromosome chr18
+Processing chromosome chr18
+.INFO [2023-05-27 02:08:04,536]  [Preprocessor.java:255] [main]  Processing chromosome chr19
+Processing chromosome chr19
+...50.0% 
+.INFO [2023-05-27 02:08:04,968]  [Preprocessor.java:255] [main]  Processing chromosome chr20
+Processing chromosome chr20
+..INFO [2023-05-27 02:08:05,167]  [Preprocessor.java:255] [main]  Processing chromosome chr21
+Processing chromosome chr21
+INFO [2023-05-27 02:08:05,193]  [Preprocessor.java:255] [main]  Processing chromosome chr22
+Processing chromosome chr22
+..INFO [2023-05-27 02:08:05,271]  [Preprocessor.java:255] [main]  Processing chromosome chrX
+Processing chromosome chrX
+.INFO [2023-05-27 02:08:05,336]  [Preprocessor.java:255] [main]  Processing chromosome chrY
+Processing chromosome chrY
+INFO [2023-05-27 02:08:05,338]  [Preprocessor.java:255] [main]  Processing chromosome chrM
+Processing chromosome chrM
+INFO [2023-05-27 02:08:05,446]  [Preprocessor.java:255] [main]  Processing chromosome GL000194.1
+Processing chromosome GL000194.1
+INFO [2023-05-27 02:08:05,461]  [Preprocessor.java:255] [main]  Processing chromosome GL000195.1
+Processing chromosome GL000195.1
+INFO [2023-05-27 02:08:05,463]  [Preprocessor.java:255] [main]  Processing chromosome GL000219.1
+Processing chromosome GL000219.1
+INFO [2023-05-27 02:08:05,464]  [Preprocessor.java:255] [main]  Processing chromosome GL000220.1
+Processing chromosome GL000220.1
+INFO [2023-05-27 02:08:05,467]  [Preprocessor.java:255] [main]  Processing chromosome KI270442.1
+Processing chromosome KI270442.1
+INFO [2023-05-27 02:08:05,467]  [Preprocessor.java:255] [main]  Processing chromosome KI270711.1
+Processing chromosome KI270711.1
+INFO [2023-05-27 02:08:05,468]  [Preprocessor.java:255] [main]  Processing chromosome KI270713.1
+Processing chromosome KI270713.1
+INFO [2023-05-27 02:08:05,473]  [Preprocessor.java:255] [main]  Processing chromosome KI270721.1
+Processing chromosome KI270721.1
+INFO [2023-05-27 02:08:05,476]  [Preprocessor.java:255] [main]  Processing chromosome KI270733.1
+Processing chromosome KI270733.1
+INFO [2023-05-27 02:08:05,483]  [Preprocessor.java:255] [main]  Processing chromosome KI270734.1
+Processing chromosome KI270734.1
+INFO [2023-05-27 02:08:05,484]  [Preprocessor.java:255] [main]  Processing chromosome KI270738.1
+Processing chromosome KI270738.1
+INFO [2023-05-27 02:08:05,485]  [Preprocessor.java:255] [main]  Processing chromosome KI270743.1
+Processing chromosome KI270743.1
+INFO [2023-05-27 02:08:05,486]  [Preprocessor.java:255] [main]  Processing chromosome KI270745.1
+Processing chromosome KI270745.1
+INFO [2023-05-27 02:08:05,487]  [Preprocessor.java:255] [main]  Processing chromosome KI270755.1
+Processing chromosome KI270755.1
+INFO [2023-05-27 02:08:05,601]  [TDFWriter.java:318] [main]  Group idx: 1
+Group idx: 1
+100.0% 
+Done
+INFO [2023-05-27 02:07:58,697]  [IgvTools.java:667] [main]  toTDF.  File = ./results/tracks/Nter_24h_IAA_4SU_3.TC.2.pos.bedGraph
+toTDF.  File = ./results/tracks/Nter_24h_IAA_4SU_3.TC.2.pos.bedGraph
+INFO [2023-05-27 02:07:58,700]  [IgvTools.java:668] [main]  Max zoom = 7
+Max zoom = 7
+INFO [2023-05-27 02:07:58,701]  [IgvTools.java:676] [main]  Window functions: mean max 
+Window functions: mean max 
+INFO [2023-05-27 02:07:58,707]  [GenomeManager.java:145] [main]  Loading genome: /srv/2023_UPF1_4SU/bam2bakR/./results/tracks/GRCh38.chrom.sizes
+Loading genome: /srv/2023_UPF1_4SU/bam2bakR/./results/tracks/GRCh38.chrom.sizes
+INFO [2023-05-27 02:07:58,934]  [DirectoryManager.java:169] [main]  IGV Directory: /home/volker/igv
+IGV Directory: /home/volker/igv
+INFO [2023-05-27 02:07:59,034]  [GenomeManager.java:192] [main]  Genome loaded.  id= /srv/2023_UPF1_4SU/bam2bakR/
+Genome loaded.  id= /srv/2023_UPF1_4SU/bam2bakR/
+INFO [2023-05-27 02:07:59,045]  [Preprocessor.java:125] [main]  track type=bedGraph name=" Nter_24h_IAA_4SU_3 TC 2 plus " description=" Nter_24h_IAA_4SU_3 TC 2 positive strand" visibility=full autoScale=off windowingFunction=mean viewLimits=0:10 color=250,0,0  altColor=10,10,10 priority=20
+track type=bedGraph name=" Nter_24h_IAA_4SU_3 TC 2 plus " description=" Nter_24h_IAA_4SU_3 TC 2 positive strand" visibility=full autoScale=off windowingFunction=mean viewLimits=0:10 color=250,0,0  altColor=10,10,10 priority=20
+INFO [2023-05-27 02:07:59,058]  [Preprocessor.java:255] [main]  Processing chromosome chr1
+Processing chromosome chr1
+.....INFO [2023-05-27 02:08:01,391]  [Preprocessor.java:255] [main]  Processing chromosome chr2
+Processing chromosome chr2
+...INFO [2023-05-27 02:08:01,959]  [Preprocessor.java:255] [main]  Processing chromosome chr3
+Processing chromosome chr3
+.10.0% 
+.INFO [2023-05-27 02:08:02,232]  [Preprocessor.java:255] [main]  Processing chromosome chr4
+Processing chromosome chr4
+..INFO [2023-05-27 02:08:02,463]  [Preprocessor.java:255] [main]  Processing chromosome chr5
+Processing chromosome chr5
+..INFO [2023-05-27 02:08:02,623]  [Preprocessor.java:255] [main]  Processing chromosome chr6
+Processing chromosome chr6
+...INFO [2023-05-27 02:08:02,866]  [Preprocessor.java:255] [main]  Processing chromosome chr7
+Processing chromosome chr7
+.20.0% 
+INFO [2023-05-27 02:08:03,110]  [Preprocessor.java:255] [main]  Processing chromosome chr8
+Processing chromosome chr8
+..INFO [2023-05-27 02:08:03,256]  [Preprocessor.java:255] [main]  Processing chromosome chr9
+Processing chromosome chr9
+..INFO [2023-05-27 02:08:03,463]  [Preprocessor.java:255] [main]  Processing chromosome chr10
+Processing chromosome chr10
+...INFO [2023-05-27 02:08:03,614]  [Preprocessor.java:255] [main]  Processing chromosome chr11
+Processing chromosome chr11
+..30.0% 
+INFO [2023-05-27 02:08:03,950]  [Preprocessor.java:255] [main]  Processing chromosome chr12
+Processing chromosome chr12
+...INFO [2023-05-27 02:08:04,277]  [Preprocessor.java:255] [main]  Processing chromosome chr13
+Processing chromosome chr13
+.INFO [2023-05-27 02:08:04,336]  [Preprocessor.java:255] [main]  Processing chromosome chr14
+Processing chromosome chr14
+..INFO [2023-05-27 02:08:04,530]  [Preprocessor.java:255] [main]  Processing chromosome chr15
+Processing chromosome chr15
+.INFO [2023-05-27 02:08:04,631]  [Preprocessor.java:255] [main]  Processing chromosome chr16
+Processing chromosome chr16
+..40.0% 
+INFO [2023-05-27 02:08:04,910]  [Preprocessor.java:255] [main]  Processing chromosome chr17
+Processing chromosome chr17
+.....INFO [2023-05-27 02:08:05,245]  [Preprocessor.java:255] [main]  Processing chromosome chr18
+Processing chromosome chr18
+.INFO [2023-05-27 02:08:05,293]  [Preprocessor.java:255] [main]  Processing chromosome chr19
+Processing chromosome chr19
+...INFO [2023-05-27 02:08:05,622]  [Preprocessor.java:255] [main]  Processing chromosome chr20
+Processing chromosome chr20
+50.0% 
+.INFO [2023-05-27 02:08:05,731]  [Preprocessor.java:255] [main]  Processing chromosome chr21
+Processing chromosome chr21
+INFO [2023-05-27 02:08:05,770]  [Preprocessor.java:255] [main]  Processing chromosome chr22
+Processing chromosome chr22
+..INFO [2023-05-27 02:08:05,991]  [Preprocessor.java:255] [main]  Processing chromosome chrX
+Processing chromosome chrX
+.INFO [2023-05-27 02:08:06,062]  [Preprocessor.java:255] [main]  Processing chromosome chrY
+Processing chromosome chrY
+INFO [2023-05-27 02:08:06,064]  [Preprocessor.java:255] [main]  Processing chromosome chrM
+Processing chromosome chrM
+INFO [2023-05-27 02:08:06,130]  [Preprocessor.java:255] [main]  Processing chromosome GL000009.2
+Processing chromosome GL000009.2
+INFO [2023-05-27 02:08:06,135]  [Preprocessor.java:255] [main]  Processing chromosome GL000194.1
+Processing chromosome GL000194.1
+INFO [2023-05-27 02:08:06,138]  [Preprocessor.java:255] [main]  Processing chromosome GL000195.1
+Processing chromosome GL000195.1
+INFO [2023-05-27 02:08:06,143]  [Preprocessor.java:255] [main]  Processing chromosome GL000205.2
+Processing chromosome GL000205.2
+INFO [2023-05-27 02:08:06,147]  [Preprocessor.java:255] [main]  Processing chromosome GL000218.1
+Processing chromosome GL000218.1
+INFO [2023-05-27 02:08:06,154]  [Preprocessor.java:255] [main]  Processing chromosome GL000219.1
+Processing chromosome GL000219.1
+INFO [2023-05-27 02:08:06,161]  [Preprocessor.java:255] [main]  Processing chromosome GL000220.1
+Processing chromosome GL000220.1
+INFO [2023-05-27 02:08:06,163]  [Preprocessor.java:255] [main]  Processing chromosome KI270709.1
+Processing chromosome KI270709.1
+INFO [2023-05-27 02:08:06,164]  [Preprocessor.java:255] [main]  Processing chromosome KI270711.1
+Processing chromosome KI270711.1
+INFO [2023-05-27 02:08:06,179]  [Preprocessor.java:255] [main]  Processing chromosome KI270713.1
+Processing chromosome KI270713.1
+INFO [2023-05-27 02:08:06,183]  [Preprocessor.java:255] [main]  Processing chromosome KI270714.1
+Processing chromosome KI270714.1
+INFO [2023-05-27 02:08:06,194]  [Preprocessor.java:255] [main]  Processing chromosome KI270717.1
+Processing chromosome KI270717.1
+INFO [2023-05-27 02:08:06,196]  [Preprocessor.java:255] [main]  Processing chromosome KI270728.1
+Processing chromosome KI270728.1
+INFO [2023-05-27 02:08:06,196]  [Preprocessor.java:255] [main]  Processing chromosome KI270733.1
+Processing chromosome KI270733.1
+INFO [2023-05-27 02:08:06,198]  [Preprocessor.java:255] [main]  Processing chromosome KI270744.1
+Processing chromosome KI270744.1
+INFO [2023-05-27 02:08:06,278]  [TDFWriter.java:318] [main]  Group idx: 1
+Group idx: 1
+100.0% 
+Done
+INFO [2023-05-27 02:07:58,732]  [IgvTools.java:667] [main]  toTDF.  File = ./results/tracks/Nter_24h_IAA_4SU_3.TC.2.min.bedGraph
+toTDF.  File = ./results/tracks/Nter_24h_IAA_4SU_3.TC.2.min.bedGraph
+INFO [2023-05-27 02:07:58,735]  [IgvTools.java:668] [main]  Max zoom = 7
+Max zoom = 7
+INFO [2023-05-27 02:07:58,736]  [IgvTools.java:676] [main]  Window functions: mean max 
+Window functions: mean max 
+INFO [2023-05-27 02:07:58,743]  [GenomeManager.java:145] [main]  Loading genome: /srv/2023_UPF1_4SU/bam2bakR/./results/tracks/GRCh38.chrom.sizes
+Loading genome: /srv/2023_UPF1_4SU/bam2bakR/./results/tracks/GRCh38.chrom.sizes
+INFO [2023-05-27 02:07:58,979]  [DirectoryManager.java:169] [main]  IGV Directory: /home/volker/igv
+IGV Directory: /home/volker/igv
+INFO [2023-05-27 02:07:59,101]  [GenomeManager.java:192] [main]  Genome loaded.  id= /srv/2023_UPF1_4SU/bam2bakR/
+Genome loaded.  id= /srv/2023_UPF1_4SU/bam2bakR/
+INFO [2023-05-27 02:07:59,123]  [Preprocessor.java:125] [main]  track type=bedGraph name=" Nter_24h_IAA_4SU_3 TC 2 minus " description=" Nter_24h_IAA_4SU_3 TC 2 minus strand" visibility=full negateValues=on autoScale=off windowingFunction=mean viewLimits=-10:0 color=10,10,10 altColor=250,0,0  priority=20
+track type=bedGraph name=" Nter_24h_IAA_4SU_3 TC 2 minus " description=" Nter_24h_IAA_4SU_3 TC 2 minus strand" visibility=full negateValues=on autoScale=off windowingFunction=mean viewLimits=-10:0 color=10,10,10 altColor=250,0,0  priority=20
+INFO [2023-05-27 02:07:59,143]  [Preprocessor.java:255] [main]  Processing chromosome chr1
+Processing chromosome chr1
+.....INFO [2023-05-27 02:08:01,545]  [Preprocessor.java:255] [main]  Processing chromosome chr2
+Processing chromosome chr2
+...INFO [2023-05-27 02:08:02,265]  [Preprocessor.java:255] [main]  Processing chromosome chr3
+Processing chromosome chr3
+.10.0% 
+.INFO [2023-05-27 02:08:02,511]  [Preprocessor.java:255] [main]  Processing chromosome chr4
+Processing chromosome chr4
+..INFO [2023-05-27 02:08:02,825]  [Preprocessor.java:255] [main]  Processing chromosome chr5
+Processing chromosome chr5
+..INFO [2023-05-27 02:08:03,012]  [Preprocessor.java:255] [main]  Processing chromosome chr6
+Processing chromosome chr6
+...INFO [2023-05-27 02:08:03,318]  [Preprocessor.java:255] [main]  Processing chromosome chr7
+Processing chromosome chr7
+.20.0% 
+.INFO [2023-05-27 02:08:03,637]  [Preprocessor.java:255] [main]  Processing chromosome chr8
+Processing chromosome chr8
+..INFO [2023-05-27 02:08:03,763]  [Preprocessor.java:255] [main]  Processing chromosome chr9
+Processing chromosome chr9
+..INFO [2023-05-27 02:08:03,990]  [Preprocessor.java:255] [main]  Processing chromosome chr10
+Processing chromosome chr10
+..INFO [2023-05-27 02:08:04,166]  [Preprocessor.java:255] [main]  Processing chromosome chr11
+Processing chromosome chr11
+..30.0% 
+.INFO [2023-05-27 02:08:04,517]  [Preprocessor.java:255] [main]  Processing chromosome chr12
+Processing chromosome chr12
+...INFO [2023-05-27 02:08:04,859]  [Preprocessor.java:255] [main]  Processing chromosome chr13
+Processing chromosome chr13
+.INFO [2023-05-27 02:08:04,910]  [Preprocessor.java:255] [main]  Processing chromosome chr14
+Processing chromosome chr14
+..INFO [2023-05-27 02:08:05,096]  [Preprocessor.java:255] [main]  Processing chromosome chr15
+Processing chromosome chr15
+.INFO [2023-05-27 02:08:05,226]  [Preprocessor.java:255] [main]  Processing chromosome chr16
+Processing chromosome chr16
+.40.0% 
+.INFO [2023-05-27 02:08:05,481]  [Preprocessor.java:255] [main]  Processing chromosome chr17
+Processing chromosome chr17
+....INFO [2023-05-27 02:08:05,792]  [Preprocessor.java:255] [main]  Processing chromosome chr18
+Processing chromosome chr18
+.INFO [2023-05-27 02:08:05,848]  [Preprocessor.java:255] [main]  Processing chromosome chr19
+Processing chromosome chr19
+...50.0% 
+.INFO [2023-05-27 02:08:06,221]  [Preprocessor.java:255] [main]  Processing chromosome chr20
+Processing chromosome chr20
+..INFO [2023-05-27 02:08:06,443]  [Preprocessor.java:255] [main]  Processing chromosome chr21
+Processing chromosome chr21
+INFO [2023-05-27 02:08:06,478]  [Preprocessor.java:255] [main]  Processing chromosome chr22
+Processing chromosome chr22
+..INFO [2023-05-27 02:08:06,589]  [Preprocessor.java:255] [main]  Processing chromosome chrX
+Processing chromosome chrX
+.INFO [2023-05-27 02:08:06,766]  [Preprocessor.java:255] [main]  Processing chromosome chrY
+Processing chromosome chrY
+INFO [2023-05-27 02:08:06,768]  [Preprocessor.java:255] [main]  Processing chromosome chrM
+Processing chromosome chrM
+INFO [2023-05-27 02:08:06,899]  [Preprocessor.java:255] [main]  Processing chromosome GL000194.1
+Processing chromosome GL000194.1
+INFO [2023-05-27 02:08:06,915]  [Preprocessor.java:255] [main]  Processing chromosome GL000195.1
+Processing chromosome GL000195.1
+INFO [2023-05-27 02:08:06,917]  [Preprocessor.java:255] [main]  Processing chromosome GL000219.1
+Processing chromosome GL000219.1
+INFO [2023-05-27 02:08:06,918]  [Preprocessor.java:255] [main]  Processing chromosome GL000220.1
+Processing chromosome GL000220.1
+INFO [2023-05-27 02:08:06,921]  [Preprocessor.java:255] [main]  Processing chromosome KI270442.1
+Processing chromosome KI270442.1
+INFO [2023-05-27 02:08:06,922]  [Preprocessor.java:255] [main]  Processing chromosome KI270711.1
+Processing chromosome KI270711.1
+INFO [2023-05-27 02:08:06,923]  [Preprocessor.java:255] [main]  Processing chromosome KI270713.1
+Processing chromosome KI270713.1
+INFO [2023-05-27 02:08:06,929]  [Preprocessor.java:255] [main]  Processing chromosome KI270721.1
+Processing chromosome KI270721.1
+INFO [2023-05-27 02:08:06,933]  [Preprocessor.java:255] [main]  Processing chromosome KI270733.1
+Processing chromosome KI270733.1
+INFO [2023-05-27 02:08:06,944]  [Preprocessor.java:255] [main]  Processing chromosome KI270734.1
+Processing chromosome KI270734.1
+INFO [2023-05-27 02:08:06,946]  [Preprocessor.java:255] [main]  Processing chromosome KI270738.1
+Processing chromosome KI270738.1
+INFO [2023-05-27 02:08:06,946]  [Preprocessor.java:255] [main]  Processing chromosome KI270743.1
+Processing chromosome KI270743.1
+INFO [2023-05-27 02:08:06,947]  [Preprocessor.java:255] [main]  Processing chromosome KI270745.1
+Processing chromosome KI270745.1
+INFO [2023-05-27 02:08:06,949]  [Preprocessor.java:255] [main]  Processing chromosome KI270755.1
+Processing chromosome KI270755.1
+INFO [2023-05-27 02:08:06,964]  [TDFWriter.java:318] [main]  Group idx: 1
+Group idx: 1
+100.0% 
+Done
+INFO [2023-05-27 02:07:58,704]  [IgvTools.java:667] [main]  toTDF.  File = ./results/tracks/Nter_24h_IAA_4SU_3.TC.1.pos.bedGraph
+toTDF.  File = ./results/tracks/Nter_24h_IAA_4SU_3.TC.1.pos.bedGraph
+INFO [2023-05-27 02:07:58,706]  [IgvTools.java:668] [main]  Max zoom = 7
+Max zoom = 7
+INFO [2023-05-27 02:07:58,707]  [IgvTools.java:676] [main]  Window functions: mean max 
+Window functions: mean max 
+INFO [2023-05-27 02:07:58,715]  [GenomeManager.java:145] [main]  Loading genome: /srv/2023_UPF1_4SU/bam2bakR/./results/tracks/GRCh38.chrom.sizes
+Loading genome: /srv/2023_UPF1_4SU/bam2bakR/./results/tracks/GRCh38.chrom.sizes
+INFO [2023-05-27 02:07:58,935]  [DirectoryManager.java:169] [main]  IGV Directory: /home/volker/igv
+IGV Directory: /home/volker/igv
+INFO [2023-05-27 02:07:59,033]  [GenomeManager.java:192] [main]  Genome loaded.  id= /srv/2023_UPF1_4SU/bam2bakR/
+Genome loaded.  id= /srv/2023_UPF1_4SU/bam2bakR/
+INFO [2023-05-27 02:07:59,044]  [Preprocessor.java:125] [main]  track type=bedGraph name=" Nter_24h_IAA_4SU_3 TC 1 plus " description=" Nter_24h_IAA_4SU_3 TC 1 positive strand" visibility=full autoScale=off windowingFunction=mean viewLimits=0:10 color=250,150,150  altColor=10,10,10 priority=20
+track type=bedGraph name=" Nter_24h_IAA_4SU_3 TC 1 plus " description=" Nter_24h_IAA_4SU_3 TC 1 positive strand" visibility=full autoScale=off windowingFunction=mean viewLimits=0:10 color=250,150,150  altColor=10,10,10 priority=20
+INFO [2023-05-27 02:07:59,055]  [Preprocessor.java:255] [main]  Processing chromosome chr1
+Processing chromosome chr1
+.....INFO [2023-05-27 02:08:01,186]  [Preprocessor.java:255] [main]  Processing chromosome chr2
+Processing chromosome chr2
+...INFO [2023-05-27 02:08:01,783]  [Preprocessor.java:255] [main]  Processing chromosome chr3
+Processing chromosome chr3
+.10.0% 
+.INFO [2023-05-27 02:08:02,160]  [Preprocessor.java:255] [main]  Processing chromosome chr4
+Processing chromosome chr4
+.INFO [2023-05-27 02:08:02,327]  [Preprocessor.java:255] [main]  Processing chromosome chr5
+Processing chromosome chr5
+..INFO [2023-05-27 02:08:02,578]  [Preprocessor.java:255] [main]  Processing chromosome chr6
+Processing chromosome chr6
+...INFO [2023-05-27 02:08:02,976]  [Preprocessor.java:255] [main]  Processing chromosome chr7
+Processing chromosome chr7
+..INFO [2023-05-27 02:08:03,191]  [Preprocessor.java:255] [main]  Processing chromosome chr8
+Processing chromosome chr8
+20.0% 
+.INFO [2023-05-27 02:08:03,542]  [Preprocessor.java:255] [main]  Processing chromosome chr9
+Processing chromosome chr9
+..INFO [2023-05-27 02:08:03,754]  [Preprocessor.java:255] [main]  Processing chromosome chr10
+Processing chromosome chr10
+..INFO [2023-05-27 02:08:04,047]  [Preprocessor.java:255] [main]  Processing chromosome chr11
+Processing chromosome chr11
+....INFO [2023-05-27 02:08:04,368]  [Preprocessor.java:255] [main]  Processing chromosome chr12
+Processing chromosome chr12
+30.0% 
+..INFO [2023-05-27 02:08:04,735]  [Preprocessor.java:255] [main]  Processing chromosome chr13
+Processing chromosome chr13
+.INFO [2023-05-27 02:08:04,847]  [Preprocessor.java:255] [main]  Processing chromosome chr14
+Processing chromosome chr14
+.INFO [2023-05-27 02:08:05,047]  [Preprocessor.java:255] [main]  Processing chromosome chr15
+Processing chromosome chr15
+..INFO [2023-05-27 02:08:05,171]  [Preprocessor.java:255] [main]  Processing chromosome chr16
+Processing chromosome chr16
+..INFO [2023-05-27 02:08:05,519]  [Preprocessor.java:255] [main]  Processing chromosome chr17
+Processing chromosome chr17
+.40.0% 
+...INFO [2023-05-27 02:08:05,972]  [Preprocessor.java:255] [main]  Processing chromosome chr18
+Processing chromosome chr18
+.INFO [2023-05-27 02:08:06,040]  [Preprocessor.java:255] [main]  Processing chromosome chr19
+Processing chromosome chr19
+...INFO [2023-05-27 02:08:06,425]  [Preprocessor.java:255] [main]  Processing chromosome chr20
+Processing chromosome chr20
+..INFO [2023-05-27 02:08:06,591]  [Preprocessor.java:255] [main]  Processing chromosome chr21
+Processing chromosome chr21
+INFO [2023-05-27 02:08:06,640]  [Preprocessor.java:255] [main]  Processing chromosome chr22
+Processing chromosome chr22
+50.0% 
+.INFO [2023-05-27 02:08:06,847]  [Preprocessor.java:255] [main]  Processing chromosome chrX
+Processing chromosome chrX
+.INFO [2023-05-27 02:08:06,955]  [Preprocessor.java:255] [main]  Processing chromosome chrY
+Processing chromosome chrY
+INFO [2023-05-27 02:08:06,957]  [Preprocessor.java:255] [main]  Processing chromosome chrM
+Processing chromosome chrM
+INFO [2023-05-27 02:08:07,057]  [Preprocessor.java:255] [main]  Processing chromosome GL000008.2
+Processing chromosome GL000008.2
+INFO [2023-05-27 02:08:07,062]  [Preprocessor.java:255] [main]  Processing chromosome GL000009.2
+Processing chromosome GL000009.2
+INFO [2023-05-27 02:08:07,062]  [Preprocessor.java:255] [main]  Processing chromosome GL000194.1
+Processing chromosome GL000194.1
+INFO [2023-05-27 02:08:07,066]  [Preprocessor.java:255] [main]  Processing chromosome GL000195.1
+Processing chromosome GL000195.1
+INFO [2023-05-27 02:08:07,070]  [Preprocessor.java:255] [main]  Processing chromosome GL000205.2
+Processing chromosome GL000205.2
+INFO [2023-05-27 02:08:07,074]  [Preprocessor.java:255] [main]  Processing chromosome GL000218.1
+Processing chromosome GL000218.1
+INFO [2023-05-27 02:08:07,081]  [Preprocessor.java:255] [main]  Processing chromosome GL000219.1
+Processing chromosome GL000219.1
+INFO [2023-05-27 02:08:07,087]  [Preprocessor.java:255] [main]  Processing chromosome GL000220.1
+Processing chromosome GL000220.1
+INFO [2023-05-27 02:08:07,089]  [Preprocessor.java:255] [main]  Processing chromosome KI270709.1
+Processing chromosome KI270709.1
+INFO [2023-05-27 02:08:07,090]  [Preprocessor.java:255] [main]  Processing chromosome KI270711.1
+Processing chromosome KI270711.1
+INFO [2023-05-27 02:08:07,106]  [Preprocessor.java:255] [main]  Processing chromosome KI270713.1
+Processing chromosome KI270713.1
+INFO [2023-05-27 02:08:07,111]  [Preprocessor.java:255] [main]  Processing chromosome KI270714.1
+Processing chromosome KI270714.1
+INFO [2023-05-27 02:08:07,122]  [Preprocessor.java:255] [main]  Processing chromosome KI270717.1
+Processing chromosome KI270717.1
+INFO [2023-05-27 02:08:07,123]  [Preprocessor.java:255] [main]  Processing chromosome KI270728.1
+Processing chromosome KI270728.1
+INFO [2023-05-27 02:08:07,124]  [Preprocessor.java:255] [main]  Processing chromosome KI270733.1
+Processing chromosome KI270733.1
+INFO [2023-05-27 02:08:07,127]  [Preprocessor.java:255] [main]  Processing chromosome KI270741.1
+Processing chromosome KI270741.1
+INFO [2023-05-27 02:08:07,128]  [Preprocessor.java:255] [main]  Processing chromosome KI270742.1
+Processing chromosome KI270742.1
+INFO [2023-05-27 02:08:07,129]  [Preprocessor.java:255] [main]  Processing chromosome KI270744.1
+Processing chromosome KI270744.1
+INFO [2023-05-27 02:08:07,172]  [TDFWriter.java:318] [main]  Group idx: 1
+Group idx: 1
+100.0% 
+Done
+INFO [2023-05-27 02:07:58,695]  [IgvTools.java:667] [main]  toTDF.  File = ./results/tracks/Nter_24h_IAA_4SU_3.TC.1.min.bedGraph
+toTDF.  File = ./results/tracks/Nter_24h_IAA_4SU_3.TC.1.min.bedGraph
+INFO [2023-05-27 02:07:58,699]  [IgvTools.java:668] [main]  Max zoom = 7
+Max zoom = 7
+INFO [2023-05-27 02:07:58,700]  [IgvTools.java:676] [main]  Window functions: mean max 
+Window functions: mean max 
+INFO [2023-05-27 02:07:58,707]  [GenomeManager.java:145] [main]  Loading genome: /srv/2023_UPF1_4SU/bam2bakR/./results/tracks/GRCh38.chrom.sizes
+Loading genome: /srv/2023_UPF1_4SU/bam2bakR/./results/tracks/GRCh38.chrom.sizes
+INFO [2023-05-27 02:07:58,916]  [DirectoryManager.java:169] [main]  IGV Directory: /home/volker/igv
+IGV Directory: /home/volker/igv
+INFO [2023-05-27 02:07:59,037]  [GenomeManager.java:192] [main]  Genome loaded.  id= /srv/2023_UPF1_4SU/bam2bakR/
+Genome loaded.  id= /srv/2023_UPF1_4SU/bam2bakR/
+INFO [2023-05-27 02:07:59,050]  [Preprocessor.java:125] [main]  track type=bedGraph name=" Nter_24h_IAA_4SU_3 TC 1 minus " description=" Nter_24h_IAA_4SU_3 TC 1 minus strand" visibility=full negateValues=on autoScale=off windowingFunction=mean viewLimits=-10:0 color=10,10,10 altColor=250,150,150  priority=20
+track type=bedGraph name=" Nter_24h_IAA_4SU_3 TC 1 minus " description=" Nter_24h_IAA_4SU_3 TC 1 minus strand" visibility=full negateValues=on autoScale=off windowingFunction=mean viewLimits=-10:0 color=10,10,10 altColor=250,150,150  priority=20
+INFO [2023-05-27 02:07:59,063]  [Preprocessor.java:255] [main]  Processing chromosome chr1
+Processing chromosome chr1
+.....INFO [2023-05-27 02:08:01,083]  [Preprocessor.java:255] [main]  Processing chromosome chr2
+Processing chromosome chr2
+...INFO [2023-05-27 02:08:01,836]  [Preprocessor.java:255] [main]  Processing chromosome chr3
+Processing chromosome chr3
+.10.0% 
+.INFO [2023-05-27 02:08:02,261]  [Preprocessor.java:255] [main]  Processing chromosome chr4
+Processing chromosome chr4
+..INFO [2023-05-27 02:08:02,549]  [Preprocessor.java:255] [main]  Processing chromosome chr5
+Processing chromosome chr5
+..INFO [2023-05-27 02:08:02,880]  [Preprocessor.java:255] [main]  Processing chromosome chr6
+Processing chromosome chr6
+...INFO [2023-05-27 02:08:03,151]  [Preprocessor.java:255] [main]  Processing chromosome chr7
+Processing chromosome chr7
+.20.0% 
+.INFO [2023-05-27 02:08:03,506]  [Preprocessor.java:255] [main]  Processing chromosome chr8
+Processing chromosome chr8
+..INFO [2023-05-27 02:08:03,670]  [Preprocessor.java:255] [main]  Processing chromosome chr9
+Processing chromosome chr9
+..INFO [2023-05-27 02:08:03,983]  [Preprocessor.java:255] [main]  Processing chromosome chr10
+Processing chromosome chr10
+..INFO [2023-05-27 02:08:04,248]  [Preprocessor.java:255] [main]  Processing chromosome chr11
+Processing chromosome chr11
+..30.0% 
+INFO [2023-05-27 02:08:04,546]  [Preprocessor.java:255] [main]  Processing chromosome chr12
+Processing chromosome chr12
+....INFO [2023-05-27 02:08:04,978]  [Preprocessor.java:255] [main]  Processing chromosome chr13
+Processing chromosome chr13
+.INFO [2023-05-27 02:08:05,045]  [Preprocessor.java:255] [main]  Processing chromosome chr14
+Processing chromosome chr14
+.INFO [2023-05-27 02:08:05,289]  [Preprocessor.java:255] [main]  Processing chromosome chr15
+Processing chromosome chr15
+..INFO [2023-05-27 02:08:05,446]  [Preprocessor.java:255] [main]  Processing chromosome chr16
+Processing chromosome chr16
+.40.0% 
+.INFO [2023-05-27 02:08:05,880]  [Preprocessor.java:255] [main]  Processing chromosome chr17
+Processing chromosome chr17
+....INFO [2023-05-27 02:08:06,280]  [Preprocessor.java:255] [main]  Processing chromosome chr18
+Processing chromosome chr18
+.INFO [2023-05-27 02:08:06,359]  [Preprocessor.java:255] [main]  Processing chromosome chr19
+Processing chromosome chr19
+...50.0% 
+.INFO [2023-05-27 02:08:06,891]  [Preprocessor.java:255] [main]  Processing chromosome chr20
+Processing chromosome chr20
+..INFO [2023-05-27 02:08:07,069]  [Preprocessor.java:255] [main]  Processing chromosome chr21
+Processing chromosome chr21
+INFO [2023-05-27 02:08:07,196]  [Preprocessor.java:255] [main]  Processing chromosome chr22
+Processing chromosome chr22
+..INFO [2023-05-27 02:08:07,320]  [Preprocessor.java:255] [main]  Processing chromosome chrX
+Processing chromosome chrX
+.INFO [2023-05-27 02:08:07,421]  [Preprocessor.java:255] [main]  Processing chromosome chrY
+Processing chromosome chrY
+INFO [2023-05-27 02:08:07,423]  [Preprocessor.java:255] [main]  Processing chromosome chrM
+Processing chromosome chrM
+INFO [2023-05-27 02:08:07,528]  [Preprocessor.java:255] [main]  Processing chromosome GL000194.1
+Processing chromosome GL000194.1
+INFO [2023-05-27 02:08:07,544]  [Preprocessor.java:255] [main]  Processing chromosome GL000195.1
+Processing chromosome GL000195.1
+INFO [2023-05-27 02:08:07,546]  [Preprocessor.java:255] [main]  Processing chromosome GL000205.2
+Processing chromosome GL000205.2
+INFO [2023-05-27 02:08:07,547]  [Preprocessor.java:255] [main]  Processing chromosome GL000219.1
+Processing chromosome GL000219.1
+INFO [2023-05-27 02:08:07,548]  [Preprocessor.java:255] [main]  Processing chromosome GL000220.1
+Processing chromosome GL000220.1
+INFO [2023-05-27 02:08:07,551]  [Preprocessor.java:255] [main]  Processing chromosome KI270442.1
+Processing chromosome KI270442.1
+INFO [2023-05-27 02:08:07,552]  [Preprocessor.java:255] [main]  Processing chromosome KI270711.1
+Processing chromosome KI270711.1
+INFO [2023-05-27 02:08:07,553]  [Preprocessor.java:255] [main]  Processing chromosome KI270713.1
+Processing chromosome KI270713.1
+INFO [2023-05-27 02:08:07,560]  [Preprocessor.java:255] [main]  Processing chromosome KI270721.1
+Processing chromosome KI270721.1
+INFO [2023-05-27 02:08:07,563]  [Preprocessor.java:255] [main]  Processing chromosome KI270733.1
+Processing chromosome KI270733.1
+INFO [2023-05-27 02:08:07,708]  [Preprocessor.java:255] [main]  Processing chromosome KI270734.1
+Processing chromosome KI270734.1
+INFO [2023-05-27 02:08:07,710]  [Preprocessor.java:255] [main]  Processing chromosome KI270738.1
+Processing chromosome KI270738.1
+INFO [2023-05-27 02:08:07,711]  [Preprocessor.java:255] [main]  Processing chromosome KI270743.1
+Processing chromosome KI270743.1
+INFO [2023-05-27 02:08:07,712]  [Preprocessor.java:255] [main]  Processing chromosome KI270744.1
+Processing chromosome KI270744.1
+.INFO [2023-05-27 02:08:07,713]  [Preprocessor.java:255] [main]  Processing chromosome KI270745.1
+Processing chromosome KI270745.1
+INFO [2023-05-27 02:08:07,716]  [Preprocessor.java:255] [main]  Processing chromosome KI270748.1
+Processing chromosome KI270748.1
+INFO [2023-05-27 02:08:07,717]  [Preprocessor.java:255] [main]  Processing chromosome KI270755.1
+Processing chromosome KI270755.1
+INFO [2023-05-27 02:08:07,730]  [TDFWriter.java:318] [main]  Group idx: 1
+Group idx: 1
+100.0% 
+Done
+INFO [2023-05-27 02:07:58,679]  [IgvTools.java:667] [main]  toTDF.  File = ./results/tracks/Nter_24h_IAA_4SU_3.TC.0.pos.bedGraph
+toTDF.  File = ./results/tracks/Nter_24h_IAA_4SU_3.TC.0.pos.bedGraph
+INFO [2023-05-27 02:07:58,682]  [IgvTools.java:668] [main]  Max zoom = 7
+Max zoom = 7
+INFO [2023-05-27 02:07:58,682]  [IgvTools.java:676] [main]  Window functions: mean max 
+Window functions: mean max 
+INFO [2023-05-27 02:07:58,690]  [GenomeManager.java:145] [main]  Loading genome: /srv/2023_UPF1_4SU/bam2bakR/./results/tracks/GRCh38.chrom.sizes
+Loading genome: /srv/2023_UPF1_4SU/bam2bakR/./results/tracks/GRCh38.chrom.sizes
+INFO [2023-05-27 02:07:58,935]  [DirectoryManager.java:169] [main]  IGV Directory: /home/volker/igv
+IGV Directory: /home/volker/igv
+INFO [2023-05-27 02:07:59,033]  [GenomeManager.java:192] [main]  Genome loaded.  id= /srv/2023_UPF1_4SU/bam2bakR/
+Genome loaded.  id= /srv/2023_UPF1_4SU/bam2bakR/
+INFO [2023-05-27 02:07:59,044]  [Preprocessor.java:125] [main]  track type=bedGraph name=" Nter_24h_IAA_4SU_3 TC 0 plus " description=" Nter_24h_IAA_4SU_3 TC 0 positive strand" visibility=full autoScale=off windowingFunction=mean viewLimits=0:10 color=200,200,200  altColor=10,10,10 priority=20
+track type=bedGraph name=" Nter_24h_IAA_4SU_3 TC 0 plus " description=" Nter_24h_IAA_4SU_3 TC 0 positive strand" visibility=full autoScale=off windowingFunction=mean viewLimits=0:10 color=200,200,200  altColor=10,10,10 priority=20
+INFO [2023-05-27 02:07:59,058]  [Preprocessor.java:255] [main]  Processing chromosome chr1
+Processing chromosome chr1
+.....INFO [2023-05-27 02:08:03,174]  [Preprocessor.java:255] [main]  Processing chromosome chr2
+Processing chromosome chr2
+...INFO [2023-05-27 02:08:04,407]  [Preprocessor.java:255] [main]  Processing chromosome chr3
+Processing chromosome chr3
+.10.0% 
+.INFO [2023-05-27 02:08:05,528]  [Preprocessor.java:255] [main]  Processing chromosome chr4
+Processing chromosome chr4
+..INFO [2023-05-27 02:08:06,150]  [Preprocessor.java:255] [main]  Processing chromosome chr5
+Processing chromosome chr5
+..INFO [2023-05-27 02:08:06,880]  [Preprocessor.java:255] [main]  Processing chromosome chr6
+Processing chromosome chr6
+..INFO [2023-05-27 02:08:07,712]  [Preprocessor.java:255] [main]  Processing chromosome chr7
+Processing chromosome chr7
+..INFO [2023-05-27 02:08:08,603]  [Preprocessor.java:255] [main]  Processing chromosome chr8
+Processing chromosome chr8
+20.0% 
+.INFO [2023-05-27 02:08:09,301]  [Preprocessor.java:255] [main]  Processing chromosome chr9
+Processing chromosome chr9
+...INFO [2023-05-27 02:08:10,079]  [Preprocessor.java:255] [main]  Processing chromosome chr10
+Processing chromosome chr10
+..INFO [2023-05-27 02:08:10,774]  [Preprocessor.java:255] [main]  Processing chromosome chr11
+Processing chromosome chr11
+...INFO [2023-05-27 02:08:11,782]  [Preprocessor.java:255] [main]  Processing chromosome chr12
+Processing chromosome chr12
+30.0% 
+..INFO [2023-05-27 02:08:12,920]  [Preprocessor.java:255] [main]  Processing chromosome chr13
+Processing chromosome chr13
+.INFO [2023-05-27 02:08:13,208]  [Preprocessor.java:255] [main]  Processing chromosome chr14
+Processing chromosome chr14
+.INFO [2023-05-27 02:08:13,776]  [Preprocessor.java:255] [main]  Processing chromosome chr15
+Processing chromosome chr15
+..INFO [2023-05-27 02:08:14,282]  [Preprocessor.java:255] [main]  Processing chromosome chr16
+Processing chromosome chr16
+...INFO [2023-05-27 02:08:15,131]  [Preprocessor.java:255] [main]  Processing chromosome chr17
+Processing chromosome chr17
+40.0% 
+...INFO [2023-05-27 02:08:16,597]  [Preprocessor.java:255] [main]  Processing chromosome chr18
+Processing chromosome chr18
+.INFO [2023-05-27 02:08:16,822]  [Preprocessor.java:255] [main]  Processing chromosome chr19
+Processing chromosome chr19
+...INFO [2023-05-27 02:08:18,054]  [Preprocessor.java:255] [main]  Processing chromosome chr20
+Processing chromosome chr20
+..INFO [2023-05-27 02:08:18,528]  [Preprocessor.java:255] [main]  Processing chromosome chr21
+Processing chromosome chr21
+INFO [2023-05-27 02:08:18,694]  [Preprocessor.java:255] [main]  Processing chromosome chr22
+Processing chromosome chr22
+50.0% 
+.INFO [2023-05-27 02:08:19,217]  [Preprocessor.java:255] [main]  Processing chromosome chrX
+Processing chromosome chrX
+.INFO [2023-05-27 02:08:19,636]  [Preprocessor.java:255] [main]  Processing chromosome chrY
+Processing chromosome chrY
+INFO [2023-05-27 02:08:19,639]  [Preprocessor.java:255] [main]  Processing chromosome chrM
+Processing chromosome chrM
+INFO [2023-05-27 02:08:19,719]  [Preprocessor.java:255] [main]  Processing chromosome GL000008.2
+Processing chromosome GL000008.2
+INFO [2023-05-27 02:08:19,725]  [Preprocessor.java:255] [main]  Processing chromosome GL000009.2
+Processing chromosome GL000009.2
+INFO [2023-05-27 02:08:19,726]  [Preprocessor.java:255] [main]  Processing chromosome GL000194.1
+Processing chromosome GL000194.1
+INFO [2023-05-27 02:08:19,732]  [Preprocessor.java:255] [main]  Processing chromosome GL000195.1
+Processing chromosome GL000195.1
+INFO [2023-05-27 02:08:19,741]  [Preprocessor.java:255] [main]  Processing chromosome GL000205.2
+Processing chromosome GL000205.2
+INFO [2023-05-27 02:08:19,748]  [Preprocessor.java:255] [main]  Processing chromosome GL000218.1
+Processing chromosome GL000218.1
+INFO [2023-05-27 02:08:19,762]  [Preprocessor.java:255] [main]  Processing chromosome GL000219.1
+Processing chromosome GL000219.1
+INFO [2023-05-27 02:08:19,771]  [Preprocessor.java:255] [main]  Processing chromosome GL000220.1
+Processing chromosome GL000220.1
+INFO [2023-05-27 02:08:19,774]  [Preprocessor.java:255] [main]  Processing chromosome GL000221.1
+Processing chromosome GL000221.1
+INFO [2023-05-27 02:08:19,776]  [Preprocessor.java:255] [main]  Processing chromosome GL000225.1
+Processing chromosome GL000225.1
+INFO [2023-05-27 02:08:19,776]  [Preprocessor.java:255] [main]  Processing chromosome KI270709.1
+Processing chromosome KI270709.1
+INFO [2023-05-27 02:08:19,777]  [Preprocessor.java:255] [main]  Processing chromosome KI270711.1
+Processing chromosome KI270711.1
+INFO [2023-05-27 02:08:19,801]  [Preprocessor.java:255] [main]  Processing chromosome KI270713.1
+Processing chromosome KI270713.1
+INFO [2023-05-27 02:08:19,807]  [Preprocessor.java:255] [main]  Processing chromosome KI270714.1
+Processing chromosome KI270714.1
+INFO [2023-05-27 02:08:19,827]  [Preprocessor.java:255] [main]  Processing chromosome KI270717.1
+Processing chromosome KI270717.1
+INFO [2023-05-27 02:08:19,829]  [Preprocessor.java:255] [main]  Processing chromosome KI270720.1
+Processing chromosome KI270720.1
+INFO [2023-05-27 02:08:19,830]  [Preprocessor.java:255] [main]  Processing chromosome KI270721.1
+Processing chromosome KI270721.1
+INFO [2023-05-27 02:08:19,831]  [Preprocessor.java:255] [main]  Processing chromosome KI270725.1
+Processing chromosome KI270725.1
+INFO [2023-05-27 02:08:19,832]  [Preprocessor.java:255] [main]  Processing chromosome KI270728.1
+Processing chromosome KI270728.1
+INFO [2023-05-27 02:08:19,833]  [Preprocessor.java:255] [main]  Processing chromosome KI270733.1
+Processing chromosome KI270733.1
+INFO [2023-05-27 02:08:19,839]  [Preprocessor.java:255] [main]  Processing chromosome KI270734.1
+Processing chromosome KI270734.1
+INFO [2023-05-27 02:08:19,842]  [Preprocessor.java:255] [main]  Processing chromosome KI270741.1
+Processing chromosome KI270741.1
+INFO [2023-05-27 02:08:19,842]  [Preprocessor.java:255] [main]  Processing chromosome KI270742.1
+Processing chromosome KI270742.1
+INFO [2023-05-27 02:08:19,844]  [Preprocessor.java:255] [main]  Processing chromosome KI270744.1
+Processing chromosome KI270744.1
+INFO [2023-05-27 02:08:19,869]  [TDFWriter.java:318] [main]  Group idx: 1
+Group idx: 1
+100.0% 
+Done
+INFO [2023-05-27 02:07:58,725]  [IgvTools.java:667] [main]  toTDF.  File = ./results/tracks/Nter_24h_IAA_4SU_3.TC.0.min.bedGraph
+toTDF.  File = ./results/tracks/Nter_24h_IAA_4SU_3.TC.0.min.bedGraph
+INFO [2023-05-27 02:07:58,728]  [IgvTools.java:668] [main]  Max zoom = 7
+Max zoom = 7
+INFO [2023-05-27 02:07:58,728]  [IgvTools.java:676] [main]  Window functions: mean max 
+Window functions: mean max 
+INFO [2023-05-27 02:07:58,735]  [GenomeManager.java:145] [main]  Loading genome: /srv/2023_UPF1_4SU/bam2bakR/./results/tracks/GRCh38.chrom.sizes
+Loading genome: /srv/2023_UPF1_4SU/bam2bakR/./results/tracks/GRCh38.chrom.sizes
+INFO [2023-05-27 02:07:58,983]  [DirectoryManager.java:169] [main]  IGV Directory: /home/volker/igv
+IGV Directory: /home/volker/igv
+INFO [2023-05-27 02:07:59,114]  [GenomeManager.java:192] [main]  Genome loaded.  id= /srv/2023_UPF1_4SU/bam2bakR/
+Genome loaded.  id= /srv/2023_UPF1_4SU/bam2bakR/
+INFO [2023-05-27 02:07:59,135]  [Preprocessor.java:125] [main]  track type=bedGraph name=" Nter_24h_IAA_4SU_3 TC 0 minus " description=" Nter_24h_IAA_4SU_3 TC 0 minus strand" visibility=full negateValues=on autoScale=off windowingFunction=mean viewLimits=-10:0 color=10,10,10 altColor=200,200,200  priority=20
+track type=bedGraph name=" Nter_24h_IAA_4SU_3 TC 0 minus " description=" Nter_24h_IAA_4SU_3 TC 0 minus strand" visibility=full negateValues=on autoScale=off windowingFunction=mean viewLimits=-10:0 color=10,10,10 altColor=200,200,200  priority=20
+INFO [2023-05-27 02:07:59,159]  [Preprocessor.java:255] [main]  Processing chromosome chr1
+Processing chromosome chr1
+.....INFO [2023-05-27 02:08:02,758]  [Preprocessor.java:255] [main]  Processing chromosome chr2
+Processing chromosome chr2
+....INFO [2023-05-27 02:08:04,176]  [Preprocessor.java:255] [main]  Processing chromosome chr3
+Processing chromosome chr3
+10.0% 
+.INFO [2023-05-27 02:08:05,254]  [Preprocessor.java:255] [main]  Processing chromosome chr4
+Processing chromosome chr4
+..INFO [2023-05-27 02:08:05,913]  [Preprocessor.java:255] [main]  Processing chromosome chr5
+Processing chromosome chr5
+...INFO [2023-05-27 02:08:06,807]  [Preprocessor.java:255] [main]  Processing chromosome chr6
+Processing chromosome chr6
+..INFO [2023-05-27 02:08:07,723]  [Preprocessor.java:255] [main]  Processing chromosome chr7
+Processing chromosome chr7
+.20.0% 
+.INFO [2023-05-27 02:08:08,615]  [Preprocessor.java:255] [main]  Processing chromosome chr8
+Processing chromosome chr8
+..INFO [2023-05-27 02:08:09,252]  [Preprocessor.java:255] [main]  Processing chromosome chr9
+Processing chromosome chr9
+..INFO [2023-05-27 02:08:09,993]  [Preprocessor.java:255] [main]  Processing chromosome chr10
+Processing chromosome chr10
+..INFO [2023-05-27 02:08:10,739]  [Preprocessor.java:255] [main]  Processing chromosome chr11
+Processing chromosome chr11
+..30.0% 
+.INFO [2023-05-27 02:08:11,828]  [Preprocessor.java:255] [main]  Processing chromosome chr12
+Processing chromosome chr12
+...INFO [2023-05-27 02:08:12,983]  [Preprocessor.java:255] [main]  Processing chromosome chr13
+Processing chromosome chr13
+.INFO [2023-05-27 02:08:13,252]  [Preprocessor.java:255] [main]  Processing chromosome chr14
+Processing chromosome chr14
+..INFO [2023-05-27 02:08:13,820]  [Preprocessor.java:255] [main]  Processing chromosome chr15
+Processing chromosome chr15
+..INFO [2023-05-27 02:08:14,448]  [Preprocessor.java:255] [main]  Processing chromosome chr16
+Processing chromosome chr16
+40.0% 
+..INFO [2023-05-27 02:08:15,518]  [Preprocessor.java:255] [main]  Processing chromosome chr17
+Processing chromosome chr17
+....INFO [2023-05-27 02:08:16,774]  [Preprocessor.java:255] [main]  Processing chromosome chr18
+Processing chromosome chr18
+INFO [2023-05-27 02:08:17,020]  [Preprocessor.java:255] [main]  Processing chromosome chr19
+Processing chromosome chr19
+...50.0% 
+.INFO [2023-05-27 02:08:18,471]  [Preprocessor.java:255] [main]  Processing chromosome chr20
+Processing chromosome chr20
+..INFO [2023-05-27 02:08:19,072]  [Preprocessor.java:255] [main]  Processing chromosome chr21
+Processing chromosome chr21
+INFO [2023-05-27 02:08:19,270]  [Preprocessor.java:255] [main]  Processing chromosome chr22
+Processing chromosome chr22
+..INFO [2023-05-27 02:08:19,800]  [Preprocessor.java:255] [main]  Processing chromosome chrX
+Processing chromosome chrX
+.INFO [2023-05-27 02:08:20,259]  [Preprocessor.java:255] [main]  Processing chromosome chrY
+Processing chromosome chrY
+INFO [2023-05-27 02:08:20,262]  [Preprocessor.java:255] [main]  Processing chromosome chrM
+Processing chromosome chrM
+INFO [2023-05-27 02:08:20,360]  [Preprocessor.java:255] [main]  Processing chromosome GL000194.1
+Processing chromosome GL000194.1
+INFO [2023-05-27 02:08:20,376]  [Preprocessor.java:255] [main]  Processing chromosome GL000195.1
+Processing chromosome GL000195.1
+.INFO [2023-05-27 02:08:20,380]  [Preprocessor.java:255] [main]  Processing chromosome GL000205.2
+Processing chromosome GL000205.2
+INFO [2023-05-27 02:08:20,381]  [Preprocessor.java:255] [main]  Processing chromosome GL000218.1
+Processing chromosome GL000218.1
+INFO [2023-05-27 02:08:20,382]  [Preprocessor.java:255] [main]  Processing chromosome GL000219.1
+Processing chromosome GL000219.1
+INFO [2023-05-27 02:08:20,383]  [Preprocessor.java:255] [main]  Processing chromosome GL000220.1
+Processing chromosome GL000220.1
+INFO [2023-05-27 02:08:20,388]  [Preprocessor.java:255] [main]  Processing chromosome KI270438.1
+Processing chromosome KI270438.1
+INFO [2023-05-27 02:08:20,389]  [Preprocessor.java:255] [main]  Processing chromosome KI270442.1
+Processing chromosome KI270442.1
+INFO [2023-05-27 02:08:20,390]  [Preprocessor.java:255] [main]  Processing chromosome KI270706.1
+Processing chromosome KI270706.1
+INFO [2023-05-27 02:08:20,391]  [Preprocessor.java:255] [main]  Processing chromosome KI270711.1
+Processing chromosome KI270711.1
+INFO [2023-05-27 02:08:20,392]  [Preprocessor.java:255] [main]  Processing chromosome KI270713.1
+Processing chromosome KI270713.1
+INFO [2023-05-27 02:08:20,402]  [Preprocessor.java:255] [main]  Processing chromosome KI270714.1
+Processing chromosome KI270714.1
+INFO [2023-05-27 02:08:20,404]  [Preprocessor.java:255] [main]  Processing chromosome KI270721.1
+Processing chromosome KI270721.1
+INFO [2023-05-27 02:08:20,408]  [Preprocessor.java:255] [main]  Processing chromosome KI270728.1
+Processing chromosome KI270728.1
+INFO [2023-05-27 02:08:20,409]  [Preprocessor.java:255] [main]  Processing chromosome KI270731.1
+Processing chromosome KI270731.1
+INFO [2023-05-27 02:08:20,410]  [Preprocessor.java:255] [main]  Processing chromosome KI270733.1
+Processing chromosome KI270733.1
+INFO [2023-05-27 02:08:20,424]  [Preprocessor.java:255] [main]  Processing chromosome KI270734.1
+Processing chromosome KI270734.1
+INFO [2023-05-27 02:08:20,428]  [Preprocessor.java:255] [main]  Processing chromosome KI270738.1
+Processing chromosome KI270738.1
+INFO [2023-05-27 02:08:20,429]  [Preprocessor.java:255] [main]  Processing chromosome KI270742.1
+Processing chromosome KI270742.1
+INFO [2023-05-27 02:08:20,430]  [Preprocessor.java:255] [main]  Processing chromosome KI270743.1
+Processing chromosome KI270743.1
+INFO [2023-05-27 02:08:20,430]  [Preprocessor.java:255] [main]  Processing chromosome KI270744.1
+Processing chromosome KI270744.1
+INFO [2023-05-27 02:08:20,432]  [Preprocessor.java:255] [main]  Processing chromosome KI270745.1
+Processing chromosome KI270745.1
+INFO [2023-05-27 02:08:20,437]  [Preprocessor.java:255] [main]  Processing chromosome KI270748.1
+Processing chromosome KI270748.1
+INFO [2023-05-27 02:08:20,438]  [Preprocessor.java:255] [main]  Processing chromosome KI270749.1
+Processing chromosome KI270749.1
+INFO [2023-05-27 02:08:20,439]  [Preprocessor.java:255] [main]  Processing chromosome KI270755.1
+Processing chromosome KI270755.1
+INFO [2023-05-27 02:08:20,457]  [TDFWriter.java:318] [main]  Group idx: 1
+Group idx: 1
+100.0% 
+Done
+* TDF track files created for sample Nter_24h_IAA_4SU_3.

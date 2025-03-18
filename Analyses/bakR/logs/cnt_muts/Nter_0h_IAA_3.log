@@ -1,0 +1,198 @@
+* The number of fragments for sample Nter_0h_IAA_3 is 32
+* The fragment size is set to 1363818 alignments per fragment
+* Aligned .sam file fragmented for sample Nter_0h_IAA_3
+0
+0
+Start: 2023-05-26 21:31:39.831572
+end: 2023-05-26 21:39:38.264597
+1363818
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/16_Nter_0h_IAA_3_frag.bam'
+0
+0
+Start: 2023-05-26 21:31:39.935646
+end: 2023-05-26 21:39:38.452779
+1363818
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/4_Nter_0h_IAA_3_frag.bam'
+0
+0
+Start: 2023-05-26 21:31:39.942354
+end: 2023-05-26 21:39:38.504485
+1363818
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/5_Nter_0h_IAA_3_frag.bam'
+0
+0
+Start: 2023-05-26 21:31:39.930110
+end: 2023-05-26 21:39:38.645438
+1363818
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/6_Nter_0h_IAA_3_frag.bam'
+0
+0
+Start: 2023-05-26 21:31:39.857214
+end: 2023-05-26 21:39:38.886476
+1363818
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/23_Nter_0h_IAA_3_frag.bam'
+0
+0
+Start: 2023-05-26 21:31:39.908448
+end: 2023-05-26 21:39:39.211018
+1363818
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/30_Nter_0h_IAA_3_frag.bam'
+0
+0
+Start: 2023-05-26 21:31:39.880668
+end: 2023-05-26 21:39:39.469516
+1363818
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/22_Nter_0h_IAA_3_frag.bam'
+0
+0
+Start: 2023-05-26 21:31:39.876917
+end: 2023-05-26 21:39:39.728205
+1363818
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/21_Nter_0h_IAA_3_frag.bam'
+0
+0
+Start: 2023-05-26 21:31:39.931298
+end: 2023-05-26 21:39:39.919850
+1363818
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/3_Nter_0h_IAA_3_frag.bam'
+0
+0
+Start: 2023-05-26 21:31:39.946794
+end: 2023-05-26 21:39:39.910212
+1363818
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/7_Nter_0h_IAA_3_frag.bam'
+0
+0
+Start: 2023-05-26 21:31:39.868462
+end: 2023-05-26 21:39:40.062976
+1363818
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/19_Nter_0h_IAA_3_frag.bam'
+0
+0
+Start: 2023-05-26 21:31:39.893040
+end: 2023-05-26 21:39:40.209314
+1363818
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/27_Nter_0h_IAA_3_frag.bam'
+0
+0
+Start: 2023-05-26 21:31:39.802547
+end: 2023-05-26 21:39:40.308583
+1363818
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/12_Nter_0h_IAA_3_frag.bam'
+0
+0
+Start: 2023-05-26 21:31:39.956921
+end: 2023-05-26 21:39:40.344876
+1363818
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/8_Nter_0h_IAA_3_frag.bam'
+0
+0
+Start: 2023-05-26 21:31:39.847922
+end: 2023-05-26 21:39:40.476470
+1363818
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/18_Nter_0h_IAA_3_frag.bam'
+0
+0
+Start: 2023-05-26 21:31:39.838500
+end: 2023-05-26 21:39:40.500188
+1363818
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/15_Nter_0h_IAA_3_frag.bam'
+0
+0
+Start: 2023-05-26 21:31:39.829464
+end: 2023-05-26 21:39:40.608622
+1363818
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/1_Nter_0h_IAA_3_frag.bam'
+0
+0
+Start: 2023-05-26 21:31:39.920240
+end: 2023-05-26 21:39:40.640799
+1363818
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/31_Nter_0h_IAA_3_frag.bam'
+0
+0
+Start: 2023-05-26 21:31:39.927306
+end: 2023-05-26 21:39:40.659592
+1363818
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/28_Nter_0h_IAA_3_frag.bam'
+0
+0
+Start: 2023-05-26 21:31:39.925217
+end: 2023-05-26 21:39:41.009474
+1363818
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/29_Nter_0h_IAA_3_frag.bam'
+0
+0
+Start: 2023-05-26 21:31:39.831930
+end: 2023-05-26 21:39:41.034841
+1363818
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/10_Nter_0h_IAA_3_frag.bam'
+0
+0
+Start: 2023-05-26 21:31:39.961503
+end: 2023-05-26 21:39:41.068154
+1363818
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/9_Nter_0h_IAA_3_frag.bam'
+0
+0
+Start: 2023-05-26 21:31:39.887950
+end: 2023-05-26 21:39:41.376881
+1363818
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/25_Nter_0h_IAA_3_frag.bam'
+0
+0
+Start: 2023-05-26 21:31:39.856707
+end: 2023-05-26 21:39:41.429055
+1363818
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/20_Nter_0h_IAA_3_frag.bam'
+0
+0
+Start: 2023-05-26 21:31:39.894980
+end: 2023-05-26 21:39:41.440874
+1363818
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/26_Nter_0h_IAA_3_frag.bam'
+0
+0
+Start: 2023-05-26 21:31:39.906870
+end: 2023-05-26 21:39:41.508886
+1363818
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/2_Nter_0h_IAA_3_frag.bam'
+0
+0
+Start: 2023-05-26 21:31:39.851606
+end: 2023-05-26 21:39:41.598273
+1363818
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/17_Nter_0h_IAA_3_frag.bam'
+0
+0
+Start: 2023-05-26 21:31:39.838461
+end: 2023-05-26 21:39:41.632677
+1363818
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/14_Nter_0h_IAA_3_frag.bam'
+0
+0
+Start: 2023-05-26 21:31:39.809885
+end: 2023-05-26 21:39:41.723805
+1363818
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/13_Nter_0h_IAA_3_frag.bam'
+0
+0
+Start: 2023-05-26 21:31:39.950918
+end: 2023-05-26 21:39:42.012833
+1363780
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/32_Nter_0h_IAA_3_frag.bam'
+0
+0
+Start: 2023-05-26 21:31:39.883076
+end: 2023-05-26 21:39:42.249025
+1363818
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/24_Nter_0h_IAA_3_frag.bam'
+0
+0
+Start: 2023-05-26 21:31:39.811585
+end: 2023-05-26 21:39:46.174378
+1363818
+[E::idx_find_and_load] Could not retrieve index file for './results/counts/11_Nter_0h_IAA_3_frag.bam'
+** Mutations called for sample Nter_0h_IAA_3
+** Results fragments merged into final files
+* Cleaning up fragmented .bam files

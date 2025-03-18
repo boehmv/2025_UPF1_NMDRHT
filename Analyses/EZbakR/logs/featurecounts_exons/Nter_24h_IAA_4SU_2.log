@@ -1,0 +1,58 @@
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.6
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                                                                            ||
+||                           Nter_24h_IAA_4SU_2.s.bam                         ||
+||                                                                            ||
+||             Output file : Nter_24h_IAA_4SU_2.featureCounts                 ||
+||                 Summary : Nter_24h_IAA_4SU_2.featureCounts.summary         ||
+||              Paired-end : yes                                              ||
+||        Count read pairs : yes                                              ||
+||              Annotation : NMDRegHumanTxome.v1.1.sort.gtf (GTF)             ||
+||      Dir for temp files : /tmp/tmpkbxhyzrb                                 ||
+||      Assignment details : <input_file>.featureCounts                       ||
+||                      (Note that files are saved to the output directory)   ||
+||                                                                            ||
+||       Junction Counting : <output_file>.jcounts                            ||
+||                                                                            ||
+||                 Threads : 20                                               ||
+||                   Level : meta-feature level                               ||
+||      Multimapping reads : counted                                          ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||       Max missing bases : 0 in reads                                       ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file NMDRegHumanTxome.v1.1.sort.gtf ...                    ||
+||    Features : 440787                                                       ||
+||    Meta-features : 22014                                                   ||
+||    Chromosomes/contigs : 25                                                ||
+||                                                                            ||
+|| Process BAM file Nter_24h_IAA_4SU_2.s.bam...                               ||
+||    Strand specific : reversely stranded                                    ||
+||    Paired-end reads are included.                                          ||
+||    Total alignments : 19426723                                             ||
+||    Successfully assigned alignments : 16564783 (85.3%)                     ||
+||    Running time : 0.67 minutes                                             ||
+||                                                                            ||
+|| Write the final count table.                                               ||
+|| Write the junction count table.                                            ||
+|| Write the read assignment summary.                                         ||
+||                                                                            ||
+|| Summary of counting results can be found in file "results/featurecounts_e  ||
+|| xons/Nter_24h_IAA_4SU_2.featureCounts.summary"                             ||
+||                                                                            ||
+\\============================================================================//
+

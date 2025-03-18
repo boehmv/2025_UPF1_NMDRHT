@@ -1,0 +1,41 @@
+Read1 before filtering:
+total reads: 23963848
+total bases: 2557667147
+Q20 bases: 2517155238(98.4161%)
+Q30 bases: 2429278732(94.9803%)
+
+Read2 before filtering:
+total reads: 23963848
+total bases: 2559209394
+Q20 bases: 2487299800(97.1902%)
+Q30 bases: 2361808352(92.2866%)
+
+Read1 after filtering:
+total reads: 23797709
+total bases: 2544146943
+Q20 bases: 2507249091(98.5497%)
+Q30 bases: 2420257652(95.1304%)
+
+Read2 after filtering:
+total reads: 23797709
+total bases: 2542061723
+Q20 bases: 2477578019(97.4633%)
+Q30 bases: 2354852727(92.6355%)
+
+Filtering result:
+reads passed filter: 47595418
+reads failed due to low quality: 311994
+reads failed due to too many N: 6896
+reads failed due to too short: 13388
+reads with adapter trimmed: 69880
+bases trimmed due to adapters: 1705389
+
+Duplication rate: 26.2941%
+
+Insert size peak (evaluated by paired-end reads): 154
+
+JSON report: results/reports/Nter_12h_IAA_4SU_3.json
+HTML report: results/reports/Nter_12h_IAA_4SU_3.html
+
+fastp --thread 8 --in1 /srv/2023_UPF1_4SU_EZbakR/FASTQ/Nter_12h_IAA_4SU_3/Nter_12h_IAA_4SU_3_S9_L002_R1_001.fastq.gz --in2 /srv/2023_UPF1_4SU_EZbakR/FASTQ/Nter_12h_IAA_4SU_3/Nter_12h_IAA_4SU_3_S9_L002_R2_001.fastq.gz --out1 results/trimmed/Nter_12h_IAA_4SU_3.1.fastq --out2 results/trimmed/Nter_12h_IAA_4SU_3.2.fastq --unpaired1 results/trimmed/Nter_12h_IAA_4SU_3.u1.fastq --unpaired2 results/trimmed/Nter_12h_IAA_4SU_3.u2.fastq --failed_out results/trimmed/Nter_12h_IAA_4SU_3.failed.fastq --json results/reports/Nter_12h_IAA_4SU_3.json --html results/reports/Nter_12h_IAA_4SU_3.html 
+fastp v0.23.4, time used: 472 seconds

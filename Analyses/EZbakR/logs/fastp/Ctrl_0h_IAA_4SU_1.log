@@ -1,0 +1,41 @@
+Read1 before filtering:
+total reads: 22677670
+total bases: 2399885111
+Q20 bases: 2351265430(97.9741%)
+Q30 bases: 2262813086(94.2884%)
+
+Read2 before filtering:
+total reads: 22677670
+total bases: 2404745406
+Q20 bases: 2326081597(96.7288%)
+Q30 bases: 2204910317(91.69%)
+
+Read1 after filtering:
+total reads: 22315370
+total bases: 2377988499
+Q20 bases: 2339057706(98.3629%)
+Q30 bases: 2251752410(94.6915%)
+
+Read2 after filtering:
+total reads: 22315370
+total bases: 2375935319
+Q20 bases: 2312293830(97.3214%)
+Q30 bases: 2195196079(92.3929%)
+
+Filtering result:
+reads passed filter: 44630740
+reads failed due to low quality: 679094
+reads failed due to too many N: 29868
+reads failed due to too short: 15638
+reads with adapter trimmed: 79418
+bases trimmed due to adapters: 1423085
+
+Duplication rate: 30.5099%
+
+Insert size peak (evaluated by paired-end reads): 143
+
+JSON report: results/reports/Ctrl_0h_IAA_4SU_1.json
+HTML report: results/reports/Ctrl_0h_IAA_4SU_1.html
+
+fastp --thread 8 --in1 /srv/2023_UPF1_4SU_EZbakR/FASTQ/Ctrl_0h_IAA_4SU_1/Ctrl_0h_IAA_4SU_1_S13_L002_R1_001.fastq.gz --in2 /srv/2023_UPF1_4SU_EZbakR/FASTQ/Ctrl_0h_IAA_4SU_1/Ctrl_0h_IAA_4SU_1_S13_L002_R2_001.fastq.gz --out1 results/trimmed/Ctrl_0h_IAA_4SU_1.1.fastq --out2 results/trimmed/Ctrl_0h_IAA_4SU_1.2.fastq --unpaired1 results/trimmed/Ctrl_0h_IAA_4SU_1.u1.fastq --unpaired2 results/trimmed/Ctrl_0h_IAA_4SU_1.u2.fastq --failed_out results/trimmed/Ctrl_0h_IAA_4SU_1.failed.fastq --json results/reports/Ctrl_0h_IAA_4SU_1.json --html results/reports/Ctrl_0h_IAA_4SU_1.html 
+fastp v0.23.4, time used: 334 seconds

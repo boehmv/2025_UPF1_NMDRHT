@@ -1,0 +1,20 @@
+rsem-extract-reference-transcripts /srv/2023_UPF1_4SU_EZbakR/rsem_index/reference 0 /home/volker/reference/NMDRegHumanTxome/NMDRegHumanTxome.v1.1.sort.gtf None 0 /home/volker/reference/Gencode/GRCh38.primary_assembly.genome.fa
+Parsed 200000 lines
+Parsed 400000 lines
+Parsed 600000 lines
+Parsed 800000 lines
+Parsing gtf File is done!
+/home/volker/reference/Gencode/GRCh38.primary_assembly.genome.fa is processed!
+45757 transcripts are extracted.
+Extracting sequences is done!
+Group File is generated!
+Transcript Information File is generated!
+Chromosome List File is generated!
+Extracted Sequences File is generated!
+
+rsem-preref /srv/2023_UPF1_4SU_EZbakR/rsem_index/reference.transcripts.fa 1 /srv/2023_UPF1_4SU_EZbakR/rsem_index/reference
+Refs.makeRefs finished!
+Refs.saveRefs finished!
+/srv/2023_UPF1_4SU_EZbakR/rsem_index/reference.idx.fa is generated!
+/srv/2023_UPF1_4SU_EZbakR/rsem_index/reference.n2g.idx.fa is generated!
+

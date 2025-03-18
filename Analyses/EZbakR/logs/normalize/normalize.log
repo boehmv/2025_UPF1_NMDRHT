@@ -1,0 +1,91 @@
+Warning message:
+package ‘optparse’ was built under R version 4.1.3 
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Warning message:
+package ‘dplyr’ was built under R version 4.1.3 
+Warning message:
+package ‘readr’ was built under R version 4.1.3 
+Warning message:
+package ‘tidyr’ was built under R version 4.1.3 
+Loading required package: limma
+Warning messages:
+1: package ‘edgeR’ was built under R version 4.1.3 
+2: package ‘limma’ was built under R version 4.1.3 
+
+Attaching package: ‘MASS’
+
+The following object is masked from ‘package:dplyr’:
+
+    select
+
+Warning message:
+package ‘MASS’ was built under R version 4.1.3 
+
+Attaching package: ‘data.table’
+
+The following objects are masked from ‘package:dplyr’:
+
+    between, first, last
+
+Warning message:
+package ‘data.table’ was built under R version 4.1.3 
+[1] "2024-10-24"
+[1] "/srv/2023_UPF1_4SU_EZbakR/results/featurecounts_exons/"
+ [1] "Ctrl_0h_IAA_4SU_1.featureCounts"       
+ [2] "Ctrl_0h_IAA_4SU_1.s.bam.featureCounts" 
+ [3] "Ctrl_0h_IAA_4SU_2.featureCounts"       
+ [4] "Ctrl_0h_IAA_4SU_2.s.bam.featureCounts" 
+ [5] "Ctrl_0h_IAA_4SU_3.featureCounts"       
+ [6] "Ctrl_0h_IAA_4SU_3.s.bam.featureCounts" 
+ [7] "Ctrl_12h_IAA_4SU_1.featureCounts"      
+ [8] "Ctrl_12h_IAA_4SU_1.s.bam.featureCounts"
+ [9] "Ctrl_12h_IAA_4SU_2.featureCounts"      
+[10] "Ctrl_12h_IAA_4SU_3.featureCounts"      
+[11] "Ctrl_12h_IAA_4SU_3.s.bam.featureCounts"
+[12] "Ctrl_24h_IAA_4SU_1.featureCounts"      
+[13] "Ctrl_24h_IAA_4SU_1.s.bam.featureCounts"
+[14] "Ctrl_24h_IAA_4SU_2.featureCounts"      
+[15] "Ctrl_24h_IAA_4SU_2.s.bam.featureCounts"
+[16] "Ctrl_24h_IAA_4SU_3.featureCounts"      
+[17] "Ctrl_24h_IAA_4SU_3.s.bam.featureCounts"
+[18] "Nter_0h_IAA_1.featureCounts"           
+[19] "Nter_0h_IAA_1.s.bam.featureCounts"     
+[20] "Nter_0h_IAA_2.featureCounts"           
+[21] "Nter_0h_IAA_2.s.bam.featureCounts"     
+[22] "Nter_0h_IAA_3.featureCounts"           
+[23] "Nter_0h_IAA_3.s.bam.featureCounts"     
+[24] "Nter_0h_IAA_4SU_1.featureCounts"       
+[25] "Nter_0h_IAA_4SU_1.s.bam.featureCounts" 
+[26] "Nter_0h_IAA_4SU_2.featureCounts"       
+[27] "Nter_0h_IAA_4SU_3.featureCounts"       
+[28] "Nter_0h_IAA_4SU_3.s.bam.featureCounts" 
+[29] "Nter_12h_IAA_4SU_1.featureCounts"      
+[30] "Nter_12h_IAA_4SU_1.s.bam.featureCounts"
+[31] "Nter_12h_IAA_4SU_2.featureCounts"      
+[32] "Nter_12h_IAA_4SU_3.featureCounts"      
+[33] "Nter_12h_IAA_4SU_3.s.bam.featureCounts"
+[34] "Nter_24h_IAA_4SU_1.featureCounts"      
+[35] "Nter_24h_IAA_4SU_2.featureCounts"      
+[36] "Nter_24h_IAA_4SU_2.s.bam.featureCounts"
+[37] "Nter_24h_IAA_4SU_3.featureCounts"      
+ [1] "Ctrl_0h_IAA_4SU_1.featureCounts"  "Ctrl_0h_IAA_4SU_2.featureCounts" 
+ [3] "Ctrl_0h_IAA_4SU_3.featureCounts"  "Ctrl_12h_IAA_4SU_1.featureCounts"
+ [5] "Ctrl_12h_IAA_4SU_2.featureCounts" "Ctrl_12h_IAA_4SU_3.featureCounts"
+ [7] "Ctrl_24h_IAA_4SU_1.featureCounts" "Ctrl_24h_IAA_4SU_2.featureCounts"
+ [9] "Ctrl_24h_IAA_4SU_3.featureCounts" "Nter_0h_IAA_1.featureCounts"     
+[11] "Nter_0h_IAA_2.featureCounts"      "Nter_0h_IAA_3.featureCounts"     
+[13] "Nter_0h_IAA_4SU_1.featureCounts"  "Nter_0h_IAA_4SU_2.featureCounts" 
+[15] "Nter_0h_IAA_4SU_3.featureCounts"  "Nter_12h_IAA_4SU_1.featureCounts"
+[17] "Nter_12h_IAA_4SU_2.featureCounts" "Nter_12h_IAA_4SU_3.featureCounts"
+[19] "Nter_24h_IAA_4SU_1.featureCounts" "Nter_24h_IAA_4SU_2.featureCounts"
+[21] "Nter_24h_IAA_4SU_3.featureCounts"

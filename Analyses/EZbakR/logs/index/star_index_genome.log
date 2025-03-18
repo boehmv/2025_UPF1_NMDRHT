@@ -1,0 +1,18 @@
+	/srv/2023_UPF1_4SU_EZbakR/.snakemake/conda/eb9df01935366c923d314523da7b3a18_/bin/STAR-avx --runThreadN 24 --runMode genomeGenerate --genomeFastaFiles /home/volker/reference/Gencode/GRCh38.primary_assembly.genome.fa --sjdbGTFfile /home/volker/reference/NMDRegHumanTxome/NMDRegHumanTxome.v1.1.sort.gtf --outTmpDir /tmp/tmp0e5uj6yt/STARtmp --genomeDir /home/volker/reference/STAR_NMDRegHumanTxome
+	STAR version: 2.7.10b   compiled: 2023-05-25T06:58:28+0000 :/opt/conda/conda-bld/star_1684997536154/work/source
+Oct 23 18:40:06 ..... started STAR run
+!!!!! WARNING: Could not move Log.out file from ./Log.out into /home/volker/reference/STAR_NMDRegHumanTxome/Log.out. Will keep ./Log.out
+
+Oct 23 18:40:06 ... starting to generate Genome files
+Oct 23 18:40:57 ..... processing annotations GTF
+Oct 23 18:41:13 ... starting to sort Suffix Array. This may take a long time...
+Oct 23 18:41:28 ... sorting Suffix Array chunks and saving them to disk...
+Oct 23 19:02:15 ... loading chunks from disk, packing SA...
+Oct 23 19:03:21 ... finished generating suffix array
+Oct 23 19:03:21 ... generating Suffix Array index
+Oct 23 19:07:26 ... completed Suffix Array index
+Oct 23 19:07:27 ..... inserting junctions into the genome indices
+Oct 23 19:09:21 ... writing Genome to disk ...
+Oct 23 19:09:24 ... writing Suffix Array to disk ...
+Oct 23 19:09:50 ... writing SAindex to disk
+Oct 23 19:09:56 ..... finished successfully

@@ -1,0 +1,77 @@
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.6
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                                                                            ||
+||                           Nter_24h_IAA_4SU_1.s.bam                         ||
+||                                                                            ||
+||             Output file : Nter_24h_IAA_4SU_1.featureCounts                 ||
+||                 Summary : Nter_24h_IAA_4SU_1.featureCounts.summary         ||
+||              Paired-end : yes                                              ||
+||        Count read pairs : yes                                              ||
+||              Annotation : NMDRegHumanTxome.v1.1_flat.gtf (GTF)             ||
+||      Dir for temp files : /tmp/tmpcm3k7l_q                                 ||
+||      Assignment details : <input_file>.featureCounts                       ||
+||                      (Note that files are saved to the output directory)   ||
+||                                                                            ||
+||                                                                            ||
+||                 Threads : 20                                               ||
+||                   Level : feature level                                    ||
+||      Multimapping reads : counted                                          ||
+|| Multi-overlapping reads : counted                                          ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file NMDRegHumanTxome.v1.1_flat.gtf ...                    ||
+WARNING: feature name on the 190482-th line is longer than 254 bytes. The name is truncated
+WARNING: feature name on the 190483-th line is longer than 254 bytes. The name is truncated
+WARNING: feature name on the 190484-th line is longer than 254 bytes. The name is truncated
+WARNING: feature name on the 190485-th line is longer than 254 bytes. The name is truncated
+WARNING: feature name on the 190486-th line is longer than 254 bytes. The name is truncated
+WARNING: feature name on the 190487-th line is longer than 254 bytes. The name is truncated
+WARNING: feature name on the 190488-th line is longer than 254 bytes. The name is truncated
+WARNING: feature name on the 190489-th line is longer than 254 bytes. The name is truncated
+WARNING: feature name on the 190490-th line is longer than 254 bytes. The name is truncated
+WARNING: feature name on the 190491-th line is longer than 254 bytes. The name is truncated
+WARNING: feature name on the 190492-th line is longer than 254 bytes. The name is truncated
+WARNING: feature name on the 190493-th line is longer than 254 bytes. The name is truncated
+WARNING: feature name on the 190494-th line is longer than 254 bytes. The name is truncated
+WARNING: feature name on the 190495-th line is longer than 254 bytes. The name is truncated
+WARNING: feature name on the 190496-th line is longer than 254 bytes. The name is truncated
+WARNING: feature name on the 190497-th line is longer than 254 bytes. The name is truncated
+WARNING: feature name on the 190498-th line is longer than 254 bytes. The name is truncated
+WARNING: feature name on the 190499-th line is longer than 254 bytes. The name is truncated
+WARNING: feature name on the 190500-th line is longer than 254 bytes. The name is truncated
+WARNING: feature name on the 190501-th line is longer than 254 bytes. The name is truncated
+WARNING: feature name on the 190502-th line is longer than 254 bytes. The name is truncated
+WARNING: feature name on the 190503-th line is longer than 254 bytes. The name is truncated
+||    Features : 223352                                                       ||
+||    Meta-features : 223333                                                  ||
+||    Chromosomes/contigs : 25                                                ||
+||                                                                            ||
+|| Process BAM file Nter_24h_IAA_4SU_1.s.bam...                               ||
+||    Strand specific : reversely stranded                                    ||
+||    Paired-end reads are included.                                          ||
+||    Total alignments : 20895629                                             ||
+||    Successfully assigned alignments : 19931511 (95.4%)                     ||
+||    Running time : 0.80 minutes                                             ||
+||                                                                            ||
+|| Write the final count table.                                               ||
+|| Write the read assignment summary.                                         ||
+||                                                                            ||
+|| Summary of counting results can be found in file "results/featurecounts_e  ||
+|| xonbins/Nter_24h_IAA_4SU_1.featureCounts.summary"                          ||
+||                                                                            ||
+\\============================================================================//
+

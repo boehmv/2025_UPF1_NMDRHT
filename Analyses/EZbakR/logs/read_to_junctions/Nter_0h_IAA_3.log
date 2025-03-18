@@ -1,0 +1,167 @@
+* The number of fragments for sample Nter_0h_IAA_3 is 32
+* The fragment size is set to 1358798 alignments per fragment
+* Aligned .sam file fragmented for sample Nter_0h_IAA_3
+[E::idx_find_and_load] Could not retrieve index file for './results/read_to_junctions/10_Nter_0h_IAA_3_frag.bam'
+Traceback (most recent call last):
+  File "/home/volker/.cache/snakemake/snakemake/source-cache/runtime-cache/tmpygol52gj/https/raw.githubusercontent.com/isaacvock/fastq2EZbakR/main/workflow/scripts/features/junction_assignment.py", line 64, in <module>
+    if junction_tags[0][0] == 'jM':
+IndexError: list index out of range
+[E::idx_find_and_load] Could not retrieve index file for './results/read_to_junctions/11_Nter_0h_IAA_3_frag.bam'
+Traceback (most recent call last):
+  File "/home/volker/.cache/snakemake/snakemake/source-cache/runtime-cache/tmpygol52gj/https/raw.githubusercontent.com/isaacvock/fastq2EZbakR/main/workflow/scripts/features/junction_assignment.py", line 64, in <module>
+    if junction_tags[0][0] == 'jM':
+IndexError: list index out of range
+[E::idx_find_and_load] Could not retrieve index file for './results/read_to_junctions/12_Nter_0h_IAA_3_frag.bam'
+Traceback (most recent call last):
+  File "/home/volker/.cache/snakemake/snakemake/source-cache/runtime-cache/tmpygol52gj/https/raw.githubusercontent.com/isaacvock/fastq2EZbakR/main/workflow/scripts/features/junction_assignment.py", line 64, in <module>
+    if junction_tags[0][0] == 'jM':
+IndexError: list index out of range
+[E::idx_find_and_load] Could not retrieve index file for './results/read_to_junctions/14_Nter_0h_IAA_3_frag.bam'
+Traceback (most recent call last):
+  File "/home/volker/.cache/snakemake/snakemake/source-cache/runtime-cache/tmpygol52gj/https/raw.githubusercontent.com/isaacvock/fastq2EZbakR/main/workflow/scripts/features/junction_assignment.py", line 64, in <module>
+    if junction_tags[0][0] == 'jM':
+IndexError: list index out of range
+[E::idx_find_and_load] Could not retrieve index file for './results/read_to_junctions/15_Nter_0h_IAA_3_frag.bam'
+Traceback (most recent call last):
+  File "/home/volker/.cache/snakemake/snakemake/source-cache/runtime-cache/tmpygol52gj/https/raw.githubusercontent.com/isaacvock/fastq2EZbakR/main/workflow/scripts/features/junction_assignment.py", line 64, in <module>
+    if junction_tags[0][0] == 'jM':
+IndexError: list index out of range
+[E::idx_find_and_load] Could not retrieve index file for './results/read_to_junctions/16_Nter_0h_IAA_3_frag.bam'
+Traceback (most recent call last):
+  File "/home/volker/.cache/snakemake/snakemake/source-cache/runtime-cache/tmpygol52gj/https/raw.githubusercontent.com/isaacvock/fastq2EZbakR/main/workflow/scripts/features/junction_assignment.py", line 64, in <module>
+    if junction_tags[0][0] == 'jM':
+IndexError: list index out of range
+[E::idx_find_and_load] Could not retrieve index file for './results/read_to_junctions/17_Nter_0h_IAA_3_frag.bam'
+Traceback (most recent call last):
+  File "/home/volker/.cache/snakemake/snakemake/source-cache/runtime-cache/tmpygol52gj/https/raw.githubusercontent.com/isaacvock/fastq2EZbakR/main/workflow/scripts/features/junction_assignment.py", line 64, in <module>
+    if junction_tags[0][0] == 'jM':
+IndexError: list index out of range
+[E::idx_find_and_load] Could not retrieve index file for './results/read_to_junctions/18_Nter_0h_IAA_3_frag.bam'
+Traceback (most recent call last):
+  File "/home/volker/.cache/snakemake/snakemake/source-cache/runtime-cache/tmpygol52gj/https/raw.githubusercontent.com/isaacvock/fastq2EZbakR/main/workflow/scripts/features/junction_assignment.py", line 64, in <module>
+    if junction_tags[0][0] == 'jM':
+IndexError: list index out of range
+[E::idx_find_and_load] Could not retrieve index file for './results/read_to_junctions/13_Nter_0h_IAA_3_frag.bam'
+Traceback (most recent call last):
+  File "/home/volker/.cache/snakemake/snakemake/source-cache/runtime-cache/tmpygol52gj/https/raw.githubusercontent.com/isaacvock/fastq2EZbakR/main/workflow/scripts/features/junction_assignment.py", line 64, in <module>
+    if junction_tags[0][0] == 'jM':
+IndexError: list index out of range
+[E::idx_find_and_load] Could not retrieve index file for './results/read_to_junctions/19_Nter_0h_IAA_3_frag.bam'
+Traceback (most recent call last):
+  File "/home/volker/.cache/snakemake/snakemake/source-cache/runtime-cache/tmpygol52gj/https/raw.githubusercontent.com/isaacvock/fastq2EZbakR/main/workflow/scripts/features/junction_assignment.py", line 64, in <module>
+    if junction_tags[0][0] == 'jM':
+IndexError: list index out of range
+[E::idx_find_and_load] Could not retrieve index file for './results/read_to_junctions/1_Nter_0h_IAA_3_frag.bam'
+Traceback (most recent call last):
+  File "/home/volker/.cache/snakemake/snakemake/source-cache/runtime-cache/tmpygol52gj/https/raw.githubusercontent.com/isaacvock/fastq2EZbakR/main/workflow/scripts/features/junction_assignment.py", line 64, in <module>
+    if junction_tags[0][0] == 'jM':
+IndexError: list index out of range
+[E::idx_find_and_load] Could not retrieve index file for './results/read_to_junctions/20_Nter_0h_IAA_3_frag.bam'
+Traceback (most recent call last):
+  File "/home/volker/.cache/snakemake/snakemake/source-cache/runtime-cache/tmpygol52gj/https/raw.githubusercontent.com/isaacvock/fastq2EZbakR/main/workflow/scripts/features/junction_assignment.py", line 64, in <module>
+    if junction_tags[0][0] == 'jM':
+IndexError: list index out of range
+[E::idx_find_and_load] Could not retrieve index file for './results/read_to_junctions/21_Nter_0h_IAA_3_frag.bam'
+Traceback (most recent call last):
+  File "/home/volker/.cache/snakemake/snakemake/source-cache/runtime-cache/tmpygol52gj/https/raw.githubusercontent.com/isaacvock/fastq2EZbakR/main/workflow/scripts/features/junction_assignment.py", line 64, in <module>
+    if junction_tags[0][0] == 'jM':
+IndexError: list index out of range
+[E::idx_find_and_load] Could not retrieve index file for './results/read_to_junctions/23_Nter_0h_IAA_3_frag.bam'
+Traceback (most recent call last):
+  File "/home/volker/.cache/snakemake/snakemake/source-cache/runtime-cache/tmpygol52gj/https/raw.githubusercontent.com/isaacvock/fastq2EZbakR/main/workflow/scripts/features/junction_assignment.py", line 64, in <module>
+    if junction_tags[0][0] == 'jM':
+IndexError: list index out of range
+[E::idx_find_and_load] Could not retrieve index file for './results/read_to_junctions/25_Nter_0h_IAA_3_frag.bam'
+Traceback (most recent call last):
+  File "/home/volker/.cache/snakemake/snakemake/source-cache/runtime-cache/tmpygol52gj/https/raw.githubusercontent.com/isaacvock/fastq2EZbakR/main/workflow/scripts/features/junction_assignment.py", line 64, in <module>
+    if junction_tags[0][0] == 'jM':
+IndexError: list index out of range
+[E::idx_find_and_load] Could not retrieve index file for './results/read_to_junctions/24_Nter_0h_IAA_3_frag.bam'
+Traceback (most recent call last):
+  File "/home/volker/.cache/snakemake/snakemake/source-cache/runtime-cache/tmpygol52gj/https/raw.githubusercontent.com/isaacvock/fastq2EZbakR/main/workflow/scripts/features/junction_assignment.py", line 64, in <module>
+    if junction_tags[0][0] == 'jM':
+IndexError: list index out of range
+[E::idx_find_and_load] Could not retrieve index file for './results/read_to_junctions/22_Nter_0h_IAA_3_frag.bam'
+Traceback (most recent call last):
+  File "/home/volker/.cache/snakemake/snakemake/source-cache/runtime-cache/tmpygol52gj/https/raw.githubusercontent.com/isaacvock/fastq2EZbakR/main/workflow/scripts/features/junction_assignment.py", line 64, in <module>
+    if junction_tags[0][0] == 'jM':
+IndexError: list index out of range
+[E::idx_find_and_load] Could not retrieve index file for './results/read_to_junctions/31_Nter_0h_IAA_3_frag.bam'
+Traceback (most recent call last):
+  File "/home/volker/.cache/snakemake/snakemake/source-cache/runtime-cache/tmpygol52gj/https/raw.githubusercontent.com/isaacvock/fastq2EZbakR/main/workflow/scripts/features/junction_assignment.py", line 64, in <module>
+    if junction_tags[0][0] == 'jM':
+IndexError: list index out of range
+[E::idx_find_and_load] Could not retrieve index file for './results/read_to_junctions/27_Nter_0h_IAA_3_frag.bam'
+Traceback (most recent call last):
+  File "/home/volker/.cache/snakemake/snakemake/source-cache/runtime-cache/tmpygol52gj/https/raw.githubusercontent.com/isaacvock/fastq2EZbakR/main/workflow/scripts/features/junction_assignment.py", line 64, in <module>
+    if junction_tags[0][0] == 'jM':
+IndexError: list index out of range
+[E::idx_find_and_load] Could not retrieve index file for './results/read_to_junctions/28_Nter_0h_IAA_3_frag.bam'
+Traceback (most recent call last):
+  File "/home/volker/.cache/snakemake/snakemake/source-cache/runtime-cache/tmpygol52gj/https/raw.githubusercontent.com/isaacvock/fastq2EZbakR/main/workflow/scripts/features/junction_assignment.py", line 64, in <module>
+    if junction_tags[0][0] == 'jM':
+IndexError: list index out of range
+[E::idx_find_and_load] Could not retrieve index file for './results/read_to_junctions/26_Nter_0h_IAA_3_frag.bam'
+Traceback (most recent call last):
+  File "/home/volker/.cache/snakemake/snakemake/source-cache/runtime-cache/tmpygol52gj/https/raw.githubusercontent.com/isaacvock/fastq2EZbakR/main/workflow/scripts/features/junction_assignment.py", line 64, in <module>
+    if junction_tags[0][0] == 'jM':
+IndexError: list index out of range
+[E::idx_find_and_load] Could not retrieve index file for './results/read_to_junctions/2_Nter_0h_IAA_3_frag.bam'
+Traceback (most recent call last):
+  File "/home/volker/.cache/snakemake/snakemake/source-cache/runtime-cache/tmpygol52gj/https/raw.githubusercontent.com/isaacvock/fastq2EZbakR/main/workflow/scripts/features/junction_assignment.py", line 64, in <module>
+    if junction_tags[0][0] == 'jM':
+IndexError: list index out of range
+[E::idx_find_and_load] Could not retrieve index file for './results/read_to_junctions/4_Nter_0h_IAA_3_frag.bam'
+Traceback (most recent call last):
+  File "/home/volker/.cache/snakemake/snakemake/source-cache/runtime-cache/tmpygol52gj/https/raw.githubusercontent.com/isaacvock/fastq2EZbakR/main/workflow/scripts/features/junction_assignment.py", line 64, in <module>
+    if junction_tags[0][0] == 'jM':
+IndexError: list index out of range
+[E::idx_find_and_load] Could not retrieve index file for './results/read_to_junctions/29_Nter_0h_IAA_3_frag.bam'
+Traceback (most recent call last):
+  File "/home/volker/.cache/snakemake/snakemake/source-cache/runtime-cache/tmpygol52gj/https/raw.githubusercontent.com/isaacvock/fastq2EZbakR/main/workflow/scripts/features/junction_assignment.py", line 64, in <module>
+    if junction_tags[0][0] == 'jM':
+IndexError: list index out of range
+[E::idx_find_and_load] Could not retrieve index file for './results/read_to_junctions/5_Nter_0h_IAA_3_frag.bam'
+Traceback (most recent call last):
+  File "/home/volker/.cache/snakemake/snakemake/source-cache/runtime-cache/tmpygol52gj/https/raw.githubusercontent.com/isaacvock/fastq2EZbakR/main/workflow/scripts/features/junction_assignment.py", line 64, in <module>
+    if junction_tags[0][0] == 'jM':
+IndexError: list index out of range
+[E::idx_find_and_load] Could not retrieve index file for './results/read_to_junctions/30_Nter_0h_IAA_3_frag.bam'
+Traceback (most recent call last):
+  File "/home/volker/.cache/snakemake/snakemake/source-cache/runtime-cache/tmpygol52gj/https/raw.githubusercontent.com/isaacvock/fastq2EZbakR/main/workflow/scripts/features/junction_assignment.py", line 64, in <module>
+    if junction_tags[0][0] == 'jM':
+IndexError: list index out of range
+[E::idx_find_and_load] Could not retrieve index file for './results/read_to_junctions/6_Nter_0h_IAA_3_frag.bam'
+Traceback (most recent call last):
+  File "/home/volker/.cache/snakemake/snakemake/source-cache/runtime-cache/tmpygol52gj/https/raw.githubusercontent.com/isaacvock/fastq2EZbakR/main/workflow/scripts/features/junction_assignment.py", line 64, in <module>
+    if junction_tags[0][0] == 'jM':
+IndexError: list index out of range
+[E::idx_find_and_load] Could not retrieve index file for './results/read_to_junctions/7_Nter_0h_IAA_3_frag.bam'
+Traceback (most recent call last):
+  File "/home/volker/.cache/snakemake/snakemake/source-cache/runtime-cache/tmpygol52gj/https/raw.githubusercontent.com/isaacvock/fastq2EZbakR/main/workflow/scripts/features/junction_assignment.py", line 64, in <module>
+    if junction_tags[0][0] == 'jM':
+IndexError: list index out of range
+[E::idx_find_and_load] Could not retrieve index file for './results/read_to_junctions/8_Nter_0h_IAA_3_frag.bam'
+Traceback (most recent call last):
+  File "/home/volker/.cache/snakemake/snakemake/source-cache/runtime-cache/tmpygol52gj/https/raw.githubusercontent.com/isaacvock/fastq2EZbakR/main/workflow/scripts/features/junction_assignment.py", line 64, in <module>
+    if junction_tags[0][0] == 'jM':
+IndexError: list index out of range
+[E::idx_find_and_load] Could not retrieve index file for './results/read_to_junctions/9_Nter_0h_IAA_3_frag.bam'
+Traceback (most recent call last):
+  File "/home/volker/.cache/snakemake/snakemake/source-cache/runtime-cache/tmpygol52gj/https/raw.githubusercontent.com/isaacvock/fastq2EZbakR/main/workflow/scripts/features/junction_assignment.py", line 64, in <module>
+    if junction_tags[0][0] == 'jM':
+IndexError: list index out of range
+[E::idx_find_and_load] Could not retrieve index file for './results/read_to_junctions/32_Nter_0h_IAA_3_frag.bam'
+Traceback (most recent call last):
+  File "/home/volker/.cache/snakemake/snakemake/source-cache/runtime-cache/tmpygol52gj/https/raw.githubusercontent.com/isaacvock/fastq2EZbakR/main/workflow/scripts/features/junction_assignment.py", line 64, in <module>
+    if junction_tags[0][0] == 'jM':
+IndexError: list index out of range
+[E::idx_find_and_load] Could not retrieve index file for './results/read_to_junctions/3_Nter_0h_IAA_3_frag.bam'
+Traceback (most recent call last):
+  File "/home/volker/.cache/snakemake/snakemake/source-cache/runtime-cache/tmpygol52gj/https/raw.githubusercontent.com/isaacvock/fastq2EZbakR/main/workflow/scripts/features/junction_assignment.py", line 64, in <module>
+    if junction_tags[0][0] == 'jM':
+IndexError: list index out of range
+** Junction information extracted for Nter_0h_IAA_3
+** fragmented bam files cleaned up for Nter_0h_IAA_3
+** Results fragments merged into final files
+* Cleaning up fragmented .bam files
