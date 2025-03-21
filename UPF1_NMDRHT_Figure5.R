@@ -1814,6 +1814,266 @@ ggsave(file.path("Plots", "Figure5", "Rev_1_F5_E_median_log2FC_perBin.pdf"),
        device=cairo_pdf,
        bg = "transparent")  
 
+### DTE cluster per NMDRHT biotype --------------------------------------------------------------
+NMDRHT.v1.2_MainTable %>%  
+  filter(!DTE_cluster %in% c("not_expressed")) %>% 
+  mutate(DTE_cluster = (fct_relevel(DTE_cluster,
+                                    "up 1:early",
+                                    "up 2:delayed",
+                                    "up 3:late",
+                                    "up 4:inverse",  
+                                    "expressed",
+                                    "not_expressed",
+                                    "down 4:inverse",
+                                    "down 3:late",
+                                    "down 2:delayed",
+                                    "down 1:early"))) %>% 
+  mutate(NMD_tx_status = fct_relevel(NMD_tx_status,
+                                     "coding",
+                                     "predicted_coding",
+                                     "NMD",
+                                     "predicted_NMD",
+                                     "mixed",
+                                     "lncRNA")) %>% 
+  dplyr::count(NMD_tx_status, DTE_cluster) %>% 
+  group_by(NMD_tx_status) %>% 
+  mutate(n_per = 100*round(n / sum(n), 5)) %>% 
+  ungroup() %>% 
+  print(n=60)
+
+NMDRHT.v1.2_MainTable %>%  
+  filter(!DTE_cluster %in% c("not_expressed")) %>% 
+  mutate(DTE_cluster = (fct_relevel(DTE_cluster,
+                                           "up 1:early",
+                                           "up 2:delayed",
+                                           "up 3:late",
+                                           "up 4:inverse",  
+                                           "expressed",
+                                           "not_expressed",
+                                           "down 4:inverse",
+                                           "down 3:late",
+                                           "down 2:delayed",
+                                           "down 1:early"))) %>% 
+  mutate(NMD_tx_status = fct_relevel(NMD_tx_status,
+                                     "coding",
+                                     "predicted_coding",
+                                     "NMD",
+                                     "predicted_NMD",
+                                     "mixed",
+                                     "lncRNA")) %>% 
+  dplyr::count(NMD_tx_status, DTE_cluster) %>% 
+  group_by(NMD_tx_status) %>% 
+  mutate(n_per = 100*round(n / sum(n), 5)) %>% 
+  ungroup() %>% 
+  ggplot(aes(x=NMD_tx_status,
+             y=n,
+             fill=DTE_cluster)) +
+  theme(legend.position="right", 
+        strip.background = element_blank(), 
+        plot.background = element_blank(), 
+        panel.background = element_blank(), 
+        legend.background = element_blank(), 
+        panel.grid.major.y = element_line(colour = 'gray', linewidth = 0.1),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor = element_blank(),
+        strip.text=element_text(size=6), 
+        axis.text=element_text(size=6), 
+        axis.title=element_text(size=6), 
+        axis.line = element_line(colour = 'black', linewidth = 0.1), 
+        axis.ticks = element_line(colour = "black", linewidth = 0.1),
+        legend.title = element_text(size = 6), 
+        legend.text = element_text(size = 6), 
+        legend.key.size = unit(0.25, "cm"),
+        legend.margin=margin(c(0.25,0.25,0.25,0.25)),
+        plot.title = element_text(size = 6), 
+        plot.subtitle = element_text(size = 6), 
+        plot.caption = element_text(size = 6),
+        text=element_text(family="Arial")) +
+  # geom_pointrange(aes(x=median,
+  #                     xmin=Q1,
+  #                     xmax=Q3),
+  #                 position = position_dodge(width = 0.95),
+  #                 linewidth = 0.25,
+  #                 size = 0.4,
+  #                 stroke=0.1,
+  #                 alpha=0.75,
+  #                 shape=21) +
+  geom_col(color="black",
+           position="fill",
+           linewidth=0.2) +
+  scale_fill_manual(values=c("up 1:early" = "#67001f",
+                             "up 2:delayed" = "#b2182b",
+                             "up 3:late" = "#d6604d",
+                             "up 4:inverse" = "#cfbeb4",
+                             "down 4:inverse" = "#b9c3c8",
+                             "down 3:late" = "#92c5de",
+                             "down 2:delayed" = "#4393c3",
+                             "down 1:early" = "#053061",
+                             "expressed" = "lightgray",
+                             "not_expressed" = "gray5")) +
+  guides(fill=guide_legend(reverse=F)) +
+  theme(axis.text.x=element_text(angle = 90, vjust = 0.5, hjust=1)) +
+  # facet_wrap(~DTE_cluster,
+  #            nrow=1,
+  #            scales="free_x") +
+  force_panelsizes(rows = unit(20+0.4, "mm"),
+                   cols = unit(7*4+0.4, "mm"))
+
+ggsave(file.path("Plots", "Figure5", "Rev_1_F5_E_NMD_status_DTE_cluster_fraction_woNonExpressed.pdf"),
+       width = cw3,
+       height = 30,
+       units = "cm",
+       device=cairo_pdf,
+       bg = "transparent")
+
+### 12h IAA log2FC "expressed "NMD" --------------------------------------------------------------
+
+
+#### log2FC ------------------------------------------------------------------
+
+NMDRHT.v1.2_MainTable %>%  
+  filter(DTE_cluster %in% c("expressed")) %>% 
+  left_join(edgeR_DTE_NMDRHT_combined %>% 
+              filter(condition_2 == "UPF1_Nter_12h")) %>% 
+  mutate(NMD_tx_status = fct_relevel(NMD_tx_status,
+                                     "coding",
+                                     "predicted_coding",
+                                     "NMD",
+                                     "predicted_NMD",
+                                     "mixed",
+                                     "lncRNA")) %>% 
+  mutate(significant = case_when(FDR < 0.0001 & abs(logFC) > 1 ~ TRUE,
+                                 TRUE ~ FALSE)) %>% 
+  ggplot(aes(x=NMD_tx_status,
+             y=logFC,
+             fill=significant)) +
+  theme(legend.position="right", 
+        strip.background = element_blank(), 
+        plot.background = element_blank(), 
+        panel.background = element_blank(), 
+        legend.background = element_blank(), 
+        panel.grid.major.y = element_line(colour = 'gray', linewidth = 0.1),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor = element_blank(),
+        strip.text=element_text(size=6), 
+        axis.text=element_text(size=6), 
+        axis.title=element_text(size=6), 
+        axis.line = element_line(colour = 'black', linewidth = 0.1), 
+        axis.ticks = element_line(colour = "black", linewidth = 0.1),
+        legend.title = element_text(size = 6), 
+        legend.text = element_text(size = 6), 
+        legend.key.size = unit(0.25, "cm"),
+        legend.margin=margin(c(0.25,0.25,0.25,0.25)),
+        plot.title = element_text(size = 6), 
+        plot.subtitle = element_text(size = 6), 
+        plot.caption = element_text(size = 6),
+        text=element_text(family="Arial")) +
+  # geom_pointrange(aes(x=median,
+  #                     xmin=Q1,
+  #                     xmax=Q3),
+  #                 position = position_dodge(width = 0.95),
+  #                 linewidth = 0.25,
+  #                 size = 0.4,
+  #                 stroke=0.1,
+  #                 alpha=0.75,
+  #                 shape=21) +
+  geom_boxplot(outliers = FALSE,
+               # coef = 0,
+               color="black",
+               linewidth=0.1) +
+  geom_hline(yintercept=1,
+             color="#963B5A",
+             linewidth=0.25,
+             linetype="solid") +
+  scale_fill_manual(values=c("TRUE" = "#963B5A",
+                             "FALSE" = "lightgray")) +
+  guides(fill=guide_legend(reverse=F)) +
+  theme(axis.text.x=element_text(angle = 90, vjust = 0.5, hjust=1)) +
+  # facet_wrap(~DTE_cluster,
+  #            nrow=1,
+  #            scales="free_x") +
+  force_panelsizes(rows = unit(20+0.4, "mm"),
+                   cols = unit(7*4+0.4, "mm"))
+
+ggsave(file.path("Plots", "Figure5", "Rev_1_F5_E_NMD_status_Expressed_log2FC_12h.pdf"),
+       width = cw3,
+       height = 30,
+       units = "cm",
+       device=cairo_pdf,
+       bg = "transparent")
+
+#### FDR ------------------------------------------------------------------
+NMDRHT.v1.2_MainTable %>%  
+  filter(DTE_cluster %in% c("expressed")) %>% 
+  left_join(edgeR_DTE_NMDRHT_combined %>% 
+              filter(condition_2 == "UPF1_Nter_12h")) %>% 
+  mutate(NMD_tx_status = fct_relevel(NMD_tx_status,
+                                     "coding",
+                                     "predicted_coding",
+                                     "NMD",
+                                     "predicted_NMD",
+                                     "mixed",
+                                     "lncRNA")) %>% 
+  mutate(significant = case_when(FDR < 0.0001 & abs(logFC) > 1 ~ TRUE,
+                                 TRUE ~ FALSE)) %>% 
+  ggplot(aes(x=NMD_tx_status,
+             y=-log10(FDR),
+             fill=significant)) +
+  theme(legend.position="right", 
+        strip.background = element_blank(), 
+        plot.background = element_blank(), 
+        panel.background = element_blank(), 
+        legend.background = element_blank(), 
+        panel.grid.major.y = element_line(colour = 'gray', linewidth = 0.1),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor = element_blank(),
+        strip.text=element_text(size=6), 
+        axis.text=element_text(size=6), 
+        axis.title=element_text(size=6), 
+        axis.line = element_line(colour = 'black', linewidth = 0.1), 
+        axis.ticks = element_line(colour = "black", linewidth = 0.1),
+        legend.title = element_text(size = 6), 
+        legend.text = element_text(size = 6), 
+        legend.key.size = unit(0.25, "cm"),
+        legend.margin=margin(c(0.25,0.25,0.25,0.25)),
+        plot.title = element_text(size = 6), 
+        plot.subtitle = element_text(size = 6), 
+        plot.caption = element_text(size = 6),
+        text=element_text(family="Arial")) +
+  # geom_pointrange(aes(x=median,
+  #                     xmin=Q1,
+  #                     xmax=Q3),
+  #                 position = position_dodge(width = 0.95),
+  #                 linewidth = 0.25,
+  #                 size = 0.4,
+  #                 stroke=0.1,
+  #                 alpha=0.75,
+  #                 shape=21) +
+  geom_boxplot(outliers = FALSE,
+               # coef = 0,
+               color="black",
+               linewidth=0.1) +
+  geom_hline(yintercept=-log10(0.0001),
+             color="#963B5A",
+             linewidth=0.25,
+             linetype="solid") +
+  scale_fill_manual(values=c("TRUE" = "#67001f",
+                             "FALSE" = "lightgray")) +
+  guides(fill=guide_legend(reverse=F)) +
+  theme(axis.text.x=element_text(angle = 90, vjust = 0.5, hjust=1)) +
+  # facet_wrap(~DTE_cluster,
+  #            nrow=1,
+  #            scales="free_x") +
+  force_panelsizes(rows = unit(20+0.4, "mm"),
+                   cols = unit(7*4+0.4, "mm"))
+
+ggsave(file.path("Plots", "Figure5", "Rev_1_F5_E_NMD_status_Expressed_FDR_12h.pdf"),
+       width = cw3,
+       height = 30,
+       units = "cm",
+       device=cairo_pdf,
+       bg = "transparent")
+
 ###
 ## Rev_1 - Figure 5 - (F) PARE analysis -----------------------------------------------------------
 ###

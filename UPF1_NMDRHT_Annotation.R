@@ -852,8 +852,32 @@ output_index <- system(command_index, intern = TRUE)
 ## Prepare GENCODE information ---------------------------------------------
 #
 
+# For export to IGV-web - modify to include only canonical transcripts and remove unnecessary information - include only transcripts (drastically reduces file size)
+gencode.v42.annotation_forIGV <- rtracklayer::readGFF("Resources/GENCODE/gencode.v42.annotation.gff3.gz") %>% 
+  mutate(ensembl_canonical = case_when(str_detect(tag, "Ensembl_canonical") ~ TRUE,
+                                       TRUE ~ FALSE)) %>%
+  mutate(ensembl_basic = case_when(str_detect(tag, "basic") ~ TRUE,
+                                   TRUE ~ FALSE)) %>%
+  mutate(appris_principal = case_when(str_detect(tag, "appris_principal") ~ TRUE,
+                                      TRUE ~ FALSE)) %>% 
+  filter(ensembl_canonical == TRUE) %>% 
+  filter(type=="transcript") %>% 
+  separate(gene_id, c("gene_id_plain", NA), remove = FALSE) %>% 
+  separate(transcript_id, c("transcript_id_plain", NA), remove = FALSE) %>% 
+  dplyr::select(-c(artif_dupl,ccdsid,protein_id,ont,havana_gene,hgnc_id,exon_id,exon_number,havana_transcript))
+
+# Export canonical-only for IGV-prepared GENCODE GFF3 file - run once
+rtracklayer::export(gencode.v42.annotation_forIGV %>% filter(type=="transcript") , "Resources/GENCODE/gencode.v42.annotation.canonical_forIGV_tx.gtf")
+
 # Load Gencode Annotation - run once
 gencode.v42.annotation <- rtracklayer::readGFF("Resources/GENCODE/gencode.v42.annotation.gtf")
+
+# Export **for IGV** canonical-only GENCODE GTF file - only transcripts -> plain IDs allowed as well
+rtracklayer::export(gencode.v42.annotation %>%
+                      separate(gene_id, c("gene_id_plain", NA), remove = FALSE) %>% 
+                      separate(transcript_id, c("transcript_id_plain", NA), remove = FALSE) %>% 
+                      filter(transcript_id %in% c(gtf_gencode_df_short %>% filter(ensembl_canonical == TRUE) %>% pull(transcript_id))) , "Resources/GENCODE/gencode.v42.annotation.canonical_forIGV.gtf")
+
 
 # Export canonical-only GENCODE GTF file - run once
 rtracklayer::export(gencode.v42.annotation %>%
