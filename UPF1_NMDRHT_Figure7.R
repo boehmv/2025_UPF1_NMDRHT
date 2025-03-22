@@ -2361,7 +2361,7 @@ WCP_PG_data_20250127_GeneTxORF_long_sig <- WCP_PG_data_20250127_GeneTxORF_long %
 WCP_PG_data_20250127_GeneTxORF_long_sig_simple <- WCP_PG_data_20250127_GeneTxORF_long_sig %>% 
   dplyr::select(gene_name, comparison, log2FC, padj)
 
-                        ##### Bar Plot --------------------------------------------------------------------
+##### Bar Plot --------------------------------------------------------------------
 
 # Distribution of unique/multiple hits per ID %>% 
 WCP_PG_data_20250127_GeneTxORF_long_sig %>% 
