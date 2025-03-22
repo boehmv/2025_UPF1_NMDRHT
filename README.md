@@ -11,6 +11,19 @@ This repository contains the scripts for the project: <br/> [**Rapid UPF1 deplet
 -   Combined with the "Resources", which can be obtained from [Zenodo](https://doi.org/10.5281/zenodo.15047819), the R scripts should allow reproducing all intermediate analyses and plots.
     -    **NOTE:** The Resources were obmitted from this repository due to their large filesize.
     -    The Resources contain pre-analyzed and intermediate output data.
+    -    The combination of scripts and resources requires the following local folder structure to work properly:
+    ```
+    2025_UPF1_NMDRHT/
+    ├── Resources/                     // Contents from the Resources.zip from Zenodo
+    │   ├── bakR/                      // First resource folder
+    │   └── ...                        // Other resource folders
+    ├── Plots/                         // Output for analyses plots
+    │   ├── Figure1/                   // Plots for Figure1
+    │   └── ...                        // Other Plots folders
+    ├── .../                           // Other folders from GitHub, e.g. "Analyses" or "Tables"
+    ├── UPF1_NMDRHT_Analysis.R         // Top-level R analysis script
+    └── ...                            // Other R analysis scripts
+    ```
 -   For immediate exploration, the finalized and styled Excel MainTables for Gene- and Transcript-level analyses can be used, which are found [here](https://github.com/boehmv/2025_UPF1_NMDRHT/blob/main/Tables).
 
 ## Features / Requirements for raw data analysis
