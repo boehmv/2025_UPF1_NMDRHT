@@ -1572,7 +1572,7 @@ RMD_tableS1_filt_missingIDs <- RMD_tableS1_filt %>%
 library("biomaRt")
 
 # Initialize bioMart | GENCODE v.42 is equal to ensembl version 108
-ensembl_108 = useEnsembl(biomart = 'genes', 
+ensembl_108 <- biomaRt::useEnsembl(biomart = 'genes', 
                          dataset = 'hsapiens_gene_ensembl',
                          version = 108)
 

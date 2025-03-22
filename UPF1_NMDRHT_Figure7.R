@@ -1579,6 +1579,8 @@ ggsave(file.path("Plots", "Figure7", "Rev_1_F7_C16_Proteomics_AS_NMD_peptides_HQ
 
 ###### Plot tx log2FC DTE ---------------------------------------------------------------  
 
+load("Resources/Proteomics/combined_peptidome_complete_class_junction.rds")
+
 WCP_peptide_data_20250127_SN_Selection_ANOVA %>% 
   distinct(Sequence, .keep_all = TRUE) %>% 
   dplyr::select(-gene_name) %>% 
@@ -1657,8 +1659,6 @@ ggsave(file.path("Plots", "Figure7", "Rev_1_F7_C17_Proteomics_AS_NMD_peptides_HQ
        bg = "transparent")  
 
 ###### Plot tx log2FC DGE ---------------------------------------------------------------  
-
-load("Resources/Proteomics/combined_peptidome_complete_class_junction.rds")
 
 WCP_peptide_data_20250127_SN_Selection_ANOVA %>% 
   distinct(Sequence, .keep_all = TRUE) %>% 

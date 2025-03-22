@@ -1169,7 +1169,7 @@ UPF1_degron_proteomics_Reanalysis_all %>%
              label.size = 0,
              parse=F
   ) +
-  geom_text(data=NMDinh_all_timepoints_combined_all_numbers,
+  geom_text(data=UPF1_degron_proteomics_Reanalysis_all_numbers,
             aes(x=-4,
                 label=case_when(up_down == "down" ~ paste0("down: n = ",n),
                                 up_down == "up" ~ "")),

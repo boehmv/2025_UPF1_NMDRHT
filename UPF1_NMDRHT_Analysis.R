@@ -11,31 +11,6 @@
 # Load libraries ----------------------------------------------------------
 ##
 
-
-# library(viridis)             # Viridis color palette
-# library(patchwork)           # Allows easy plot stitching
-# library(ggridges)            # For Ridge plots!
-# library(ggcoverage)          # Produce fake IGV snapshots
-# library(gprofiler2)          # For GO analysis
-# library(DESeq2)              # To work with imported counts
-# library(tximeta)             # To import salmon counts for Heatmap-Clustering
-# library(fishpond)            # To scale salmon counts for Heatmap-Clustering
-# library(nVennR)              # For overlaps with nVenns
-# library(rstatix)             # Correlation testing - pipe-friendly
-# library(ggpubr)              # Add significance to boxplots
-# library(ggrepel)             # For nice labels in plots
-# library(readxl)              # To import Excel data
-# library(simplifyEnrichment)  # Aggregate significant GO terms
-# library(edgeR)               # For edgeR DTE analyses
-#library(janitor)             # Clean names of imported tables
-#library(biomaRt)             # Perform name/ID matching
-#library(corrr)               # For tidy correlations
-#library(ComplexUpset)        # For ggplot UpSet plots
-#library(cleaver)             # in silico cleaving into peptides
-#library(ggside)              # For extra annotations on e.g. ggplot heatmaps
-#library(GenomicScores)       # To determine conservation scores
-#library(depmap)              # DepMap
-#library(ExperimentHub)       # For DepMap
 library(tidyverse)           # Generally required
 library(patchwork)           # Allows easy plot stitching
 library(extrafont)           # For using Arial in some plots
@@ -322,3 +297,6 @@ source("UPF1_NMDRHT_SupplementalTables.R")
 
 # Generate Supplemental Tables
 source("UPF1_NMDRHT_RevisionAnalyses.R")
+
+# SessionInfo to file
+writeLines(capture.output(sessionInfo()), paste0("UPF1_NMDRHT_session_info.", format(Sys.time(), "%Y%m%d.%H%M"), ".txt"))
