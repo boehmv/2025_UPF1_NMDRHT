@@ -4,6 +4,11 @@
 
 This repository contains the scripts for the project: <br/> [**Rapid UPF1 depletion illuminates the temporal dynamics of the NMD-regulated human transcriptome**](https://doi.org/10.1101/2024.03.04.583328) <br/> (available as bioRxiv preprint)
 
+
+## Graphical abstract
+
+<img src="https://github.com/boehmv/2025_UPF1_NMDRHT/blob/main/Plots/UPF1_NMDRHT.png?raw=true" max-height="300">
+
 ## Scope
 
 -   This repository primarily aims to provide transparent insight into the high-throughput analysis steps used in the study of UPF1 depletion via conditional degron tags (CDT) in human cells. :warning: **NOTE:** The complete pipeline and individual scripts are currently not optimized to run on different computing infrastructures in a standardized/portable manner. This means that all required packages have to be installed manually and configured accordingly to reproduce the results.
