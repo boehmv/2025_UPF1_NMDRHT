@@ -63,8 +63,8 @@ LeafCutter_AS_clusters_annotated_summary %>%
   # ) +
   scale_x_continuous(expand = expansion(c(0.025, 0.25))) +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
-scale_fill_manual(values=c("Fully annotated" = "#B80C66",
-                           "Contain unannotated junctions" = "#FCA50A")) +
+  scale_fill_manual(values=c("Fully annotated" = "#B80C66",
+                             "Contain unannotated junctions" = "#FCA50A")) +
   labs(y="",
        x="Number of cluster",
        fill="Cluster") +
@@ -587,9 +587,9 @@ WCP_peptide_data_20250206_diaNN_all_ids <- WCP_peptide_data_20250206_DiaNN_final
   pull(gene_seq)
 
 WCP_peptide_data_20250206_overlap_all_myNV <- nVennR::plotVenn(list(WCP_peptide_data_20250127_SN_all_ids,
-                                                            WCP_peptide_data_20250206_diaNN_all_ids), 
-                                                       sNames=c("SN", 
-                                                                "DiaNN"), showPlot = FALSE)
+                                                                    WCP_peptide_data_20250206_diaNN_all_ids), 
+                                                               sNames=c("SN", 
+                                                                        "DiaNN"), showPlot = FALSE)
 
 showSVG(WCP_peptide_data_20250206_overlap_all_myNV,
         opacity=0.3,
@@ -651,9 +651,9 @@ WCP_peptide_data_20250206_diaNN_ids <- WCP_peptide_data_20250206_DiaNN_final_log
   pull(gene_seq)
 
 WCP_peptide_data_20250206_overlap_myNV <- nVennR::plotVenn(list(WCP_peptide_data_20250127_SN_ids,
-                                                        WCP_peptide_data_20250206_diaNN_ids), 
-                                                   sNames=c("SN", 
-                                                            "DiaNN"), showPlot = FALSE)
+                                                                WCP_peptide_data_20250206_diaNN_ids), 
+                                                           sNames=c("SN", 
+                                                                    "DiaNN"), showPlot = FALSE)
 
 showSVG(WCP_peptide_data_20250206_overlap_myNV,
         opacity=0.3,
@@ -855,14 +855,14 @@ WCP_peptide_data_20250127_SN_final_log2_combined_expand %>%
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1, size = 4)) +
   ggside::geom_ysidetile(aes(x = "NMD reason", yfill = NMD_peptide_reason))  +
   ggside::scale_yfill_manual(values=c("none" = "#214D65",
-                              "lncRNA" = "#76716E",
-                              "AS_NMD"="#E5BF85",
-                              "AS_NMD_UTR3" = "#C1AC65",
-                              "novel" = "#9A9A49",
-                              "uORF" = "#708831",
-                              "overl_uORF" = "#43761E",
-                              "multiple" = "gray30",
-                              "other" = "#D9DADA")) +
+                                      "lncRNA" = "#76716E",
+                                      "AS_NMD"="#E5BF85",
+                                      "AS_NMD_UTR3" = "#C1AC65",
+                                      "novel" = "#9A9A49",
+                                      "uORF" = "#708831",
+                                      "overl_uORF" = "#43761E",
+                                      "multiple" = "gray30",
+                                      "other" = "#D9DADA")) +
   # geom_ysidetile(aes(x = "40% valid values", yfill = selected))  +
   # scale_yfill_manual(values=c("TRUE" = "#963B5A",
   #                             "FALSE" = "gray90")) +
@@ -970,7 +970,7 @@ WCP_peptide_data_20250127_SN_final_log2_combined_expand %>%
   #                             "other" = "#D9DADA")) +
   ggside::geom_ysidetile(aes(x = "35% valid values", yfill = selected))  +
   ggside::scale_yfill_manual(values=c("TRUE" = "#963B5A",
-                              "FALSE" = "gray90")) +
+                                      "FALSE" = "gray90")) +
   force_panelsizes(rows = unit(40, "mm"),
                    cols = unit(25, "mm"))
 
@@ -1336,14 +1336,14 @@ WCP_peptide_data_20250127_SN_final_log2_combined_ANOVA_expand %>%
        x="") +
   ggside::geom_ysidetile(aes(x = "NMD reason", yfill = NMD_peptide_reason_simple))  +
   ggside::scale_yfill_manual(values=c("none" = "#214D65",
-                              "lncRNA" = "#76716E",
-                              "AS_NMD"="#E5BF85",
-                              "AS_NMD_UTR3" = "#C1AC65",
-                              "novel" = "#9A9A49",
-                              "uORF" = "#708831",
-                              "overl_uORF" = "#43761E",
-                              "multiple" = "gray30",
-                              "other" = "#D9DADA")) +
+                                      "lncRNA" = "#76716E",
+                                      "AS_NMD"="#E5BF85",
+                                      "AS_NMD_UTR3" = "#C1AC65",
+                                      "novel" = "#9A9A49",
+                                      "uORF" = "#708831",
+                                      "overl_uORF" = "#43761E",
+                                      "multiple" = "gray30",
+                                      "other" = "#D9DADA")) +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
   force_panelsizes(rows = unit(100, "mm"),
                    cols = unit(80, "mm"))
@@ -1443,14 +1443,14 @@ WCP_peptide_data_20250127_SN_Selection_ANOVA %>%
        x="") +
   ggside::geom_ysidetile(aes(x = "NMD reason", yfill = NMD_peptide_reason_simple))  +
   ggside::scale_yfill_manual(values=c("none" = "#214D65",
-                              "lncRNA" = "#76716E",
-                              "AS_NMD"="#E5BF85",
-                              "AS_NMD_UTR3" = "#C1AC65",
-                              "novel" = "#9A9A49",
-                              "uORF" = "#708831",
-                              "overl_uORF" = "#43761E",
-                              "multiple" = "gray30",
-                              "other" = "#D9DADA")) +
+                                      "lncRNA" = "#76716E",
+                                      "AS_NMD"="#E5BF85",
+                                      "AS_NMD_UTR3" = "#C1AC65",
+                                      "novel" = "#9A9A49",
+                                      "uORF" = "#708831",
+                                      "overl_uORF" = "#43761E",
+                                      "multiple" = "gray30",
+                                      "other" = "#D9DADA")) +
   force_panelsizes(rows = unit(40*1.5, "mm"),
                    cols = unit(5*2, "mm")) +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
@@ -1902,14 +1902,14 @@ WCP_peptide_data_20250127_SN_Single_ANOVA %>%
        x="") +
   ggside::geom_ysidetile(aes(x = "NMD reason", yfill = NMD_peptide_reason_simple))  +
   ggside::scale_yfill_manual(values=c("none" = "#214D65",
-                              "lncRNA" = "#76716E",
-                              "AS_NMD"="#E5BF85",
-                              "AS_NMD_UTR3" = "#C1AC65",
-                              "novel" = "#9A9A49",
-                              "uORF" = "#708831",
-                              "overl_uORF" = "#43761E",
-                              "multiple" = "gray30",
-                              "other" = "#D9DADA")) +
+                                      "lncRNA" = "#76716E",
+                                      "AS_NMD"="#E5BF85",
+                                      "AS_NMD_UTR3" = "#C1AC65",
+                                      "novel" = "#9A9A49",
+                                      "uORF" = "#708831",
+                                      "overl_uORF" = "#43761E",
+                                      "multiple" = "gray30",
+                                      "other" = "#D9DADA")) +
   force_panelsizes(rows = unit(47*1.5, "mm"),
                    cols = unit(5*2, "mm")) +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
@@ -2261,15 +2261,15 @@ Rev_1_F2_GO_DGE_bg_full <- DESeq2_DGE_combined %>%
 
 # Perform GO analysis
 WCP_peptide_data_20250127_SN_final_log2_combined_ANOVA_gostres <- gprofiler2::gost(query = WCP_peptide_data_20250127_SN_final_log2_combined_ANOVA_forGO,
-                                                                       custom_bg = Rev_1_F2_GO_DGE_bg_full,
-                                                                       # multi_query = TRUE,
-                                                                       sources = "GO:BP",
-                                                                       domain_scope = "custom",
-                                                                       organism = "hsapiens",
-                                                                       correction_method = c("gSCS"),
-                                                                       evcodes = TRUE,
-                                                                       # as_short_link = TRUE,
-                                                                       significant = TRUE)
+                                                                                   custom_bg = Rev_1_F2_GO_DGE_bg_full,
+                                                                                   # multi_query = TRUE,
+                                                                                   sources = "GO:BP",
+                                                                                   domain_scope = "custom",
+                                                                                   organism = "hsapiens",
+                                                                                   correction_method = c("gSCS"),
+                                                                                   evcodes = TRUE,
+                                                                                   # as_short_link = TRUE,
+                                                                                   significant = TRUE)
 
 # As tibble
 WCP_peptide_data_20250127_SN_final_log2_combined_ANOVA_gostres_result <- WCP_peptide_data_20250127_SN_final_log2_combined_ANOVA_gostres$result
@@ -2330,10 +2330,10 @@ ggsave(file.path("Plots", "Figure7", "Rev_1_F7_C26_WCP_peptide_data_gostres_resu
 ###### Enrichment visualization ----------------------------------------
 
 simMatrix_WCP_peptide_data <- rrvgo::calculateSimMatrix(WCP_peptide_data_20250127_SN_final_log2_combined_ANOVA_gostres_result %>% 
-                                                   pull(term_id),
-                                                 orgdb="org.Hs.eg.db",
-                                                 ont="BP",
-                                                 method="Rel")
+                                                          pull(term_id),
+                                                        orgdb="org.Hs.eg.db",
+                                                        ont="BP",
+                                                        method="Rel")
 
 scores_WCP_peptide_data <- setNames(-log10(WCP_peptide_data_20250127_SN_final_log2_combined_ANOVA_gostres_result %>% 
                                              pull(p_value)), 
@@ -2341,9 +2341,9 @@ scores_WCP_peptide_data <- setNames(-log10(WCP_peptide_data_20250127_SN_final_lo
                                       pull(term_id))
 
 reducedTerms_WCP_peptide_data <- rrvgo::reduceSimMatrix(simMatrix_WCP_peptide_data,
-                                                 scores_WCP_peptide_data,
-                                                 threshold=0.7,
-                                                 orgdb="org.Hs.eg.db")
+                                                        scores_WCP_peptide_data,
+                                                        threshold=0.7,
+                                                        orgdb="org.Hs.eg.db")
 
 rrvgo::treemapPlot(reducedTerms_WCP_peptide_data)
 

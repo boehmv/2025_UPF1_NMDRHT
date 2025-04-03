@@ -36,8 +36,8 @@ UPF1_NMDRHT_datasets_complete %>%
 
 # Load sample and condition mapping
 UPF1_NMDRHT_datasets_experiments_complete <- readr::read_tsv(UPF1_NMDRHT_datasets_complete$experiment_path, 
-                                                      id = "experiment_path",
-                                                      col_names = c("sample", "condition_2")) %>% 
+                                                             id = "experiment_path",
+                                                             col_names = c("sample", "condition_2")) %>% 
   left_join(UPF1_NMDRHT_datasets_complete %>% dplyr::select(-c(meta_repository, meta_ID, fastq_repository, fastq_ID, DESeq2_DGE_path, Swish_DGE_path, edgeR_DTE_path, edgeR_DTE_NMDRegHumanTxome_path, ISAR_path, ISAR_NMDRegHumanTxome_path, LeafCutter_path))) %>% 
   arrange((experimentSet)) %>% 
   mutate(condition_2 = fct_inorder(condition_2))
@@ -221,13 +221,13 @@ ISAR_DTU_NMDRHT_combined  %>%  write_csv(file.path("Resources", "ISAR_DTU_NMDRHT
 
 # Check if all files are present - otherwise stop here
 stopifnot("*** Not all files are present! ***" = all(file.exists(UPF1_NMDRHT_datasets %>% 
-                                                                 filter(!experimentSet %in% c("HeLa_UPF1_KD_Longman_2020",
-                                                                                              "HCT116_UPF1_AID_TestSeq_this_Study"))
+                                                                   filter(!experimentSet %in% c("HeLa_UPF1_KD_Longman_2020",
+                                                                                                "HCT116_UPF1_AID_TestSeq_this_Study"))
                                                                  %>% pull(LeafCutter_path))))
 
 LeafCutter_AS_combined <- UPF1_NMDRHT_datasets %>% 
   filter(!experimentSet %in% c("HeLa_UPF1_KD_Longman_2020",
-                              "HCT116_UPF1_AID_TestSeq_this_Study")) %>% 
+                               "HCT116_UPF1_AID_TestSeq_this_Study")) %>% 
   pull(LeafCutter_path) %>% 
   map_dfr(read_csv, col_select = (-1), id = 'LeafCutter_path')  %>% 
   left_join(UPF1_NMDRHT_datasets %>% dplyr::select(LeafCutter_path, experimentSet, publicationName)) %>% 

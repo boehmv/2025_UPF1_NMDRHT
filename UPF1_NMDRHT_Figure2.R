@@ -417,11 +417,11 @@ Rev_1_F2_A2_UPF1_Salmon_QC <- UPF1_Salmon_QC %>%
         axis.line = element_line(colour = 'black', linewidth = 0.1), 
         axis.ticks = element_line(colour = "black", linewidth = 0.1)) +
   ggdist::stat_pointinterval(aes(interval_color = after_stat(level)),
-                     .width = c(0.9),
-                     point_interval = "mean_qi",
-                     linewidth = 0.5,
-                     point_color = "black",
-                     point_size = 0.5,
+                             .width = c(0.9),
+                             point_interval = "mean_qi",
+                             linewidth = 0.5,
+                             point_color = "black",
+                             point_size = 0.5,
   ) +
   geom_point(aes(fill=percent_mapped),
              color="black",
@@ -1248,20 +1248,20 @@ Rev_1_F2_GO_DGE_NMD_cluster <- split(gtf_gencode_df_short_DGE_cluster %>%
 
 # Perform GO analysis
 Rev_1_F2_GO_DGE_NMD_cluster_gostres <- gprofiler2::gost(query = Rev_1_F2_GO_DGE_NMD_cluster,
-                                            custom_bg = Rev_1_F2_GO_DGE_bg_full,
-                                            # multi_query = TRUE,
-                                            sources = "GO:BP",
-                                            domain_scope = "custom",
-                                            organism = "hsapiens",
-                                            correction_method = c("gSCS"),
-                                            # evcodes = TRUE,
-                                            # as_short_link = TRUE,
-                                            significant = FALSE)
+                                                        custom_bg = Rev_1_F2_GO_DGE_bg_full,
+                                                        # multi_query = TRUE,
+                                                        sources = "GO:BP",
+                                                        domain_scope = "custom",
+                                                        organism = "hsapiens",
+                                                        correction_method = c("gSCS"),
+                                                        # evcodes = TRUE,
+                                                        # as_short_link = TRUE,
+                                                        significant = FALSE)
 
 # Results as dataframe
 Rev_1_F2_GO_DGE_NMD_cluster_gostres_result <- Rev_1_F2_GO_DGE_NMD_cluster_gostres$result
 
- # Plot significance of GO terms per Cluster
+# Plot significance of GO terms per Cluster
 Rev_1_F2_GO_DGE_NMD_cluster_gostres_result %>% 
   mutate(query = fct_rev(fct_relevel(query,
                                      "up 1:early",
@@ -1792,14 +1792,14 @@ DESeq2_DGE_combined_DGE_cluster_NMD_relevance_complete_bin %>%
   dplyr::count() %>% 
   ungroup() %>% 
   mutate(NMD_bin = fct_rev(fct_relevel(NMD_bin,
-                                   "up_(75,100]",
-                                   "up_(50,75]",
-                                   "up_(25,50]",
-                                   "up_[0,25]",
-                                   "down_[0,25]",
-                                   "down_(25,50]",
-                                   "down_(50,75]",
-                                   "down_(75,100]",
+                                       "up_(75,100]",
+                                       "up_(50,75]",
+                                       "up_(25,50]",
+                                       "up_[0,25]",
+                                       "down_[0,25]",
+                                       "down_(25,50]",
+                                       "down_(50,75]",
+                                       "down_(75,100]",
   ))) %>% 
   # mutate(n = case_when(UpDown == "up" ~ n,
   #                      UpDown == "down" ~ -n)) %>% 
@@ -1876,15 +1876,15 @@ Rev_1_F2_GO_DGE_NMD_bin_UpDown <- split(DESeq2_DGE_combined_DGE_cluster_NMD_rele
 
 # Perform GO analysis
 Rev_1_F2_GO_DGE_NMD_gostres <- gprofiler2::gost(query = Rev_1_F2_GO_DGE_NMD_bin_UpDown,
-                                    custom_bg = Rev_1_F2_GO_DGE_bg_full,
-                                    # multi_query = TRUE,
-                                    sources = "GO:BP",
-                                    domain_scope = "custom",
-                                    organism = "hsapiens",
-                                    correction_method = c("gSCS"),
-                                    # evcodes = TRUE,
-                                    # as_short_link = TRUE,
-                                    significant = FALSE)
+                                                custom_bg = Rev_1_F2_GO_DGE_bg_full,
+                                                # multi_query = TRUE,
+                                                sources = "GO:BP",
+                                                domain_scope = "custom",
+                                                organism = "hsapiens",
+                                                correction_method = c("gSCS"),
+                                                # evcodes = TRUE,
+                                                # as_short_link = TRUE,
+                                                significant = FALSE)
 
 # Results as dataframe
 Rev_1_F2_GO_DGE_NMD_gostres_result <- Rev_1_F2_GO_DGE_NMD_gostres$result

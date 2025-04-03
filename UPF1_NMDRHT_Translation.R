@@ -41,9 +41,9 @@ stopifnot("*** Not all salmon files are present! ***" = all(file.exists(coldata$
 
 # Use tximeta to import salmon data
 all_y <- tximeta::tximeta(coldata,
-                 type = "salmon",
-                 txOut = TRUE,
-                 useHub = FALSE) # reads in counts and inf reps
+                          type = "salmon",
+                          txOut = TRUE,
+                          useHub = FALSE) # reads in counts and inf reps
 
 all_y_gene <- tximeta::summarizeToGene(all_y)
 
@@ -65,10 +65,10 @@ RNA_raw_counts <- as.data.frame(raw_counts) %>%
   dplyr::select("191508", "191510", "191512", "191532", "191534", "191536")
 
 coldata_RNA <- read_delim("/home/volker/gencode.v42.datasets/2023_UPF1_AID_DW/experiment.txt", 
-                           delim = "\t",
-                           escape_double = FALSE, 
-                           col_names = c("samples", "condition"),
-                           trim_ws = TRUE) %>% 
+                          delim = "\t",
+                          escape_double = FALSE, 
+                          col_names = c("samples", "condition"),
+                          trim_ws = TRUE) %>% 
   column_to_rownames(var = "samples") %>% 
   filter(condition %in% c("UPF1_Nter_0h", "UPF1_Nter_12h")) %>% 
   mutate(condition = as.factor(condition)) %>% 
@@ -77,8 +77,8 @@ coldata_RNA <- read_delim("/home/volker/gencode.v42.datasets/2023_UPF1_AID_DW/ex
 # Save data for re-use
 save(RNA_raw_counts,
      coldata_RNA,
-  file = paste0("Resources/Translation/RNA_raw_counts.rds"))
-  
+     file = paste0("Resources/Translation/RNA_raw_counts.rds"))
+
 # Load data for re-use - if necessary
 load(file = paste0("Resources/Translation/RNA_raw_counts.rds"))
 
@@ -94,21 +94,21 @@ BAMs <- c("/home/volker/Riboseq/2024_08_UPF1_RiboSeq_3rd/BAM/HCT_N_AID_UPF1_0h_I
           "/home/volker/Riboseq/2024_08_UPF1_RiboSeq_3rd/BAM/HCT_N_AID_UPF1_12h_IAA_3.bam")
 
 featureCounts_Out <- Rsubread::featureCounts(files = BAMs,
-                                   annot.ext = Reference,
-                                   isGTFAnnotationFile=TRUE,
-                                   GTF.featureType="exon",
-                                   GTF.attrType="gene_id",
-                                   nthreads=10,
-                                   strandSpecific=1)
+                                             annot.ext = Reference,
+                                             isGTFAnnotationFile=TRUE,
+                                             GTF.featureType="exon",
+                                             GTF.attrType="gene_id",
+                                             nthreads=10,
+                                             strandSpecific=1)
 
 counts_RiboSeq <- as.data.frame(featureCounts_Out$counts) %>% 
   rename_with(~str_remove(., '.bam')) 
 
 coldata_Ribo <- read_delim("/home/volker/Riboseq/2024_08_UPF1_RiboSeq_3rd/experiment_forCRSA.txt", 
-                      delim = "\t",
-                      escape_double = FALSE, 
-                      col_names = c("samples", "condition"),
-                      trim_ws = TRUE) %>% 
+                           delim = "\t",
+                           escape_double = FALSE, 
+                           col_names = c("samples", "condition"),
+                           trim_ws = TRUE) %>% 
   column_to_rownames(var = "samples") %>% 
   mutate(condition = case_when(condition == "control" ~ "UPF1_Nter_0h",
                                condition == "UPF1" ~ "UPF1_Nter_12h")) %>% 
@@ -159,7 +159,7 @@ resultsNames(ddsMat)
 res=results(ddsMat, name="conditionUPF1_Nter_12h.seqtypeRibo")
 
 res_TE_df <- as_tibble(res,
-          rownames="gene_id")
+                       rownames="gene_id")
 
 # RNA ----------------------------------------------------------------
 
@@ -212,8 +212,8 @@ combined_TE_results <- as_tibble(res,
   left_join(as_tibble(res_rna,
                       rownames="gene_id") %>% 
               dplyr::select(gene_id,
-                     log2FoldChange,
-                     padj)) %>% 
+                            log2FoldChange,
+                            padj)) %>% 
   dplyr::rename("L2FC_RNA" = "log2FoldChange",
                 "padj_RNA" = "padj") %>% 
   left_join(as_tibble(res_ribo,

@@ -36,8 +36,8 @@ NMDRHT.v1.1_tbl <- read_csv("Resources/NMDRHT/NMDRHT.v1.1_short.csv")
 
 # load annotation information
 NMDRHT.v1.1_GTF <- rtracklayer::readGFF("Resources/NMDRHT/NMDRHT.v1.1.sort.gtf",
-                                              filter = list(type=c("gene",
-                                                                   "transcript")))
+                                        filter = list(type=c("gene",
+                                                             "transcript")))
 # Convert to tibble
 NMDRHT.v1.1_GTF_tbl <- dplyr::as_tibble(NMDRHT.v1.1_GTF)
 
@@ -45,27 +45,27 @@ NMDRHT.v1.1_GTF_tbl <- dplyr::as_tibble(NMDRHT.v1.1_GTF)
 # Prepare annotation file
 
 ORFquant::prepare_annotation_files(annotation_directory = "Resources/ORFquant",
-                         twobit_file = "Resources/ORFquant/GRCh38.primary_assembly.genome.2bit",
-                         gtf_file = "Resources/NMDRHT/NMDRHT.v1.1.sort.gtf",
-                         scientific_name = "Homo.sapiens",
-                         annotation_name = "NMDRHT.v1.1",
-                         export_bed_tables_TxDb = F,
-                         forge_BSgenome = T,
-                         create_TxDb = T)
+                                   twobit_file = "Resources/ORFquant/GRCh38.primary_assembly.genome.2bit",
+                                   gtf_file = "Resources/NMDRHT/NMDRHT.v1.1.sort.gtf",
+                                   scientific_name = "Homo.sapiens",
+                                   annotation_name = "NMDRHT.v1.1",
+                                   export_bed_tables_TxDb = F,
+                                   forge_BSgenome = T,
+                                   create_TxDb = T)
 
 # Load annotation
 ORFquant::load_annotation("Resources/ORFquant/NMDRHT.v1.1.sort.gtf_Rannot")
 
 ## Run RiboseQC  -------------------------------------------------------
 RiboseQC::RiboseQC_analysis(annotation_file="Resources/ORFquant/NMDRHT.v1.1.sort.gtf_Rannot",
-                  bam_files = c("/home/volker/Riboseq/2024_08_UPF1_RiboSeq_3rd/BAM_NMDRegHumanTxome/HCT_N_AID_UPF1_0h_IAA_merged.bam",
-                                "/home/volker/Riboseq/2024_08_UPF1_RiboSeq_3rd/BAM_NMDRegHumanTxome/HCT_N_AID_UPF1_12h_IAA_merged.bam"),
-                  dest_names = c("/home/volker/Riboseq/2024_08_UPF1_RiboSeq_3rd/NMDRegHumanTxome/HCT_N_AID_UPF1_0h_IAA",
-                                 "/home/volker/Riboseq/2024_08_UPF1_RiboSeq_3rd/NMDRegHumanTxome/HCT_N_AID_UPF1_12h_IAA"),
-                  report_file = "Resources/ORFquant/RiboseQC_merged.html",
-                  sample_names = c("HCT_N_AID_UPF1_0h",
-                                   "HCT_N_AID_UPF1_12h"),
-                  write_tmp_files = F)
+                            bam_files = c("/home/volker/Riboseq/2024_08_UPF1_RiboSeq_3rd/BAM_NMDRegHumanTxome/HCT_N_AID_UPF1_0h_IAA_merged.bam",
+                                          "/home/volker/Riboseq/2024_08_UPF1_RiboSeq_3rd/BAM_NMDRegHumanTxome/HCT_N_AID_UPF1_12h_IAA_merged.bam"),
+                            dest_names = c("/home/volker/Riboseq/2024_08_UPF1_RiboSeq_3rd/NMDRegHumanTxome/HCT_N_AID_UPF1_0h_IAA",
+                                           "/home/volker/Riboseq/2024_08_UPF1_RiboSeq_3rd/NMDRegHumanTxome/HCT_N_AID_UPF1_12h_IAA"),
+                            report_file = "Resources/ORFquant/RiboseQC_merged.html",
+                            sample_names = c("HCT_N_AID_UPF1_0h",
+                                             "HCT_N_AID_UPF1_12h"),
+                            write_tmp_files = F)
 
 ##
 ## Run ORFquant  -------------------------------------------------------
@@ -235,34 +235,34 @@ ORF_gen_df <- dplyr::as_tibble(ORFs_gen) %>%
 
 # Extract other parameters from transcript-specific information
 ORF_tx_df <- dplyr::tibble(gene_id = ORFs_tx$gene_id,
-                    gene_biotype = ORFs_tx$gene_biotype,
-                    gene_name =  ORFs_tx$gene_name,
-                    transcript_id = ORFs_tx$transcript_id,
-                    transcript_biotype = ORFs_tx$transcript_biotype,
-                    ORF_id_tr = ORFs_tx$ORF_id_tr,
-                    dplyr::as_tibble(ORFs_tx$region),
-                    ave_pct_fr = ORFs_tx$ave_pct_fr,
-                    pct_fr = ORFs_tx$pct_fr,
-                    ave_pct_fr_st = ORFs_tx$ave_pct_fr_st,
-                    pct_fr_st = ORFs_tx$pct_fr_st,
-                    pval = ORFs_tx$pval,
-                    pval_uniq = ORFs_tx$pval_uniq,
-                    P_sites_raw = ORFs_tx$P_sites_raw,
-                    P_sites_raw_uniq = ORFs_tx$P_sites_raw_uniq,
-                    P_sites_raw_uniq_mm = ORFs_tx$P_sites_raw_uniq_mm,
-                    P_sites = ORFs_tx$P_sites,
-                    ORF_pct_P_sites = ORFs_tx$ORF_pct_P_sites,
-                    ORF_pct_P_sites_pN = ORFs_tx$ORF_pct_P_sites_pN,
-                    compatible_biotype = ORFs_tx$compatible_biotype,
-                    NC_protein_isoform = ORFs_tx$NC_protein_isoform,
-                    ORF_category_Tx = ORFs_tx$ORF_category_Tx,
-                    ORF_category_Tx_compatible = ORFs_tx$ORF_category_Tx_compatible,
-                    ORF_category_Gen = ORFs_tx$ORF_category_Gen,
-                    NMD_candidate = ORFs_tx$NMD_candidate,
-                    Distance_to_lastExEx = ORFs_tx$Distance_to_lastExEx,
-                    ORFs_pM = ORFs_tx$ORFs_pM,
-                    longest_ORF = as.character(ORFs_tx$longest_ORF),
-                    Protein = as.character(ORFs_tx$Protein))
+                           gene_biotype = ORFs_tx$gene_biotype,
+                           gene_name =  ORFs_tx$gene_name,
+                           transcript_id = ORFs_tx$transcript_id,
+                           transcript_biotype = ORFs_tx$transcript_biotype,
+                           ORF_id_tr = ORFs_tx$ORF_id_tr,
+                           dplyr::as_tibble(ORFs_tx$region),
+                           ave_pct_fr = ORFs_tx$ave_pct_fr,
+                           pct_fr = ORFs_tx$pct_fr,
+                           ave_pct_fr_st = ORFs_tx$ave_pct_fr_st,
+                           pct_fr_st = ORFs_tx$pct_fr_st,
+                           pval = ORFs_tx$pval,
+                           pval_uniq = ORFs_tx$pval_uniq,
+                           P_sites_raw = ORFs_tx$P_sites_raw,
+                           P_sites_raw_uniq = ORFs_tx$P_sites_raw_uniq,
+                           P_sites_raw_uniq_mm = ORFs_tx$P_sites_raw_uniq_mm,
+                           P_sites = ORFs_tx$P_sites,
+                           ORF_pct_P_sites = ORFs_tx$ORF_pct_P_sites,
+                           ORF_pct_P_sites_pN = ORFs_tx$ORF_pct_P_sites_pN,
+                           compatible_biotype = ORFs_tx$compatible_biotype,
+                           NC_protein_isoform = ORFs_tx$NC_protein_isoform,
+                           ORF_category_Tx = ORFs_tx$ORF_category_Tx,
+                           ORF_category_Tx_compatible = ORFs_tx$ORF_category_Tx_compatible,
+                           ORF_category_Gen = ORFs_tx$ORF_category_Gen,
+                           NMD_candidate = ORFs_tx$NMD_candidate,
+                           Distance_to_lastExEx = ORFs_tx$Distance_to_lastExEx,
+                           ORFs_pM = ORFs_tx$ORFs_pM,
+                           longest_ORF = as.character(ORFs_tx$longest_ORF),
+                           Protein = as.character(ORFs_tx$Protein))
 
 # Join both tibbles
 HCT_N_AID_UPF1_12h_ORF_tx_df <- ORF_tx_df %>% left_join(ORF_gen_df)
@@ -559,7 +559,7 @@ HCT_N_AID_UPF1_ORFquant_RiboTish_NMD_sumORF_all_unique <- HCT_N_AID_UPF1_ORFquan
   mutate(HCT_N_AID_UPF1_0h_valid = case_when(is.na(HCT_N_AID_UPF1_0h_P_sites_pN) ~ FALSE,
                                              TRUE ~ TRUE),
          HCT_N_AID_UPF1_12h_valid = case_when(is.na(HCT_N_AID_UPF1_12h_P_sites_pN) ~ FALSE,
-                                             TRUE ~ TRUE)) %>% 
+                                              TRUE ~ TRUE)) %>% 
   replace_na(list(HCT_N_AID_UPF1_0h_P_sites_pN = 0.001, HCT_N_AID_UPF1_12h_P_sites_pN = 0.001)) %>% 
   mutate(log2FC_P_sites_pN = log2(HCT_N_AID_UPF1_12h_P_sites_pN/HCT_N_AID_UPF1_0h_P_sites_pN)) %>% 
   mutate(ORFquant_NMD_tx_status_combined = case_when(HCT_N_AID_UPF1_0h_ORFquant_NMD_tx_status == HCT_N_AID_UPF1_12h_ORFquant_NMD_tx_status ~ HCT_N_AID_UPF1_12h_ORFquant_NMD_tx_status,
@@ -1016,7 +1016,7 @@ NMDRHT_tx_length_mod <- tibble::as_tibble(NMDRHT_tx_length) %>%
 
 # Combine the NMDRegHumanTxome.v1.1_tbl table (from Main analysis) with transcripts lengths
 NMDRHT.v1.2_tbl_length <- left_join(NMDRHT.v1.2_tbl, 
-                                              NMDRHT_tx_length_mod, by = c("transcript_id" = "tx_name"))
+                                    NMDRHT_tx_length_mod, by = c("transcript_id" = "tx_name"))
 
 # Get genome fasta file - Required to obtain nucleotide sequence
 Hsapiens <- BSgenome.Hsapiens.UCSC.hg38::BSgenome.Hsapiens.UCSC.hg38
@@ -1081,8 +1081,8 @@ NMDRHT_utr3_GC_200nt %>% write_csv("Resources/NMDRHT/NMDRHT_utr3_GC_200nt.csv")
 
 # Combine the NMDRegHumanTxome.v1.1_tbl_MasterTable_length table with GC contents
 NMDRHT.v1.2_tbl_length_GC <- left_join(NMDRHT.v1.2_tbl_length, 
-                                                             NMDRHT_transcript_GC,
-                                                             by = c("transcript_id" = "tx_id")) %>% 
+                                       NMDRHT_transcript_GC,
+                                       by = c("transcript_id" = "tx_id")) %>% 
   left_join(NMDRHT_utr5_GC,
             by = c("transcript_id" = "tx_id")) %>% 
   left_join(NMDRHT_cds_GC,
@@ -1367,7 +1367,7 @@ HCT_N_AID_UPF1_ORFquant_supplemented_final <- HCT_N_AID_UPF1_ORFquant_supplement
 
 # Export annotation
 rtracklayer::export.gff(HCT_N_AID_UPF1_ORFquant_supplemented_final,
-                    "Resources/NMDRHT/HCT_N_AID_UPF1_ORFquant_supplemented_final.gtf")
+                        "Resources/NMDRHT/HCT_N_AID_UPF1_ORFquant_supplemented_final.gtf")
 
 # Run sort and index
 command_sort <- paste(c("/home/volker/Tools/IGV_2.14.1/igvtools ",

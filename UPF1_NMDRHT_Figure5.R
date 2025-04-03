@@ -938,7 +938,7 @@ Rev_1_F5_transcript_test_down_klus_cond_n <- Rev_1_F5_transcript_test_down_klus_
   summarize(n=n()) %>% 
   dplyr::rename("DTE_cluster" = "DTE_cluster_down")
 
- #### Combined Up/Down ------------------------------------------------
+#### Combined Up/Down ------------------------------------------------
 Rev_1_F5_transcript_test_combined_klus <- Rev_1_F5_transcript_test_down_klus_cond_forPlot %>% 
   # filter(exp_cond %in% c("UPF1_AID",
   #                        "UPF1_AID_Rec")) %>% 
@@ -1539,14 +1539,14 @@ edgeR_DTE_NMDRHT_combined_DTE_cluster_NMD_relevance_complete_bin %>%
   dplyr::count() %>% 
   ungroup() %>% 
   mutate(NMD_bin_tx = fct_rev(fct_relevel(NMD_bin_tx,
-                                   "up_(75,100]",
-                                   "up_(50,75]",
-                                   "up_(25,50]",
-                                   "up_[0,25]",
-                                   "down_[0,25]",
-                                   "down_(25,50]",
-                                   "down_(50,75]",
-                                   "down_(75,100]",
+                                          "up_(75,100]",
+                                          "up_(50,75]",
+                                          "up_(25,50]",
+                                          "up_[0,25]",
+                                          "down_[0,25]",
+                                          "down_(25,50]",
+                                          "down_(50,75]",
+                                          "down_(75,100]",
   ))) %>% 
   # mutate(n = case_when(UpDown == "up" ~ n,
   #                      UpDown == "down" ~ -n)) %>% 
@@ -1844,16 +1844,16 @@ NMDRHT.v1.2_MainTable %>%
 NMDRHT.v1.2_MainTable %>%  
   filter(!DTE_cluster %in% c("not_expressed")) %>% 
   mutate(DTE_cluster = (fct_relevel(DTE_cluster,
-                                           "up 1:early",
-                                           "up 2:delayed",
-                                           "up 3:late",
-                                           "up 4:inverse",  
-                                           "expressed",
-                                           "not_expressed",
-                                           "down 4:inverse",
-                                           "down 3:late",
-                                           "down 2:delayed",
-                                           "down 1:early"))) %>% 
+                                    "up 1:early",
+                                    "up 2:delayed",
+                                    "up 3:late",
+                                    "up 4:inverse",  
+                                    "expressed",
+                                    "not_expressed",
+                                    "down 4:inverse",
+                                    "down 3:late",
+                                    "down 2:delayed",
+                                    "down 1:early"))) %>% 
   mutate(NMD_tx_status = fct_relevel(NMD_tx_status,
                                      "coding",
                                      "predicted_coding",
@@ -2651,14 +2651,14 @@ NMDRHT.v1.2_MainTable %>%
   filter(UpDown == "up") %>% 
   mutate(NMD_bin_updown = paste0(UpDown,"_",NMD_bin_tx)) %>% 
   mutate(NMD_bin_updown = fct_rev(fct_relevel(NMD_bin_updown,
-                                       "up_(75,100]",
-                                       "up_(50,75]",
-                                       "up_(25,50]",
-                                       "up_[0,25]",
-                                       "down_[0,25]",
-                                       "down_(25,50]",
-                                       "down_(50,75]",
-                                       "down_(75,100]",
+                                              "up_(75,100]",
+                                              "up_(50,75]",
+                                              "up_(25,50]",
+                                              "up_[0,25]",
+                                              "down_[0,25]",
+                                              "down_(25,50]",
+                                              "down_(50,75]",
+                                              "down_(75,100]",
   ))) %>% 
   ggplot(aes(x=NMD_bin_updown,
              y=logFC,
@@ -2821,11 +2821,11 @@ NMDRHT.v1.2_MainTable %>%
                                         kdeg_conclusion == "Not Sig." & RNA_conclusion == "Downregulated" & Mech_conclusion == "Synthesis" ~ "Decreased Syn.",
                                         TRUE ~ "n.s.")) %>% 
   mutate(overall_conclusion = fct_rev(fct_relevel(overall_conclusion,
-                                          "Stabilized",
-                                          "Increased Syn.",
-                                          "n.s.",
-                                          "Decreased Syn.",
-                                          "Destabilized"))) %>% 
+                                                  "Stabilized",
+                                                  "Increased Syn.",
+                                                  "n.s.",
+                                                  "Decreased Syn.",
+                                                  "Destabilized"))) %>% 
   left_join(edgeR_DTE_NMDRHT_combined %>% 
               filter(condition_2 %in% c("UPF1_Nter_12h",
                                         "UPF1_FKBP_HCT_12h",
@@ -2903,7 +2903,7 @@ ggsave(file.path("Plots", "Figure5", "Rev_1_F5_G_log2FC_UPF1_12h_DTE_gene_Conclu
 #### tx -vs- gene-level ----------------------------------------------------------
 NMDRHT.v1.2_MainTable %>% 
   left_join(GENCODE_v42_MainTable %>% dplyr::select(gene_id,
-                                                      DGE_cluster)) %>% 
+                                                    DGE_cluster)) %>% 
   mutate(DGE_cluster = fct_relevel(DGE_cluster, 
                                    "up 1:early",
                                    "up 2:delayed",
@@ -2950,7 +2950,7 @@ NMDRHT.v1.2_MainTable %>%
   left_join(edgeR_DTE_NMDRHT_combined %>% 
               filter(condition_2 %in% c("UPF1_Nter_12h"))) %>%
   left_join(GENCODE_v42_MainTable %>% dplyr::select(gene_id,
-                                                      DGE_cluster)) %>% 
+                                                    DGE_cluster)) %>% 
   left_join(DESeq2_DGE_combined %>% 
               filter(condition_2 %in% c("UPF1_Nter_12h")) %>% 
               dplyr::select(gene_id, log2FoldChange)) %>% 
@@ -2986,12 +2986,12 @@ NMDRHT.v1.2_MainTable %>%
   ggrastr::rasterise(ggpointdensity::geom_pointdensity(adjust = 4,size = 0.25),
                      dpi=1200, dev = "cairo") +
   ggpmisc::stat_poly_line(show.legend=FALSE,
-                 alpha=0.75,
-                 color="gray") +
+                          alpha=0.75,
+                          color="gray") +
   ggpmisc::stat_poly_eq(mapping = ggpmisc::use_label(c("adj.R2", "eq"), sep = "\n"),
-               size = 5*0.30,
-               color="gray20",
-               label.y = "bottom", label.x = "right") +
+                        size = 5*0.30,
+                        color="gray20",
+                        label.y = "bottom", label.x = "right") +
   facet_wrap(~NMD_50nt_rule) +
   scale_color_viridis_c(option="mako") +
   coord_fixed(ratio=1,
@@ -3241,12 +3241,12 @@ ISAR_DTU_NMDRHT_combined %>%
         plot.caption = element_text(size = 6),
         text=element_text(family="Arial")) +
   ggpmisc::stat_poly_line(show.legend=FALSE,
-                 alpha=0.75,
-                 color="gray") +
+                          alpha=0.75,
+                          color="gray") +
   ggpmisc::stat_poly_eq(mapping = ggpmisc::use_label(c("adj.R2", "eq"), sep = "\n"),
-               size = 5*0.30,
-               color="gray20",
-               label.y = "bottom", label.x = "right") +
+                        size = 5*0.30,
+                        color="gray20",
+                        label.y = "bottom", label.x = "right") +
   facet_wrap(~NMD_50nt_rule, nrow=1) +
   scale_color_viridis_c(option="mako") +
   theme(axis.text.x=element_text(angle = 90, vjust = 0.5, hjust=1)) +
@@ -3321,12 +3321,12 @@ ISAR_DTU_NMDRHT_combined %>%
         plot.caption = element_text(size = 6),
         text=element_text(family="Arial")) +
   ggpmisc::stat_poly_line(show.legend=FALSE,
-                 alpha=0.75,
-                 color="gray") +
+                          alpha=0.75,
+                          color="gray") +
   ggpmisc::stat_poly_eq(mapping = ggpmisc::use_label(c("adj.R2", "eq"), sep = "\n"),
-               size = 5*0.30,
-               color="gray20",
-               label.y = "bottom", label.x = "right") +
+                        size = 5*0.30,
+                        color="gray20",
+                        label.y = "bottom", label.x = "right") +
   facet_wrap(~NMD_50nt_rule, nrow=1) +
   scale_color_viridis_c(option="mako") +
   theme(axis.text.x=element_text(angle = 90, vjust = 0.5, hjust=1)) +
@@ -3904,13 +3904,13 @@ UPF1_NMDRHT_EZbakR_TEC_combined %>%
                alpha=0.75,
                linewidth=0.1) +
   scale_fill_manual(values=c("up 1:early" = "#67001f",
-                              "up 2:delayed" = "#b2182b",
-                              "up 3:late" = "#d6604d",
-                              "up 4:inverse" = "#cfbeb4",
-                              "down 4:inverse" = "#b9c3c8",
-                              "down 3:late" = "#92c5de",
-                              "down 2:delayed" = "#4393c3",
-                              "down 1:early" = "#053061")) +
+                             "up 2:delayed" = "#b2182b",
+                             "up 3:late" = "#d6604d",
+                             "up 4:inverse" = "#cfbeb4",
+                             "down 4:inverse" = "#b9c3c8",
+                             "down 3:late" = "#92c5de",
+                             "down 2:delayed" = "#4393c3",
+                             "down 1:early" = "#053061")) +
   scale_y_continuous(name = "log2FC",
                      # breaks = c(-3,-2,-1,0,1),
                      breaks = c(-3,-2,-1,0,1),
@@ -4017,12 +4017,12 @@ UPF1_NMDRHT_EZbakR_TEC_combined %>%
   filter(condition == "UPF1_12h") %>% 
   # filter(UpDown == "up") %>% 
   mutate(NMD_tx_status = (fct_relevel(NMD_tx_status,
-                                     "coding",
-                                     "predicted_coding",
-                                     "NMD",
-                                     "predicted_NMD",
-                                     "mixed",
-                                     "lncRNA"))) %>%
+                                      "coding",
+                                      "predicted_coding",
+                                      "NMD",
+                                      "predicted_NMD",
+                                      "mixed",
+                                      "lncRNA"))) %>%
   ggplot(aes(x=NMD_tx_status,
              y=L2FC_kdeg_tx,
              fill=NMD_tx_status)) +
@@ -4320,10 +4320,10 @@ NMDRHT.v1.2_MainTable_EZbakR_tx_all <- NMDRHT.v1.2_MainTable %>%
               filter(condition_2 %in% c("UPF1_Nter_12h")) %>% 
               dplyr::select(gene_id, baseMean)) %>% 
   left_join(UPF1_NMDRHT_EZbakR_TEC_combined %>% 
-            filter(condition == "UPF1_12h") %>% dplyr::select(transcript_id,
-                                                              L2FC_kdeg_tx,
-                                                              padj_kdeg_tx,
-                                                              kdeg_tx_conclusion))
+              filter(condition == "UPF1_12h") %>% dplyr::select(transcript_id,
+                                                                L2FC_kdeg_tx,
+                                                                padj_kdeg_tx,
+                                                                kdeg_tx_conclusion))
 
 NMDRHT.v1.2_MainTable_EZbakR_tx_all %>% 
   mutate(EZbakR_detected = case_when(is.na(kdeg_tx_conclusion) ~ FALSE,
@@ -4364,19 +4364,19 @@ NMDRHT.v1.2_MainTable_EZbakR_tx_all %>%
   geom_text(aes(label = case_when(n_per > 20 & EZbakR_detected == TRUE ~ paste0("n=",
                                                                                 n,
                                                                                 "\n(",
-    round(n_per,0),
-    "%)"),
-    TRUE ~ "")),
-    color="white",
-    size = 4*0.36,
-    angle=90,
-    position = position_stack(vjust = 0.5)
+                                                                                round(n_per,0),
+                                                                                "%)"),
+                                  TRUE ~ "")),
+            color="white",
+            size = 4*0.36,
+            angle=90,
+            position = position_stack(vjust = 0.5)
   ) +
   geom_text(aes(label = case_when(n_per > 20 & EZbakR_detected == FALSE ~ paste0("n=",
-                                                                                  n,
-                                                                                  "\n(",
-                                                                                  round(n_per,0),
-                                                                                  "%)"),
+                                                                                 n,
+                                                                                 "\n(",
+                                                                                 round(n_per,0),
+                                                                                 "%)"),
                                   TRUE ~ "")),
             color="black",
             size = 4*0.36,

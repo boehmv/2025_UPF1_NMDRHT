@@ -84,14 +84,14 @@ NMDRHT.v1.2_MainTable_bakR_gene_all <- NMDRHT.v1.2_MainTable %>%
               filter(condition_2 %in% c("UPF1_Nter_12h")) %>% 
               dplyr::select(gene_id, baseMean)) %>% 
   left_join(GENCODE_v42_MainTable %>% dplyr::select(gene_id,
-                                                      L2FC_kdeg,
-                                                      padj_kdeg,
-                                                      L2FC_ksyn,
-                                                      padj_ksyn,
-                                                      Mech_score,
-                                                      kdeg_conclusion,
-                                                      RNA_conclusion,
-                                                      Mech_conclusion))
+                                                    L2FC_kdeg,
+                                                    padj_kdeg,
+                                                    L2FC_ksyn,
+                                                    padj_ksyn,
+                                                    Mech_score,
+                                                    kdeg_conclusion,
+                                                    RNA_conclusion,
+                                                    Mech_conclusion))
 
 # How many transcripts with which mechanism conclusion
 NMDRHT.v1.2_MainTable_bakR_gene_all %>% 
@@ -267,16 +267,16 @@ Rev_1_F6_DTE_up_no_NMD_geneID <- split(NMDRHT.v1.2_MainTable_bakR_gene %>%
                                          pull(Mech_conclusion)) 
 
 Rev_1_F6_DTE_up_no_NMD_gostres <- gprofiler2::gost(query = Rev_1_F6_DTE_up_no_NMD_geneID,
-                                       custom_bg = Rev_1_F6_DTE_up_no_NMD_bg,
-                                       ordered_query = TRUE,
-                                       # multi_query = TRUE,
-                                       sources = "GO:BP",
-                                       domain_scope = "custom",
-                                       organism = "hsapiens",
-                                       correction_method = c("gSCS"),
-                                       # evcodes = TRUE,
-                                       # as_short_link = TRUE,
-                                       significant = FALSE)
+                                                   custom_bg = Rev_1_F6_DTE_up_no_NMD_bg,
+                                                   ordered_query = TRUE,
+                                                   # multi_query = TRUE,
+                                                   sources = "GO:BP",
+                                                   domain_scope = "custom",
+                                                   organism = "hsapiens",
+                                                   correction_method = c("gSCS"),
+                                                   # evcodes = TRUE,
+                                                   # as_short_link = TRUE,
+                                                   significant = FALSE)
 
 Rev_1_F6_DTE_up_no_NMD_gostres_result <- Rev_1_F6_DTE_up_no_NMD_gostres$result
 
@@ -331,12 +331,12 @@ ggsave(file.path("Plots", "Figure6", "Rev_1_F6_A4_DTE_up_no_NMD_gostres_result.p
 ####### Synth GO terms  ---------------------------------------------
 
 simMatrix_F6_DTE_up_no_NMD <- rrvgo::calculateSimMatrix(Rev_1_F6_DTE_up_no_NMD_gostres_result %>% 
-                                                   filter(query == "Synthesis") %>% 
-                                                   filter(p_value < 0.05) %>% 
-                                                   pull(term_id),
-                                                 orgdb="org.Hs.eg.db",
-                                                 ont="BP",
-                                                 method="Rel")
+                                                          filter(query == "Synthesis") %>% 
+                                                          filter(p_value < 0.05) %>% 
+                                                          pull(term_id),
+                                                        orgdb="org.Hs.eg.db",
+                                                        ont="BP",
+                                                        method="Rel")
 
 scores_F6_DTE_up_no_NMD <- setNames(-log10(Rev_1_F6_DTE_up_no_NMD_gostres_result %>% 
                                              filter(query == "Synthesis") %>% 
@@ -347,9 +347,9 @@ scores_F6_DTE_up_no_NMD <- setNames(-log10(Rev_1_F6_DTE_up_no_NMD_gostres_result
                                       pull(term_id))
 
 reducedTerms_F6_DTE_up_no_NMD <- rrvgo::reduceSimMatrix(simMatrix_F6_DTE_up_no_NMD,
-                                                 scores_F6_DTE_up_no_NMD,
-                                                 threshold=0.7,
-                                                 orgdb="org.Hs.eg.db")
+                                                        scores_F6_DTE_up_no_NMD,
+                                                        threshold=0.7,
+                                                        orgdb="org.Hs.eg.db")
 
 rrvgo::scatterPlot(simMatrix_F6_DTE_up_no_NMD, reducedTerms_F6_DTE_up_no_NMD)
 rrvgo::treemapPlot(reducedTerms_F6_DTE_up_no_NMD)
@@ -393,7 +393,7 @@ NMDRHT.v1.2_MainTable_EZbakR_tx_all <- NMDRHT.v1.2_MainTable %>%
 # How many transcripts with which mechanism conclusion
 NMDRHT.v1.2_MainTable_EZbakR_tx_all %>% 
   mutate(EZbakR_detected = case_when(is.na(kdeg_tx_conclusion) ~ FALSE,
-                                   !is.na(kdeg_tx_conclusion) ~ TRUE)) %>% 
+                                     !is.na(kdeg_tx_conclusion) ~ TRUE)) %>% 
   dplyr::count(NMD_50nt_rule, kdeg_tx_conclusion) %>% 
   group_by(NMD_50nt_rule) %>% 
   mutate(n_per = n/sum(n))
@@ -816,11 +816,11 @@ NMDRHT.v1.2_MainTable %>%
         plot.caption = element_text(size = 6),
         text=element_text(family="Arial")) +
   ggdist::stat_pointinterval(alpha = .5, 
-                     size=0.2,
-                     interval_linewidth = 0.25,
-                     stroke=0,
-                     point_size = 1.5,
-                     show.legend = TRUE) +
+                             size=0.2,
+                             interval_linewidth = 0.25,
+                             stroke=0,
+                             point_size = 1.5,
+                             show.legend = TRUE) +
   coord_cartesian(xlim = c(0,5000)) +
   scale_color_manual(values=c("up 1:early" = "#67001f",
                               "up 2:delayed" = "#b2182b",
@@ -872,9 +872,9 @@ for_plot <- NMDRHT.v1.2_MainTable %>%
                                     "down 1:early")))
 
 ggpubr::ggqqplot(for_plot, x = "utr3_len",
-         color = "DTE_cluster", 
-         # palette = c("#0073C2FF", "#FC4E07"),
-         ggtheme = ggpubr::theme_pubclean())
+                 color = "DTE_cluster", 
+                 # palette = c("#0073C2FF", "#FC4E07"),
+                 ggtheme = ggpubr::theme_pubclean())
 
 # Perform non-parametric analog of the one-way ANOVA -> Dunn's Test
 for_plot %>% rstatix::dunn_test(utr3_len ~ DTE_cluster) %>% 
@@ -926,12 +926,12 @@ NMDRHT.v1.2_MainTable_HQ_up_early %>%
                      dpi=1200, dev = "cairo") +
   scale_color_viridis_c(option="mako") +
   ggpmisc::stat_poly_line(show.legend=FALSE,
-                 alpha=0.75,
-                 color="gray") +
+                          alpha=0.75,
+                          color="gray") +
   ggpmisc::stat_poly_eq(mapping = ggpmisc::use_label(c("adj.R2")),
-               size = 5*0.30,
-               color="gray20",
-               label.y = "bottom", label.x = "right") +
+                        size = 5*0.30,
+                        color="gray20",
+                        label.y = "bottom", label.x = "right") +
   facet_wrap(~condition_2, nrow=1)  +
   force_panelsizes(rows = unit(20, "mm"),
                    cols = unit(10, "mm"))
@@ -1055,11 +1055,11 @@ NMDRHT.v1.2_MainTable %>%
         plot.caption = element_text(size = 6),
         text=element_text(family="Arial")) +
   ggdist::stat_halfeye(alpha = .5, 
-               size=1,
-               stroke=0,
-               position = position_dodge(0.9),
-               point_size = 2,
-               show.legend = TRUE) +
+                       size=1,
+                       stroke=0,
+                       position = position_dodge(0.9),
+                       point_size = 2,
+                       show.legend = TRUE) +
   scale_color_manual(values=c("TRUE" = "#B09771",
                               "FALSE" = "#214D65")) +
   # scale_fill_manual(values=c("up 1:early" = "#67001f",
@@ -1153,12 +1153,12 @@ NMDRHT.v1.2_MainTable_HQ_up_early %>%
                      dpi=1200, dev = "cairo") +
   scale_color_viridis_c(option="mako") +
   ggpmisc::stat_poly_line(show.legend=FALSE,
-                 alpha=0.75,
-                 color="gray") +
+                          alpha=0.75,
+                          color="gray") +
   ggpmisc::stat_poly_eq(mapping = ggpmisc::use_label(c("adj.R2")),
-               size = 5*0.30,
-               color="gray20",
-               label.y = "bottom", label.x = "right") +
+                        size = 5*0.30,
+                        color="gray20",
+                        label.y = "bottom", label.x = "right") +
   facet_wrap(~condition_2, nrow=1)  +
   force_panelsizes(rows = unit(20, "mm"),
                    cols = unit(10, "mm"))
@@ -1573,8 +1573,8 @@ library("biomaRt")
 
 # Initialize bioMart | GENCODE v.42 is equal to ensembl version 108
 ensembl_108 <- biomaRt::useEnsembl(biomart = 'genes', 
-                         dataset = 'hsapiens_gene_ensembl',
-                         version = 108)
+                                   dataset = 'hsapiens_gene_ensembl',
+                                   version = 108)
 
 # Perform bioMart request
 RMD_tableS1_filt_ENSG <- getBM(c("ensembl_gene_id_version","hgnc_symbol", "refseq_mrna"), "refseq_mrna", RMD_tableS1_filt_missingIDs$ncbi_refseq, ensembl_108)
@@ -3289,12 +3289,12 @@ NMDRHT.v1.2_MainTable_forCorrelation  %>%
                   utr3_len)) %>% 
   group_by(condition_2,NMD_50nt_rule) %>% 
   rstatix::cor_test(vars = c("logFC"),
-           vars2 = c("num_of_downEJs",
-                     "stop_to_lastEJ",
-                     "NMD_n_sig_tx_perc",
-                     "utr5_len",
-                     "cds_len",
-                     "utr3_len")) %>% 
+                    vars2 = c("num_of_downEJs",
+                              "stop_to_lastEJ",
+                              "NMD_n_sig_tx_perc",
+                              "utr5_len",
+                              "cds_len",
+                              "utr3_len")) %>% 
   mutate(var2 = case_when(var2 == "num_of_downEJs" ~ "num. downstream EJs",
                           var2 == "stop_to_lastEJ" ~ "distance stop-lastEJ",
                           var2 == "NMD_n_sig_tx_perc" ~ "NMD relevance (%)",
@@ -3511,11 +3511,11 @@ NMDRHT.v1.2_MainTable %>%
         plot.caption = element_text(size = 6),
         text=element_text(family="Arial")) +
   ggdist::stat_halfeye(alpha = .5, 
-               size=1,
-               stroke=0,
-               position = position_dodge(0.9),
-               point_size = 2,
-               show.legend = TRUE) +
+                       size=1,
+                       stroke=0,
+                       position = position_dodge(0.9),
+                       point_size = 2,
+                       show.legend = TRUE) +
   scale_color_manual(values=c("TRUE" = "#B09771",
                               "FALSE" = "#214D65")) +
   # scale_fill_manual(values=c("up 1:early" = "#67001f",

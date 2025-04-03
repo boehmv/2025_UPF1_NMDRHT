@@ -110,7 +110,7 @@ gtf_gencode_df_short %>%
                                     "protein-coding",
                                     "NMD",
                                     "lncRNA"
-                                    ))) %>% 
+  ))) %>% 
   group_by(transcript_support_level, type) %>% 
   summarize(n=n()) %>% 
   ungroup() %>% 

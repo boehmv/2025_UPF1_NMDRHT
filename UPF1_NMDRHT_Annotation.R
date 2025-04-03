@@ -22,18 +22,18 @@ library(GenomicFeatures)
 ## Prepared only once - GENCODE v42 simplify
 
 gencode.v42.annotation <- rtracklayer::readGFF("Resources/GENCODE/gencode.v42.annotation.gff3.gz",
-                                           filter = list(type=c("gene",
-                                                                "transcript")))
+                                               filter = list(type=c("gene",
+                                                                    "transcript")))
 gencode.v42.annotation <- as_tibble(gencode.v42.annotation)
 
 gencode.v42.annotation_tags <- gencode.v42.annotation %>%
   mutate(ensembl_canonical = case_when(str_detect(tag, "Ensembl_canonical") ~ TRUE,
-                                                  TRUE ~ FALSE)) %>%
-  mutate(ensembl_basic = case_when(str_detect(tag, "basic") ~ TRUE,
                                        TRUE ~ FALSE)) %>%
+  mutate(ensembl_basic = case_when(str_detect(tag, "basic") ~ TRUE,
+                                   TRUE ~ FALSE)) %>%
   mutate(appris_principal = case_when(str_detect(tag, "appris_principal") ~ TRUE,
-                                   TRUE ~ FALSE)) 
-  
+                                      TRUE ~ FALSE)) 
+
 
 gtf_gencode_df_short <- gencode.v42.annotation_tags %>%
   dplyr::select("type",
@@ -88,7 +88,7 @@ gtf_gencode_df_short %>%
 
 # Import LR dataset metadata
 NMDRHT_LR_datasets <- read_csv("Resources/Longread/NMDRHT_LR_complete_datasets.csv", 
-                                                trim_ws = TRUE) %>% 
+                               trim_ws = TRUE) %>% 
   mutate(unique_ID = fct_inorder(unique_ID)) %>% 
   mutate(method = fct_inorder(method)) %>% 
   mutate(sequencing = fct_inorder(sequencing)) %>% 
@@ -103,7 +103,7 @@ NMDRHT_LR_datasets <- read_csv("Resources/Longread/NMDRHT_LR_complete_datasets.c
 ##
 # Import SR dataset metadata
 NMDRHT_SR_datasets <- read_csv("Resources/Shortread/NMDRHT_SR_complete_datasets.csv", 
-                                         trim_ws = TRUE) %>% 
+                               trim_ws = TRUE) %>% 
   mutate(unique_ID = fct_inorder(unique_ID)) %>% 
   mutate(method = fct_inorder(method)) %>% 
   mutate(sequencing = fct_inorder(sequencing)) %>% 
@@ -140,7 +140,7 @@ NMDRHT_SQANTI3 <- NMDRHT_datasets %>%
                               pull(SQANTI_path), 
                             id = "SQANTI_path")) %>% 
   dplyr::rename("GTF_transcript_id" = "isoform",
-         "seqname" = "chrom") %>%
+                "seqname" = "chrom") %>%
   dplyr::filter(seqname %in% selected_chromosomes) %>% 
   select_if(~sum(!is.na(.)) > 0)
 
@@ -167,12 +167,12 @@ NMDRHT_SQANTI3_GENCODE <- NMDRHT_SQANTI3 %>%
               dplyr::select(transcript_id, transcript_type, transcript_name, transcript_support_level, ensembl_canonical, ensembl_basic, appris_principal),
             by=c("associated_transcript" = "transcript_id")) %>% 
   dplyr::rename("GENCODE_gene_id" = "associated_gene",
-         "GENCODE_gene_name" = "gene_name",
-         "GENCODE_gene_type" = "gene_type",
-         "GENCODE_transcript_id" = "associated_transcript",
-         "GENCODE_transcript_name" = "transcript_name",
-         "GENCODE_transcript_type" = "transcript_type",
-         "GENCODE_transcript_support_level" = "transcript_support_level",) %>% 
+                "GENCODE_gene_name" = "gene_name",
+                "GENCODE_gene_type" = "gene_type",
+                "GENCODE_transcript_id" = "associated_transcript",
+                "GENCODE_transcript_name" = "transcript_name",
+                "GENCODE_transcript_type" = "transcript_type",
+                "GENCODE_transcript_support_level" = "transcript_support_level",) %>% 
   relocate(GENCODE_gene_id, GENCODE_gene_name, GENCODE_gene_type,
            GENCODE_transcript_id, GENCODE_transcript_name, GENCODE_transcript_type, GENCODE_transcript_support_level,
            ensembl_canonical, ensembl_basic, appris_principal,
@@ -213,7 +213,7 @@ NMDRHT_fromGTF <- NMDRHT_datasets %>%
                        sep = "\\\"",
                        extra = "drop",
                        fill = "right")
-            )
+  )
 
 ##
 ### Join GTF & SQANTI3  ----------------------------------------------------------------
@@ -246,21 +246,21 @@ save(NMDRHT_datasets,
 
 # Run gffcompare script
 command_gffcompare_NMDRHT <- paste(c("bash ",
-                         "/home/volker/2025_UPF1_NMDRHT/Resources/NMDRHT/gffcompare/NMDRHT_gffcompare.sh"), sep="", collapse = "")
+                                     "/home/volker/2025_UPF1_NMDRHT/Resources/NMDRHT/gffcompare/NMDRHT_gffcompare.sh"), sep="", collapse = "")
 
 run_gffcompare_NMDRHT <- system(command_gffcompare_NMDRHT, intern = TRUE)
 
 # Run sort and index
 command_sort_NMDRegHumanTxome <- paste(c("/home/volker/Tools/IGV_2.14.1/igvtools ",
-                        "sort ",
-                        "/home/volker/2025_UPF1_NMDRHT/Resources/NMDRHT/gffcompare/NMDRHT.combined.gtf ",
-                        "/home/volker/2025_UPF1_NMDRHT/Resources/NMDRHT/gffcompare/NMDRHT.combined.sort.gtf"), sep="", collapse = "")
+                                         "sort ",
+                                         "/home/volker/2025_UPF1_NMDRHT/Resources/NMDRHT/gffcompare/NMDRHT.combined.gtf ",
+                                         "/home/volker/2025_UPF1_NMDRHT/Resources/NMDRHT/gffcompare/NMDRHT.combined.sort.gtf"), sep="", collapse = "")
 
 run_sort_NMDRegHumanTxome <- system(command_sort_NMDRegHumanTxome, intern = TRUE)
 
 command_index_NMDRegHumanTxome <- paste(c("/home/volker/Tools/IGV_2.14.1/igvtools ",
-                         "index ",
-                         "/home/volker/2025_UPF1_NMDRHT/Resources/NMDRHT/gffcompare/NMDRHT.combined.sort.gtf"), sep="", collapse = "")
+                                          "index ",
+                                          "/home/volker/2025_UPF1_NMDRHT/Resources/NMDRHT/gffcompare/NMDRHT.combined.sort.gtf"), sep="", collapse = "")
 
 run_index_NMDRegHumanTxome <- system(command_index_NMDRegHumanTxome, intern = TRUE)
 
@@ -269,17 +269,17 @@ run_index_NMDRegHumanTxome <- system(command_index_NMDRegHumanTxome, intern = TR
 ##
 # The tracking file gives information about which UIC was found in which individual transcriptome
 NMDRHT_tracking <- read_delim("/home/volker/2025_UPF1_NMDRHT/Resources/NMDRHT/gffcompare/NMDRHT.tracking", 
-                                      delim = "\t", 
-                                      escape_double = FALSE,
-                                      trim_ws = TRUE,
-                                      na = c("", "NA", "-"),
-                                      col_names = c("NMDRHT_transcript_id",
-                                                    "NMDRHT_locus_id",
-                                                    "reference_id",
-                                                    "class_code",
-                                                    NMDRHT_datasets %>% 
-                                                      mutate(unique_ID = as.character(unique_ID)) %>% 
-                                                      dplyr::pull(unique_ID)))
+                              delim = "\t", 
+                              escape_double = FALSE,
+                              trim_ws = TRUE,
+                              na = c("", "NA", "-"),
+                              col_names = c("NMDRHT_transcript_id",
+                                            "NMDRHT_locus_id",
+                                            "reference_id",
+                                            "class_code",
+                                            NMDRHT_datasets %>% 
+                                              mutate(unique_ID = as.character(unique_ID)) %>% 
+                                              dplyr::pull(unique_ID)))
 
 ## Clean columns  -------------------------------------------------
 NMDRHT_tracking_cleaned <- NMDRHT_tracking %>% 
@@ -306,60 +306,60 @@ NMDRHT_tracking_cleaned <- NMDRHT_tracking %>%
 ## Calculate overlap metrics  -------------------------------------------------
 NMDRHT_tracking_cleaned_sum <- NMDRHT_tracking_cleaned %>% 
   mutate(UIC_total_support = rowSums(!is.na(dplyr::select(., c(NMDRHT_datasets %>% 
-                                                     mutate(unique_ID = as.character(unique_ID)) %>% 
-                                                     dplyr::pull(unique_ID))))),
+                                                                 mutate(unique_ID = as.character(unique_ID)) %>% 
+                                                                 dplyr::pull(unique_ID))))),
          UIC_LR_support = rowSums(!is.na(dplyr::select(., c(NMDRHT_datasets %>% 
-                                                             filter(sequencing != "Illumina") %>%
-                                                             mutate(unique_ID = as.character(unique_ID)) %>% 
-                                                             dplyr::pull(unique_ID))))),
+                                                              filter(sequencing != "Illumina") %>%
+                                                              mutate(unique_ID = as.character(unique_ID)) %>% 
+                                                              dplyr::pull(unique_ID))))),
          UIC_LR_Bambu_support = rowSums(!is.na(dplyr::select(., c(NMDRHT_datasets %>% 
-                                                         filter(method == "Bambu") %>%
-                                                         mutate(unique_ID = as.character(unique_ID)) %>% 
-                                                         dplyr::pull(unique_ID))))),
+                                                                    filter(method == "Bambu") %>%
+                                                                    mutate(unique_ID = as.character(unique_ID)) %>% 
+                                                                    dplyr::pull(unique_ID))))),
          UIC_LR_IsoQuant_support = rowSums(!is.na(dplyr::select(., c(NMDRHT_datasets %>% 
-                                                            filter(method == "IsoQuant") %>%
-                                                            mutate(unique_ID = as.character(unique_ID)) %>% 
-                                                            dplyr::pull(unique_ID))))),
+                                                                       filter(method == "IsoQuant") %>%
+                                                                       mutate(unique_ID = as.character(unique_ID)) %>% 
+                                                                       dplyr::pull(unique_ID))))),
          UIC_LR_StringTie2_support = rowSums(!is.na(dplyr::select(., c(NMDRHT_datasets %>%
-                                                              filter(method == "StringTie2" & sequencing != "Illumina") %>%
+                                                                         filter(method == "StringTie2" & sequencing != "Illumina") %>%
+                                                                         mutate(unique_ID = as.character(unique_ID)) %>%
+                                                                         dplyr::pull(unique_ID))))),
+         UIC_SR_support = rowSums(!is.na(dplyr::select(., c(NMDRHT_datasets %>%
+                                                              filter(sequencing == "Illumina") %>%
                                                               mutate(unique_ID = as.character(unique_ID)) %>%
                                                               dplyr::pull(unique_ID))))),
-         UIC_SR_support = rowSums(!is.na(dplyr::select(., c(NMDRHT_datasets %>%
-                                                               filter(sequencing == "Illumina") %>%
+         UIC_ONT_dRNA_support = rowSums(!is.na(dplyr::select(., c(NMDRHT_datasets %>%
+                                                                    filter(sequencing == "ONT_dRNA") %>%
+                                                                    mutate(unique_ID = as.character(unique_ID)) %>%
+                                                                    dplyr::pull(unique_ID))))),
+         UIC_PacBio_support = rowSums(!is.na(dplyr::select(., c(NMDRHT_datasets %>%
+                                                                  filter(sequencing == "PacBio") %>%
+                                                                  mutate(unique_ID = as.character(unique_ID)) %>%
+                                                                  dplyr::pull(unique_ID))))),
+         UIC_HEK293_support = rowSums(!is.na(dplyr::select(., c(NMDRHT_datasets %>%
+                                                                  filter(cell_line == "HEK293") %>%
+                                                                  mutate(unique_ID = as.character(unique_ID)) %>%
+                                                                  dplyr::pull(unique_ID))))),
+         UIC_HCT116_support = rowSums(!is.na(dplyr::select(., c(NMDRHT_datasets %>%
+                                                                  filter(cell_line == "HCT116") %>%
+                                                                  mutate(unique_ID = as.character(unique_ID)) %>%
+                                                                  dplyr::pull(unique_ID))))),
+         UIC_HFF_support = rowSums(!is.na(dplyr::select(., c(NMDRHT_datasets %>%
+                                                               filter(cell_line == "HFF1") %>%
                                                                mutate(unique_ID = as.character(unique_ID)) %>%
                                                                dplyr::pull(unique_ID))))),
-         UIC_ONT_dRNA_support = rowSums(!is.na(dplyr::select(., c(NMDRHT_datasets %>%
-                                                       filter(sequencing == "ONT_dRNA") %>%
-                                                       mutate(unique_ID = as.character(unique_ID)) %>%
-                                                       dplyr::pull(unique_ID))))),
-         UIC_PacBio_support = rowSums(!is.na(dplyr::select(., c(NMDRHT_datasets %>%
-                                                       filter(sequencing == "PacBio") %>%
-                                                       mutate(unique_ID = as.character(unique_ID)) %>%
-                                                       dplyr::pull(unique_ID))))),
-         UIC_HEK293_support = rowSums(!is.na(dplyr::select(., c(NMDRHT_datasets %>%
-                                                             filter(cell_line == "HEK293") %>%
-                                                             mutate(unique_ID = as.character(unique_ID)) %>%
-                                                             dplyr::pull(unique_ID))))),
-         UIC_HCT116_support = rowSums(!is.na(dplyr::select(., c(NMDRHT_datasets %>%
-                                                           filter(cell_line == "HCT116") %>%
-                                                           mutate(unique_ID = as.character(unique_ID)) %>%
-                                                           dplyr::pull(unique_ID))))),
-         UIC_HFF_support = rowSums(!is.na(dplyr::select(., c(NMDRHT_datasets %>%
-                                                                  filter(cell_line == "HFF1") %>%
-                                                                  mutate(unique_ID = as.character(unique_ID)) %>%
-                                                                  dplyr::pull(unique_ID))))),
          UIC_HUVEC_support = rowSums(!is.na(dplyr::select(., c(NMDRHT_datasets %>%
-                                                                  filter(cell_line == "HUVEC") %>%
+                                                                 filter(cell_line == "HUVEC") %>%
+                                                                 mutate(unique_ID = as.character(unique_ID)) %>%
+                                                                 dplyr::pull(unique_ID))))),
+         UIC_deNovo_support = rowSums(!is.na(dplyr::select(., c(NMDRHT_datasets %>%
+                                                                  filter(annotation == "deNovo") %>%
                                                                   mutate(unique_ID = as.character(unique_ID)) %>%
                                                                   dplyr::pull(unique_ID))))),
-         UIC_deNovo_support = rowSums(!is.na(dplyr::select(., c(NMDRHT_datasets %>%
-                                                           filter(annotation == "deNovo") %>%
-                                                           mutate(unique_ID = as.character(unique_ID)) %>%
-                                                           dplyr::pull(unique_ID))))),
          UIC_GENCODE_support = rowSums(!is.na(dplyr::select(., c(NMDRHT_datasets %>%
-                                                           filter(annotation == "GENCODE") %>%
-                                                           mutate(unique_ID = as.character(unique_ID)) %>%
-                                                           dplyr::pull(unique_ID))))),
+                                                                   filter(annotation == "GENCODE") %>%
+                                                                   mutate(unique_ID = as.character(unique_ID)) %>%
+                                                                   dplyr::pull(unique_ID))))),
          .after = "class_code_simple") %>% 
   left_join(gtf_gencode_df_short %>% 
               dplyr::rename("gffcompare_gene_id" = "gene_id",
@@ -387,14 +387,14 @@ NMDRHT_tracking_cleaned_sum %>%
 NMDRHT_tracking_forJoin <- NMDRHT_tracking_cleaned_sum %>% 
   filter(UIC_total_support >= 2) %>% 
   dplyr::select(NMDRHT_transcript_id, 
-              NMDRHT_locus_id,
-              starts_with("gffcompare"),
-              class_code,
-              class_code_simple,
-              ends_with("_support"),
-              NMDRHT_datasets %>% 
-                mutate(unique_ID = as.character(unique_ID)) %>% 
-                dplyr::pull(unique_ID)) %>% 
+                NMDRHT_locus_id,
+                starts_with("gffcompare"),
+                class_code,
+                class_code_simple,
+                ends_with("_support"),
+                NMDRHT_datasets %>% 
+                  mutate(unique_ID = as.character(unique_ID)) %>% 
+                  dplyr::pull(unique_ID)) %>% 
   pivot_longer(cols=NMDRHT_datasets %>% 
                  mutate(unique_ID = as.character(unique_ID)) %>% 
                  dplyr::pull(unique_ID),
@@ -408,8 +408,8 @@ NMDRHT_tracking_forJoin <- NMDRHT_tracking_cleaned_sum %>%
 # Note that gffcompare and SQANTI3 do not always match the same transcript to the same gene -> thus we need to handle conflicts properly
 NMDRHT_SQANTI3_GENCODE_fromGTF_gffcompare_merge <- NMDRHT_SQANTI3_GENCODE_fromGTF %>% 
   right_join(NMDRHT_tracking_forJoin,
-            by = c("unique_ID" = "unique_ID",
-                   "GTF_transcript_id" = "GTF_transcript_id")) %>% 
+             by = c("unique_ID" = "unique_ID",
+                    "GTF_transcript_id" = "GTF_transcript_id")) %>% 
   dplyr::filter(!is.na(seqname)) %>% 
   mutate(gene_id_conflict = case_when(gffcompare_gene_id == GENCODE_gene_id ~ "exact_match",
                                       str_detect(GENCODE_gene_id, "novelGene") ~ "novel_gene",
@@ -457,7 +457,7 @@ NMDRHT_SQANTI3_GENCODE_fromGTF_gffcompare_merge_exactMatch <-  NMDRHT_SQANTI3_GE
 
 # Second round: fill with transcripts that do not have exact match
 NMDRHT_SQANTI3_GENCODE_fromGTF_gffcompare_merge_conflict <- NMDRHT_SQANTI3_GENCODE_fromGTF_gffcompare_merge %>% 
-filter(!NMDRHT_transcript_id %in% NMDRHT_SQANTI3_GENCODE_fromGTF_gffcompare_merge_exactMatch$NMDRHT_transcript_id)
+  filter(!NMDRHT_transcript_id %in% NMDRHT_SQANTI3_GENCODE_fromGTF_gffcompare_merge_exactMatch$NMDRHT_transcript_id)
 
 NMDRHT_SQANTI3_GENCODE_fromGTF_gffcompare_merge_total <- NMDRHT_SQANTI3_GENCODE_fromGTF_gffcompare_merge_exactMatch %>% 
   bind_rows(NMDRHT_SQANTI3_GENCODE_fromGTF_gffcompare_merge_exactMatch) 
@@ -466,7 +466,7 @@ NMDRHT_SQANTI3_GENCODE_fromGTF_gffcompare_merge_total <- NMDRHT_SQANTI3_GENCODE_
 NMDRHT_SQANTI3_GENCODE_fromGTF_gffcompare_merge_total %>% 
   group_by(gene_id) %>% 
   filter(sum(strand == "+") > 1 & sum(strand == "-") > 1)
-  
+
 # How many gene_ids are left
 NMDRHT_SQANTI3_GENCODE_fromGTF_gffcompare_merge_total %>% 
   distinct(gene_id) %>% 
@@ -490,10 +490,10 @@ NMDRHT_SQANTI3_GENCODE_fromGTF_gffcompare_merge_total %>%
 NMDRHT_tracking_HighSup <- NMDRHT_tracking_cleaned_sum %>% 
   right_join(NMDRHT_SQANTI3_GENCODE_fromGTF_gffcompare_merge_total %>% 
                dplyr::distinct(NMDRHT_transcript_id,
-                        NMDRHT_locus_id,
-                        gene_id,
-                        gene_name,
-                        gene_id_conflict)) %>% 
+                               NMDRHT_locus_id,
+                               gene_id,
+                               gene_name,
+                               gene_id_conflict)) %>% 
   filter(UIC_total_support >= 4) %>% 
   group_by(NMDRHT_locus_id) %>% 
   mutate(mean_UIC_support = mean(UIC_total_support)) %>% 
@@ -577,19 +577,19 @@ NMDRHT_tracking_filtered_ids <- NMDRHT_tracking_filtered %>%
                names_to = "unique_ID",
                values_to = "GTF_transcript_id") %>% 
   filter(!is.na(GTF_transcript_id))
-  
+
 ##
 ## Join ---------------------------------------------------
 ##
 NMDRHT_SQANTI3_GENCODE_fromGTF_Filtered <-NMDRHT_SQANTI3_GENCODE_fromGTF %>% 
   filter(paste0(unique_ID,GTF_transcript_id) %in% (NMDRHT_tracking_filtered_ids %>% 
-                                           mutate(unique_ID_GTF_transcript_id = paste0(unique_ID,GTF_transcript_id)) %>% 
-                                           pull(unique_ID_GTF_transcript_id)
-                                         )) %>% 
+                                                     mutate(unique_ID_GTF_transcript_id = paste0(unique_ID,GTF_transcript_id)) %>% 
+                                                     pull(unique_ID_GTF_transcript_id)
+  )) %>% 
   left_join(NMDRHT_tracking_filtered_ids,
             by = c("unique_ID" = "unique_ID",
                    "GTF_transcript_id" = "GTF_transcript_id")) 
- 
+
 
 ##
 ## Median start/end  ---------------------------------------------------
@@ -645,7 +645,7 @@ NMDRHT_final_selection_part3 <- NMDRHT_SQANTI3_GENCODE_fromGTF_Filtered  %>%
 NMDRHT_final_selection <- NMDRHT_final_selection_part1 %>% 
   bind_rows(NMDRHT_final_selection_part2,
             NMDRHT_final_selection_part3)
-  
+
 # How many transcripts per annotation
 NMDRHT_final_selection %>% 
   distinct(NMDRHT_transcript_id, annotation, .keep_all = TRUE) %>% 
@@ -653,7 +653,7 @@ NMDRHT_final_selection %>%
 
 # Check if no problematic gene_ids exist (containing transcripts on both strands?) -> should be none
 NMDRHT_final_selection %>% 
-group_by(gene_id) %>% 
+  group_by(gene_id) %>% 
   filter(sum(strand == "+") > 1 & sum(strand == "-") > 1)
 
 
@@ -681,25 +681,25 @@ NMDRHT_fromGTF_full <- NMDRHT_datasets %>%
   right_join(readr::read_tsv(NMDRHT_datasets %>%
                                pull(GTF_path),
                              col_names = c("seqnames",
-                                          "source",
-                                          "type",
-                                          "start",
-                                          "end",
-                                          "score",
-                                          "strand",
-                                          "phase",
-                                          "attribute"),
-                            id = "GTF_path") %>% 
-              separate(attribute, 
-                       into = c("GTF_transcript_id",NA,NA), 
-                       sep = "\\;",
-                       extra = "drop",
-                       fill = "right") %>% 
-              separate(GTF_transcript_id, 
-                       into = c(NA,"GTF_transcript_id", NA), 
-                       sep = "\\\"",
-                       extra = "drop",
-                       fill = "right")
+                                           "source",
+                                           "type",
+                                           "start",
+                                           "end",
+                                           "score",
+                                           "strand",
+                                           "phase",
+                                           "attribute"),
+                             id = "GTF_path") %>% 
+               separate(attribute, 
+                        into = c("GTF_transcript_id",NA,NA), 
+                        sep = "\\;",
+                        extra = "drop",
+                        fill = "right") %>% 
+               separate(GTF_transcript_id, 
+                        into = c(NA,"GTF_transcript_id", NA), 
+                        sep = "\\\"",
+                        extra = "drop",
+                        fill = "right")
   )
 
 # Filter full GTF file for selected transcripts
@@ -733,9 +733,9 @@ NMDRHT_final_selection_forGTFexport <- NMDRHT_fromGTF_full_filtered %>%
                             within_CAGE_peak,
                             within_polyA_site,
                             polyA_motif_found
-                     )) %>% 
+              )) %>% 
   dplyr::rename("transcript_id" = "NMDRHT_transcript_id",
-         "width" = "length") %>% 
+                "width" = "length") %>% 
   dplyr::select(-c(SQANTI_path,
                    GTF_path,
                    condition_2,
@@ -749,8 +749,8 @@ NMDRHT_final_selection_forGTFexport <- NMDRHT_fromGTF_full_filtered %>%
                                                 structural_category == "fusion" ~ "F",
                                                 structural_category == "antisense" ~ "AS",
                                                 structural_category == "genic" ~ "G"
-                                                ),
-         .after = structural_category)  %>% 
+  ),
+  .after = structural_category)  %>% 
   mutate(transcript_name = case_when(!is.na(GENCODE_transcript_name) ~ paste0(GENCODE_transcript_name,"_",structural_category_simple),
                                      TRUE ~ paste0(transcript_id,"_",structural_category_simple))) %>% 
   mutate(gene_name = case_when(!is.na(gene_name) ~ gene_name,
@@ -789,7 +789,7 @@ NMDRHT_final_selection_forGTFexport <- NMDRHT_fromGTF_full_filtered %>%
            within_CAGE_peak,
            within_polyA_site,
            polyA_motif_found
-           ) %>% 
+  ) %>% 
   filter(!is.na(start)) %>% 
   dplyr::select(-c(folder)) %>% 
   mutate(across(.cols = c(GENCODE_gene_id,
@@ -819,14 +819,14 @@ NMDRHT_final_selection_forGTFexport <- NMDRHT_fromGTF_full_filtered %>%
                           method,
                           sequencing,
                           annotation
-                          ),
-                .fns = ~case_when(type == "exon" ~ NA,
-                                  TRUE ~ (.))))
+  ),
+  .fns = ~case_when(type == "exon" ~ NA,
+                    TRUE ~ (.))))
 
 # Export as gtf file
 rtracklayer::export(GenomicRanges::makeGRangesFromDataFrame(NMDRHT_final_selection_forGTFexport,
-  keep.extra.columns=TRUE),
-  "Resources/NMDRHT/NMDRHT_final_selection.gtf")
+                                                            keep.extra.columns=TRUE),
+                    "Resources/NMDRHT/NMDRHT_final_selection.gtf")
 
 # Run sort and index
 command_sort <- paste(c("/home/volker/Tools/IGV_2.14.1/igvtools ",
@@ -836,8 +836,8 @@ command_sort <- paste(c("/home/volker/Tools/IGV_2.14.1/igvtools ",
 output_sort <- system(command_sort, intern = TRUE)
 
 command_index <- paste(c("/home/volker/Tools/IGV_2.14.1/igvtools ",
-                        "index ",
-                        "/home/volker/2025_UPF1_NMDRHT/Resources/NMDRHT/NMDRHT_final_selection.sort.gtf"), sep="", collapse = "")
+                         "index ",
+                         "/home/volker/2025_UPF1_NMDRHT/Resources/NMDRHT/NMDRHT_final_selection.sort.gtf"), sep="", collapse = "")
 output_index <- system(command_index, intern = TRUE)
 
 #
@@ -881,11 +881,11 @@ rtracklayer::export(gencode.v42.annotation %>%
 
 # Export canonical-only GENCODE GTF file - run once
 rtracklayer::export(gencode.v42.annotation %>%
-                     filter(transcript_id %in% c(gtf_gencode_df_short %>% filter(ensembl_canonical == TRUE) %>% pull(transcript_id))) , "Resources/GENCODE/gencode.v42.annotation.canonical.gtf")
+                      filter(transcript_id %in% c(gtf_gencode_df_short %>% filter(ensembl_canonical == TRUE) %>% pull(transcript_id))) , "Resources/GENCODE/gencode.v42.annotation.canonical.gtf")
 
 # Export canonical- & NMD-only GENCODE GTF file - run once
 rtracklayer::export(gencode.v42.annotation %>%
-                     filter(transcript_id %in% c(gtf_gencode_df_short %>% filter(ensembl_canonical == TRUE | transcript_type == "nonsense_mediated_decay") %>% pull(transcript_id))) , "Resources/GENCODE/gencode.v42.annotation.canonical_NMD.gtf")
+                      filter(transcript_id %in% c(gtf_gencode_df_short %>% filter(ensembl_canonical == TRUE | transcript_type == "nonsense_mediated_decay") %>% pull(transcript_id))) , "Resources/GENCODE/gencode.v42.annotation.canonical_NMD.gtf")
 
 # Get list of Ensembl canonical transcript ids
 GENCODE_canonical <- gtf_gencode_df_short %>% filter(ensembl_canonical == TRUE) %>% pull(transcript_id)
@@ -998,22 +998,22 @@ run_gffcompare_ORFanage <- system(command_gffcompare_ORFanage, intern = TRUE)
 
 # Run sort and index
 command_sort_ORFanage <- paste(c("/home/volker/Tools/IGV_2.14.1/igvtools ",
-                                         "sort ",
-                                         "/home/volker/2025_UPF1_NMDRHT/Resources/NMDRHT/ORFanage/NMDRHT_ORFanage_all.gtf ",
-                                         "/home/volker/2025_UPF1_NMDRHT/Resources/NMDRHT/ORFanage/NMDRHT_ORFanage_all.sort.gtf"), sep="", collapse = "")
+                                 "sort ",
+                                 "/home/volker/2025_UPF1_NMDRHT/Resources/NMDRHT/ORFanage/NMDRHT_ORFanage_all.gtf ",
+                                 "/home/volker/2025_UPF1_NMDRHT/Resources/NMDRHT/ORFanage/NMDRHT_ORFanage_all.sort.gtf"), sep="", collapse = "")
 
 run_sort_ORFanage <- system(command_sort_ORFanage, intern = TRUE)
 
 command_index_ORFanage <- paste(c("/home/volker/Tools/IGV_2.14.1/igvtools ",
-                                          "index ",
+                                  "index ",
                                   "/home/volker/2025_UPF1_NMDRHT/Resources/NMDRHT/ORFanage/NMDRHT_ORFanage_all.sort.gtf"), sep="", collapse = "")
 
 run_index_ORFanage <- system(command_index_ORFanage, intern = TRUE)
 
 # Import ORFanage stats
 NMDRHT_ORFanage_stats_all <- read_delim("Resources/NMDRHT/ORFanage/NMDRHT_ORFanage_stats_all.txt", 
-                                     delim = "\t", escape_double = FALSE, 
-                                     trim_ws = TRUE) %>%  
+                                        delim = "\t", escape_double = FALSE, 
+                                        trim_ws = TRUE) %>%  
   separate(query_id, 
            into = c("query_id", "ORF_id"), 
            sep = "\\.",
@@ -1051,7 +1051,7 @@ NMDRHT_ORFanage_filt <- NMDRHT_ORFanage_stats_all_canonicalMatch %>%
                                       TRUE ~ "start_other"),
          stop_codon_type = case_when(is.na(stop_codon) ~ "non_coding",
                                      stop_codon == stop_codon_canon ~ "stop_canonical",
-                                      TRUE ~ "stop_other"),
+                                     TRUE ~ "stop_other"),
          .after=stop_codon_canon)  %>% 
   mutate(ORF_type = case_when(start_codon_type == "start_canonical" & stop_codon_type == "stop_canonical" ~ "exact_match",
                               start_codon_type == "start_canonical" ~ "start_match",
@@ -1134,15 +1134,15 @@ NMDRHT_ORFanage_all.sort.gtf <- rtracklayer::readGFF("Resources/NMDRHT/ORFanage/
            within_CAGE_peak, within_polyA_site, polyA_motif_found,
            orfanage_status, orfanage_duplicity, orfanage_template, orfanage_template_source,
            study, GTF_transcript_id, cell_line, method, sequencing, annotation
-           )
+  )
 
 # Recover lost gene_id for exons
 NMDRHT_ORFanage_all.sort.gtf_fixed <- NMDRHT_ORFanage_all.sort.gtf %>%
   filter(transcript_id %in% NMDRHT_ORFanage_collapsed_selected$transcript_id) %>% 
   left_join(NMDRHT_ORFanage_collapsed_selected %>% dplyr::select(transcript_id,
-                                                                  ORF_type,
-                                                                  start_codon_type,
-                                                                  stop_codon_type)) %>% 
+                                                                 ORF_type,
+                                                                 start_codon_type,
+                                                                 stop_codon_type)) %>% 
   separate(transcript_id, 
            into = c("transcript_id", "ORF_id"), 
            sep = "\\.",
@@ -1214,7 +1214,7 @@ NMDRHT_ORFanage_all.sort.gtf_fixed_NMD <- NMDRHT_ORFanage_all.sort.gtf_fixed %>%
                             stop_to_lastEJ,
                             num_of_downEJs,
                             "3'UTR_length"
-                            ) %>% 
+              ) %>% 
               dplyr::rename("UTR3_length" = "3'UTR_length",
                             "NMD_status" = "is_NMD")) %>% 
   mutate(gene_biotype = case_when(is.na(GENCODE_gene_type) & ORF_type != "non_coding" ~ "protein_coding",
@@ -1292,7 +1292,7 @@ save(NMDRHT_ORFanage_all.sort.gtf_fixed,
 ##
 
 NMDRHT.v1.1 <- rtracklayer::readGFF("Resources/NMDRHT/NMDRHT.v1.1.sort.gtf",
-                                              filter = list(type=c("transcript")))
+                                    filter = list(type=c("transcript")))
 
 NMDRHT.v1.1_tbl <- dplyr::as_tibble(NMDRHT.v1.1) %>% 
   dplyr::select(gene_id, transcript_id,

@@ -198,13 +198,13 @@ ggsave(file.path("Plots/Figure3", "Rev_1_F3_A_UPF1_combined_Mechanistic_Dissecti
 
 gtf_gencode_df_short_DGE_cluster <- read_csv("Resources/GENCODE/gtf_gencode_df_short_DGE_cluster.csv") %>% 
   mutate(DGE_cluster = (fct_relevel(DGE_cluster,
-                                           "up 1:early",
-                                           "up 2:delayed",
-                                           "up 3:late",
-                                           "expressed",
-                                           "down 3:late",
-                                           "down 2:delayed",
-                                           "down 1:early")))
+                                    "up 1:early",
+                                    "up 2:delayed",
+                                    "up 3:late",
+                                    "expressed",
+                                    "down 3:late",
+                                    "down 2:delayed",
+                                    "down 1:early")))
 
 gtf_gencode_df_short_DGE_cluster_Mech_4SU <- gtf_gencode_df_short_DGE_cluster %>% 
   left_join(Mechs_UPF1_combined,
@@ -287,14 +287,14 @@ DESeq2_DGE_combined_DGE_cluster_NMD_relevance_complete_bin_Mech_4SU %>%
   mutate(UpDown_NMD_bin = paste0(UpDown,"_",NMD_bin), .after=NMD_bin) %>% 
   filter(!is.na(condition)) %>% 
   mutate(UpDown_NMD_bin = fct_rev(fct_relevel(UpDown_NMD_bin,
-                                          "up_(75,100]",
-                                          "up_(50,75]",
-                                          "up_(25,50]",
-                                          "up_[0,25]",
-                                          "down_[0,25]",
-                                          "down_(25,50]",
-                                          "down_(50,75]",
-                                          "down_(75,100]"))) %>% 
+                                              "up_(75,100]",
+                                              "up_(50,75]",
+                                              "up_(25,50]",
+                                              "up_[0,25]",
+                                              "down_[0,25]",
+                                              "down_(25,50]",
+                                              "down_(50,75]",
+                                              "down_(75,100]"))) %>% 
   pivot_longer(cols= c(L2FC_kdeg,
                        L2FC_ksyn),
                names_to = "rate",
@@ -1160,7 +1160,7 @@ ggsave(file.path("Plots/Figure3", "Rev_1_F3_C_MetabolicRates_CytoNuc_NMD_bin_Dun
 
 ### Ribo-Seq counts --------------------------------------------------------------------- 
 ReadCounts_RiboSeq_Merged <- readxl::read_excel("Resources/Translation/ReadCounts_RiboSeq.xlsx",
-                                        sheet = "Merged")
+                                                sheet = "Merged")
 
 ReadCounts_RiboSeq_Merged %>% 
   dplyr::select(-c(P_sites_total_NMDRegHumanTxome)) %>% 
@@ -1405,11 +1405,11 @@ GENCODE_v42_MainTable %>%
                                           "Decreased Syn.",
                                           "Destabilized")) %>% 
   mutate(class_RiboSeq = fct_relevel(class_RiboSeq,
-                             "Concordant_up",
-                             "Concordant_down",
-                             "Not Sig.",
-                             "Discordant_down",
-                             "Discordant_up"
+                                     "Concordant_up",
+                                     "Concordant_down",
+                                     "Not Sig.",
+                                     "Discordant_down",
+                                     "Discordant_up"
   )) %>% 
   dplyr::count(type,class_RiboSeq,overall_conclusion) %>% 
   group_by(type,class_RiboSeq) %>% 

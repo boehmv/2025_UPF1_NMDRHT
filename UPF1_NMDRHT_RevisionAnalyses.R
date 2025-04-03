@@ -24,7 +24,7 @@ DESeq2_DGE_combined %>%
   filter(experimentSet %in% c("HCT116_UPF1_AID_degradation_this_Study",
                               "HCT116_UPF1_AID_recovery_this_Study")) %>% 
   filter(condition_2 %in% c("UPF1_Nter_24h",
-                          "UPF1_Nter_24h_R0h")) %>% 
+                            "UPF1_Nter_24h_R0h")) %>% 
   dplyr::select(gene_id, log2FoldChange, condition_2) %>% 
   pivot_wider(values_from = log2FoldChange,
               names_from = condition_2,
@@ -35,11 +35,11 @@ DESeq2_DGE_combined %>%
                      dpi=1200, dev = "cairo") +
   scale_color_viridis() +
   ggpmisc::stat_poly_line(show.legend=FALSE,
-                 color="darkred") +
+                          color="darkred") +
   ggpmisc::stat_poly_eq(mapping = ggpmisc::use_label(c("adj.R2", "p.value.label")),
-               size = 5*0.30,
-               color="gray20",
-               label.y = "bottom", label.x = "right") +
+                        size = 5*0.30,
+                        color="gray20",
+                        label.y = "bottom", label.x = "right") +
   theme(strip.background = element_rect(color="black", fill = "white", linewidth=0.1),
         strip.text = element_text(size=6),
         plot.background = element_blank(), 
@@ -86,12 +86,12 @@ ggsave(file.path("Plots", "Revision", "R2_DGE_Correlation_24h.pdf"),
 DESeq2_DGE_combined %>% 
   filter(experimentSet %in% c("HCT116_UPF1_AID_recovery_this_Study")) %>% 
   filter(condition_2 %in% c("UPF1_Nter_24h_R0h",
-                          "UPF1_Nter_24h_R2h",
-                          "UPF1_Nter_24h_R4h",
-                          "UPF1_Nter_24h_R8h",
-                          "UPF1_Nter_24h_R12h",
-                          "UPF1_Nter_24h_R24h",
-                          "UPF1_Nter_24h_R48h")) %>% 
+                            "UPF1_Nter_24h_R2h",
+                            "UPF1_Nter_24h_R4h",
+                            "UPF1_Nter_24h_R8h",
+                            "UPF1_Nter_24h_R12h",
+                            "UPF1_Nter_24h_R24h",
+                            "UPF1_Nter_24h_R48h")) %>% 
   dplyr::select(gene_id, log2FoldChange, condition_2) %>% 
   pivot_wider(values_from = log2FoldChange,
               names_from = condition_2,
@@ -162,8 +162,8 @@ ggsave(file.path("Plots", "Revision", "R2_DGE_Correlation_Recovery.pdf"),
 
 DESeq2_DGE_combined %>% 
   filter(condition_2 %in% c("UPF1_Nter_12h",
-                          "UPF1_FKBP_HCT_12h",
-                          "UPF1_FKBP_HEK_12h")) %>% 
+                            "UPF1_FKBP_HCT_12h",
+                            "UPF1_FKBP_HEK_12h")) %>% 
   dplyr::select(gene_id, log2FoldChange, condition_2) %>% 
   pivot_wider(values_from = log2FoldChange,
               names_from = condition_2,
@@ -242,15 +242,15 @@ DESeq2_DGE_combined_ForCor <- DESeq2_DGE_combined %>%
 DESeq2_DGE_combined_Cor = cor(DESeq2_DGE_combined_ForCor, use="complete.obs")
 
 ggcorrplot::ggcorrplot(DESeq2_DGE_combined_Cor, 
-           type = "full",
-           method = "square",
-           lab = FALSE,
-           tl.cex = 6,
-           lab_size = 2.5,
-           pch.cex = 2.5,
-           ggtheme = ggplot2::theme_minimal,
-           colors = c("#6D9EC1", "white", "#E46726"),
-           outline.col = "white")
+                       type = "full",
+                       method = "square",
+                       lab = FALSE,
+                       tl.cex = 6,
+                       lab_size = 2.5,
+                       pch.cex = 2.5,
+                       ggtheme = ggplot2::theme_minimal,
+                       colors = c("#6D9EC1", "white", "#E46726"),
+                       outline.col = "white")
 
 ggsave(file.path("Plots", "Revision", "R2_DGE_Correlation_complete.pdf"),
        width = 15,

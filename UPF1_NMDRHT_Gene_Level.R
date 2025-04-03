@@ -74,9 +74,9 @@ stopifnot("*** Not all salmon files are present! ***" = all(file.exists(files)))
 # Import tx2gene file which references each transcript to the corresponding gene ID
 tx2gene <- read_tsv(file.path(ref_dir, "tx2gene.gencode.v42.SIRV.ERCC.tsv"))
 txi <- tximport::tximport(files, 
-                type="salmon",
-                tx2gene=tx2gene,
-                ignoreTxVersion = FALSE)
+                          type="salmon",
+                          tx2gene=tx2gene,
+                          ignoreTxVersion = FALSE)
 
 # Generate DESeqDataSet using samples and condition as parameters
 ddsTxi <- DESeqDataSetFromTximport(txi,
@@ -150,9 +150,9 @@ stopifnot("*** Not all salmon files are present! ***" = all(file.exists(files)))
 # Import tx2gene file which references each transcript to the corresponding gene ID
 tx2gene <- read_tsv(file.path(ref_dir, "tx2gene.gencode.v42.SIRV.ERCC.tsv"))
 txi <- tximport::tximport(files, 
-                type="salmon",
-                tx2gene=tx2gene,
-                ignoreTxVersion = FALSE)
+                          type="salmon",
+                          tx2gene=tx2gene,
+                          ignoreTxVersion = FALSE)
 
 # Generate DESeqDataSet using samples and condition as parameters
 ddsTxi <- DESeqDataSetFromTximport(txi,
@@ -225,9 +225,9 @@ stopifnot("*** Not all salmon files are present! ***" = all(file.exists(files)))
 # Import tx2gene file which references each transcript to the corresponding gene ID
 tx2gene <- read_tsv(file.path(ref_dir, "tx2gene.gencode.v42.SIRV.ERCC.tsv"))
 txi <- tximport::tximport(files, 
-                type="salmon",
-                tx2gene=tx2gene,
-                ignoreTxVersion = FALSE)
+                          type="salmon",
+                          tx2gene=tx2gene,
+                          ignoreTxVersion = FALSE)
 
 # Generate DESeqDataSet using samples and condition as parameters
 ddsTxi <- DESeqDataSetFromTximport(txi,
@@ -295,9 +295,9 @@ stopifnot("*** Not all salmon files are present! ***" = all(file.exists(files)))
 # Import tx2gene file which references each transcript to the corresponding gene ID
 tx2gene <- read_tsv(file.path(ref_dir, "tx2gene.gencode.v42.SIRV.ERCC.tsv"))
 txi <- tximport::tximport(files, 
-                type="salmon",
-                tx2gene=tx2gene,
-                ignoreTxVersion = FALSE)
+                          type="salmon",
+                          tx2gene=tx2gene,
+                          ignoreTxVersion = FALSE)
 
 # Generate DESeqDataSet using samples and condition as parameters
 ddsTxi <- DESeqDataSetFromTximport(txi,
@@ -828,7 +828,7 @@ assayNames(UPF1_y_qsmooth_gene)
 
 # Generate DESeqDataSet using samples and condition as parameters
 UPF1_ddsTxi_qsmooth_gene <- DESeq2::DESeqDataSet(UPF1_y_qsmooth_gene,
-                                         design = ~ condition)
+                                                 design = ~ condition)
 
 # Filter step: keep only genes that have at least 10 counts in at least 3 samples!
 keep <- rowSums(counts(UPF1_ddsTxi_qsmooth_gene) >= 10) >= 3
@@ -1640,3 +1640,38 @@ GENCODE_v42_MainTable %>%
 
 # Read data - if necessary
 GENCODE_v42_MainTable <- read_csv("Resources/GENCODE/GENCODE_v42_MainTable.csv")
+
+## Obtain gene coordinates -------------------------------------------
+
+# Load Gencode Annotation - run once
+gencode.v42.annotation <- rtracklayer::readGFF("Resources/GENCODE/gencode.v42.annotation.gtf")
+
+# Obtain coordinates ready for IGV 
+gencode.v42.annotation_gene_coord <- as_tibble(gencode.v42.annotation) %>% 
+  filter(type=="gene") %>% 
+  mutate(coordinates=paste0(seqid,":",start,"-",end)) %>% 
+  dplyr::select(gene_id, coordinates)
+
+# Join and export
+GENCODE_v42_MainTable_Coordinates <- GENCODE_v42_MainTable %>% 
+  left_join(gencode.v42.annotation_gene_coord) %>% 
+  relocate(coordinates, .after="type")
+
+# Export NMDRHT global table
+GENCODE_v42_MainTable_Coordinates %>% 
+  write_csv("Resources/GENCODE/GENCODE_v42_MainTable_Coordinates.csv")
+
+## Export JSON for IGV web-app -------------------------------------------
+library(jsonlite)
+
+# Select data
+GENCODE_v42_MainTable_Coordinates_JSON <- GENCODE_v42_MainTable_Coordinates %>% 
+  select(gene_id, gene_name, gene_type, DGE_cluster, t1, t2, NMD_n_sig_perc, NMD_bin, L2FC_RNA_RiboSeq, L2FC_Ribo, class_RiboSeq, L2FC_kdeg, L2FC_ksyn, Mech_conclusion, coordinates) %>% 
+  mutate(across(where(is.numeric), round, 2))
+
+# Export to JSON for import into IGV web-app
+jsonlite::toJSON(x = GENCODE_v42_MainTable_Coordinates_JSON,
+                 auto_unbox = TRUE,
+                 na = "string",
+                 pretty = T) %>% 
+  write(file = "Resources/GENCODE/GENCODE_v42_MainTable.json")

@@ -991,8 +991,8 @@ ggsave(file.path("Plots", "Figure1", "Rev_1_F1_D2_NMD_factors_log2FC_flipped.pdf
 
 # Load peptide data
 UPF1_degron_20250312_112231_peptides <- read_delim("Resources/Proteomics/2025_03_11_Reanalysis/UPF1_UniProt_WCP_peptides_SN.txt", 
-                                   delim = "\t", escape_double = FALSE, 
-                                   trim_ws = TRUE) %>% 
+                                                   delim = "\t", escape_double = FALSE, 
+                                                   trim_ws = TRUE) %>% 
   clean_names()
 
 # Prepare for plotting
@@ -1149,7 +1149,7 @@ UPF1_degron_proteomics_Reanalysis_all %>%
   geom_violin(aes(fill=comparison),
               linewidth=0.2) +
   geom_point(data = (UPF1_degron_proteomics_Reanalysis_all %>% filter(id_name == "UPF1")), aes(color = case_when(id_name == "UPF1" ~ "#963B5A",
-                                                                                                                TRUE ~ "darkgray")),
+                                                                                                                 TRUE ~ "darkgray")),
              alpha=0.75) +
   scale_color_identity() +
   scale_fill_manual(values = c("UPF1_06h" = "#11897C",

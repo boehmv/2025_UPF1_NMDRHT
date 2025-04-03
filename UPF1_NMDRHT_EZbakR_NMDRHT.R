@@ -26,8 +26,8 @@ print(unique(UPF1_NMDRHT_EZbakR_cB_csv$sample))
 
 # Load Metadata file
 UPF1_NMDRHT_metadf <- read_delim("Resources/EZbakR_NMDRHT/metadf", 
-                          delim = "\t", escape_double = FALSE, 
-                          col_names = TRUE, trim_ws = TRUE)
+                                 delim = "\t", escape_double = FALSE, 
+                                 col_names = TRUE, trim_ws = TRUE)
 
 # Assemble EZbakR dataset -------------------------------------------------------
 UPF1_NMDRHT_EZbakR <- EZbakRData(UPF1_NMDRHT_EZbakR_cB_csv, UPF1_NMDRHT_metadf)
@@ -43,24 +43,24 @@ UPF1_NMDRHT_EZbakR_QC <- EZQC(UPF1_NMDRHT_EZbakR)
 
 ## Estimate TEC fraction new  ---------------------------------------------------------
 UPF1_NMDRHT_EZbakR_TEC <- EstimateFractions(UPF1_NMDRHT_EZbakR,
-                                         pold_from_nolabel = TRUE,
-                                         features = c("XF", "TEC"),
-                                         filter_condition = `|`)
+                                            pold_from_nolabel = TRUE,
+                                            features = c("XF", "TEC"),
+                                            filter_condition = `|`)
 
 ## Estimate transcript isoform fraction new ---------------------------------------------------------
 
 ### Load isoform quantification information
 UPF1_NMDRHT_EZbakR_file_names <- list.files(path = "Resources/EZbakR_NMDRHT/rsem",
-                         pattern = "isoform",
-                         full.names = TRUE)
+                                            pattern = "isoform",
+                                            full.names = TRUE)
 
 names(UPF1_NMDRHT_EZbakR_file_names) <- UPF1_NMDRHT_metadf$sample
 
 ### Deconvolve isoform fraction news
 
 UPF1_NMDRHT_EZbakR_TEC <- ImportIsoformQuant(UPF1_NMDRHT_EZbakR_TEC,
-                            files = UPF1_NMDRHT_EZbakR_file_names,
-                            quant_tool = "rsem")
+                                             files = UPF1_NMDRHT_EZbakR_file_names,
+                                             quant_tool = "rsem")
 
 # Check how many isoforms are quantified
 UPF1_NMDRHT_EZbakR_TEC$readcounts$isoform_quant_rsem %>% 
@@ -81,7 +81,7 @@ UPF1_NMDRHT_EZbakR_TEC <- EstimateIsoformFractions(UPF1_NMDRHT_EZbakR_TEC,
 ## Estimate, average, and compare degradation rate constants ---------------------------------------------------------
 
 UPF1_NMDRHT_EZbakR_TEC <- EstimateKinetics(UPF1_NMDRHT_EZbakR_TEC, features = "transcript_id",
-                          exactMatch = FALSE)
+                                           exactMatch = FALSE)
 
 ### QC plots  ---------------------------------------------------------
 # Check how many isoforms per 50-nt rule are quantified - per condition
@@ -138,8 +138,8 @@ UPF1_NMDRHT_EZbakR_TEC$kinetics$XF_transcriptid %>%
 
 # Average rate constants
 UPF1_NMDRHT_EZbakR_TEC <- AverageAndRegularize(UPF1_NMDRHT_EZbakR_TEC, features = "transcript_id",
-                                            formula_mean = ~ group,
-                              exactMatch = FALSE)
+                                               formula_mean = ~ group,
+                                               exactMatch = FALSE)
 
 # Save analyzed EZbakR to file
 save(UPF1_NMDRHT_EZbakR_TEC,
@@ -171,20 +171,20 @@ UPF1_NMDRHT_EZbakR_TEC_Ctrl_24_vs_Ctrl_0 <- CompareParameters(UPF1_NMDRHT_EZbakR
 ### Compare N-AID-UPF1-0h vs Ctrl-0h ---------------------------------------
 
 UPF1_NMDRHT_EZbakR_TEC_Nter_0_vs_Ctrl_0 <- CompareParameters(UPF1_NMDRHT_EZbakR_TEC,
-                                                              features = "transcript_id",
-                                                              design_factor = "group",
-                                                              reference = "Ctrl_0h_IAA",
-                                                              experimental = "Nter_0h_IAA",
-                                                              exactMatch = FALSE)
+                                                             features = "transcript_id",
+                                                             design_factor = "group",
+                                                             reference = "Ctrl_0h_IAA",
+                                                             experimental = "Nter_0h_IAA",
+                                                             exactMatch = FALSE)
 
 ### Compare N-AID-UPF1-12h vs Ctrl-0h ---------------------------------------
 
 UPF1_NMDRHT_EZbakR_TEC_Nter_12_vs_Ctrl_0 <- CompareParameters(UPF1_NMDRHT_EZbakR_TEC,
-                           features = "transcript_id",
-                           design_factor = "group",
-                           reference = "Ctrl_0h_IAA",
-                           experimental = "Nter_12h_IAA",
-                           exactMatch = FALSE)
+                                                              features = "transcript_id",
+                                                              design_factor = "group",
+                                                              reference = "Ctrl_0h_IAA",
+                                                              experimental = "Nter_12h_IAA",
+                                                              exactMatch = FALSE)
 
 ### Compare N-AID-UPF1-24h vs Ctrl-0h ---------------------------------------
 
@@ -211,7 +211,7 @@ Mechs_UPF1_combined <- read_csv(file=file.path("Resources/bakR/Mechs_UPF1_combin
 
 ### Assess Ctrl-12h vs Ctrl-0h ---------------------------------------
 comparison_TEC_Ctrl_12_vs_Ctrl_0 <- EZget(UPF1_NMDRHT_EZbakR_TEC_Ctrl_12_vs_Ctrl_0,
-                    type = "comparisons") %>% 
+                                          type = "comparisons") %>% 
   dplyr::rename("gene_id" = "XF",
                 "L2FC_kdeg_tx" = "difference",
                 "EZbakR_tx_uncertainty" = "uncertainty",
@@ -261,7 +261,7 @@ comparison_TEC_Ctrl_24_vs_Ctrl_0 %>%
 
 ### Assess N-AID-UPF1-0h vs Ctrl-0h ---------------------------------------
 comparison_TEC_Nter_0_vs_Ctrl_0 <- EZget(UPF1_NMDRHT_EZbakR_TEC_Nter_0_vs_Ctrl_0,
-                                          type = "comparisons") %>% 
+                                         type = "comparisons") %>% 
   dplyr::rename("gene_id" = "XF",
                 "L2FC_kdeg_tx" = "difference",
                 "EZbakR_tx_uncertainty" = "uncertainty",
@@ -286,7 +286,7 @@ comparison_TEC_Nter_0_vs_Ctrl_0 %>%
 
 ### Assess N-AID-UPF1-12h vs Ctrl-0h ---------------------------------------
 comparison_TEC_Nter_12_vs_Ctrl_0 <- EZget(UPF1_NMDRHT_EZbakR_TEC_Nter_12_vs_Ctrl_0,
-                                         type = "comparisons") %>% 
+                                          type = "comparisons") %>% 
   dplyr::rename("gene_id" = "XF",
                 "L2FC_kdeg_tx" = "difference",
                 "EZbakR_tx_uncertainty" = "uncertainty",
@@ -336,13 +336,13 @@ comparison_TEC_Nter_24_vs_Ctrl_0 %>%
 
 ### Combine -----------------------------------------------------------------
 UPF1_NMDRHT_EZbakR_TEC_combined <- rbind(comparison_TEC_Ctrl_12_vs_Ctrl_0,
-                                 comparison_TEC_Ctrl_24_vs_Ctrl_0,
-                                 comparison_TEC_Nter_0_vs_Ctrl_0,
-                                 comparison_TEC_Nter_12_vs_Ctrl_0,
-                                 comparison_TEC_Nter_24_vs_Ctrl_0) %>% 
+                                         comparison_TEC_Ctrl_24_vs_Ctrl_0,
+                                         comparison_TEC_Nter_0_vs_Ctrl_0,
+                                         comparison_TEC_Nter_12_vs_Ctrl_0,
+                                         comparison_TEC_Nter_24_vs_Ctrl_0) %>% 
   mutate(kdeg_tx_conclusion = ifelse(padj_kdeg_tx < 0.01, case_when(L2FC_kdeg_tx < -1 ~ "Stabilized",
                                                                     L2FC_kdeg_tx > 1 ~ "Destabilized",
-                                                            TRUE ~ "Not Sig."), "Not Sig.")) %>% 
+                                                                    TRUE ~ "Not Sig."), "Not Sig.")) %>% 
   relocate(kdeg_tx_conclusion, condition, logFC, L2FC_kdeg, .after="EZbakR_tx_avg_coverage")
 
 # Stats kdeg_tx_conclusion

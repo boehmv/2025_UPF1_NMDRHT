@@ -972,8 +972,8 @@ combined_tbl_peptidome_class_unique %>%
 
 # Perform peptide detectability analysis using the Random forest classifier trained on the ProteomicsDB database
 combined_tbl_peptidome_class_unique_predictions <- PeptideRanger::peptide_predictions(peptides = combined_tbl_peptidome_class_unique$sequence,
-                                                                       prediction_model = RFmodel_ProteomicsDB,
-                                                                       missed_cleavages = combined_tbl_peptidome_class_unique$missed_cleavages)
+                                                                                      prediction_model = RFmodel_ProteomicsDB,
+                                                                                      missed_cleavages = combined_tbl_peptidome_class_unique$missed_cleavages)
 
 # Combine information
 combined_tbl_peptidome_class_unique_detectability <- combined_tbl_peptidome_class_unique %>% 
@@ -1946,15 +1946,15 @@ WCP_PG_data_20250127_GeneTxORF_long_sig_up_forGO_list <- split(WCP_PG_data_20250
 
 # Perform GO analysis
 WCP_PG_data_20250127_GeneTxORF_long_sig_up_gostres <- gprofiler2::gost(query = WCP_PG_data_20250127_GeneTxORF_long_sig_up_forGO_list,
-                                                           custom_bg = Rev_1_F2_GO_DGE_bg_full,
-                                                           # multi_query = TRUE,
-                                                           sources = "GO:BP",
-                                                           domain_scope = "custom",
-                                                           organism = "hsapiens",
-                                                           correction_method = c("gSCS"),
-                                                           evcodes = TRUE,
-                                                           # as_short_link = TRUE,
-                                                           significant = TRUE)
+                                                                       custom_bg = Rev_1_F2_GO_DGE_bg_full,
+                                                                       # multi_query = TRUE,
+                                                                       sources = "GO:BP",
+                                                                       domain_scope = "custom",
+                                                                       organism = "hsapiens",
+                                                                       correction_method = c("gSCS"),
+                                                                       evcodes = TRUE,
+                                                                       # as_short_link = TRUE,
+                                                                       significant = TRUE)
 
 # As tibble
 WCP_PG_data_20250127_GeneTxORF_long_sig_up_gostres_result <- WCP_PG_data_20250127_GeneTxORF_long_sig_up_gostres$result %>% 
@@ -1967,11 +1967,11 @@ WCP_PG_data_20250127_GeneTxORF_long_sig_up_gostres_result <- WCP_PG_data_2025012
 # sim Matrix
 ##
 simMatrix_WCP_PG_data_up_combined <- rrvgo::calculateSimMatrix(WCP_PG_data_20250127_GeneTxORF_long_sig_up_gostres_result %>% 
-                                                          distinct(term_id) %>% 
-                                                          pull(term_id),
-                                                        orgdb="org.Hs.eg.db",
-                                                        ont="BP",
-                                                        method="Rel")
+                                                                 distinct(term_id) %>% 
+                                                                 pull(term_id),
+                                                               orgdb="org.Hs.eg.db",
+                                                               ont="BP",
+                                                               method="Rel")
 
 ##
 # scores
@@ -1989,9 +1989,9 @@ scores_WCP_PG_data_up_combined <- setNames(-log10(WCP_PG_data_20250127_GeneTxORF
 ##
 
 reducedTerms_WCP_PG_data_up_combined <- rrvgo::reduceSimMatrix(simMatrix_WCP_PG_data_up_combined,
-                                                        scores_WCP_PG_data_up_combined,
-                                                        threshold=0.95,
-                                                        orgdb="org.Hs.eg.db")
+                                                               scores_WCP_PG_data_up_combined,
+                                                               threshold=0.95,
+                                                               orgdb="org.Hs.eg.db")
 
 # Combine G:profiler output with combined&reduced GO IDs
 WCP_PG_data_20250127_GeneTxORF_long_sig_up_GO <- WCP_PG_data_20250127_GeneTxORF_long_sig_up_gostres_result %>% 
@@ -2033,15 +2033,15 @@ WCP_PG_data_20250127_GeneTxORF_long_sig_down_forGO_list <- split(WCP_PG_data_202
 
 # Perform GO analysis
 WCP_PG_data_20250127_GeneTxORF_long_sig_down_gostres <- gprofiler2::gost(query = WCP_PG_data_20250127_GeneTxORF_long_sig_down_forGO_list,
-                                                             custom_bg = Rev_1_F2_GO_DGE_bg_full,
-                                                             # multi_query = TRUE,
-                                                             sources = "GO:BP",
-                                                             domain_scope = "custom",
-                                                             organism = "hsapiens",
-                                                             correction_method = c("gSCS"),
-                                                             evcodes = TRUE,
-                                                             # as_short_link = TRUE,
-                                                             significant = TRUE)
+                                                                         custom_bg = Rev_1_F2_GO_DGE_bg_full,
+                                                                         # multi_query = TRUE,
+                                                                         sources = "GO:BP",
+                                                                         domain_scope = "custom",
+                                                                         organism = "hsapiens",
+                                                                         correction_method = c("gSCS"),
+                                                                         evcodes = TRUE,
+                                                                         # as_short_link = TRUE,
+                                                                         significant = TRUE)
 
 # As tibble
 WCP_PG_data_20250127_GeneTxORF_long_sig_down_gostres_result <- WCP_PG_data_20250127_GeneTxORF_long_sig_down_gostres$result %>% 
@@ -2053,11 +2053,11 @@ WCP_PG_data_20250127_GeneTxORF_long_sig_down_gostres_result <- WCP_PG_data_20250
 # sim Matrix
 ##
 simMatrix_WCP_PG_data_down_combined <- rrvgo::calculateSimMatrix(WCP_PG_data_20250127_GeneTxORF_long_sig_down_gostres_result %>% 
-                                                            distinct(term_id) %>% 
-                                                            pull(term_id),
-                                                          orgdb="org.Hs.eg.db",
-                                                          ont="BP",
-                                                          method="Rel")
+                                                                   distinct(term_id) %>% 
+                                                                   pull(term_id),
+                                                                 orgdb="org.Hs.eg.db",
+                                                                 ont="BP",
+                                                                 method="Rel")
 
 ##
 # scores
@@ -2075,9 +2075,9 @@ scores_WCP_PG_data_down_combined <- setNames(-log10(WCP_PG_data_20250127_GeneTxO
 ##
 
 reducedTerms_WCP_PG_data_down_combined <- rrvgo::reduceSimMatrix(simMatrix_WCP_PG_data_down_combined,
-                                                          scores_WCP_PG_data_down_combined,
-                                                          threshold=0.9,
-                                                          orgdb="org.Hs.eg.db")
+                                                                 scores_WCP_PG_data_down_combined,
+                                                                 threshold=0.9,
+                                                                 orgdb="org.Hs.eg.db")
 
 # Combine G:profiler output with combined&reduced GO IDs
 WCP_PG_data_20250127_GeneTxORF_long_sig_down_GO <- WCP_PG_data_20250127_GeneTxORF_long_sig_down_gostres_result %>% 

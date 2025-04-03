@@ -190,9 +190,9 @@ scaled.counts <- catch$counts/catch$annotation$Overdispersion
 
 # Create DGEList object
 DGEList <- edgeR::DGEList(counts = scaled.counts,
-                   samples = Rev_1_F5_samples,
-                   group = Rev_1_F5_samples$condition,
-                   genes = catch$annotation)
+                          samples = Rev_1_F5_samples,
+                          group = Rev_1_F5_samples$condition,
+                          genes = catch$annotation)
 
 # Filter out spike-ins
 keep_woSpike <- !str_detect(rownames(DGEList$genes), 'ERCC') & !str_detect(rownames(DGEList$genes), 'SIRV')
@@ -1097,7 +1097,7 @@ NMDRHT.v1.2_MainTable <- NMDRHT.v1.2_tbl_DTE_cluster %>%
                    ORFanage_num_of_downEJs,
                    ORFanage_UTR3_length,
                    utr3_length_str
-                   )) %>% 
+  )) %>% 
   left_join(NMDRHT.v1.2_tbl_DTE_cluster_NMD_relevance_fill_bin) %>% 
   left_join(Rev_1_F5_ImpulseDE2_Combined_df_Cluster_Param %>% 
               dplyr::select(transcript_id,padj,sigImpulseDE2, bestFit, beta, h0, h1, h2, t1, t2) %>% 
@@ -1245,7 +1245,7 @@ save(SRR1574720_ofst,
 
 # Define DGEList
 PARE_y <- edgeR::DGEList(PARE_analysis_combined,
-                  group=c("XRN1","XRN1","XRN1_SMG6","XRN1_SMG6","XRN1_UPF1","XRN1_UPF1"))
+                         group=c("XRN1","XRN1","XRN1_SMG6","XRN1_SMG6","XRN1_UPF1","XRN1_UPF1"))
 
 # Supply total mapped reads as lib.size - important since coverage was only computed for +/- 100 nt around stop!
 PARE_y$samples$lib.size <- c(length(SRR1574720_ofst),
@@ -1349,8 +1349,8 @@ PARE_edgeR_combined %>% write_csv("Resources/PARE/PARE_edgeR_combined.csv")
 
 # Initialize bioMart | GENCODE v.42 is equal to ensembl version 108
 ensembl_108 = biomaRt::useEnsembl(biomart = 'genes', 
-                         dataset = 'hsapiens_gene_ensembl',
-                         version = 108)
+                                  dataset = 'hsapiens_gene_ensembl',
+                                  version = 108)
 
 # Data from Supplemental Table S3 | expand refseq column
 Imamachi_Supplemental_Table_S3 <- read_excel("Resources/External/Imamachi2017/Supplemental_Table_S3.xlsx", 
@@ -1438,14 +1438,14 @@ NMDRHT.v1.2_MainTable_forBoruta <- NMDRHT.v1.2_MainTable %>%
               dplyr::select(gene_id, gene_name, upf1_motifs_top4, upf1_motifs_top1, L2FC_hl_siUPF1_Tani, L2FC_UPF1_RIP, L2FC_pUPF1_Kurosaki, L2FC_hl_siSTAU1_Maekawa)) %>% 
   left_join(Kurosaki2014_tbl %>% filter(condition_2 == "p_UPF1") %>% dplyr::select(gene_id, log2FoldChange) %>% dplyr::rename("L2FC_pUPF1_Kurosaki_new" = "log2FoldChange")) %>% 
   left_join(GENCODE_v42_MainTable %>% dplyr::select(gene_id,
-                                                      L2FC_kdeg,
-                                                      padj_kdeg,
-                                                      L2FC_ksyn,
-                                                      padj_ksyn,
-                                                      Mech_score,
-                                                      kdeg_conclusion,
-                                                      RNA_conclusion,
-                                                      Mech_conclusion)) %>% 
+                                                    L2FC_kdeg,
+                                                    padj_kdeg,
+                                                    L2FC_ksyn,
+                                                    padj_ksyn,
+                                                    Mech_score,
+                                                    kdeg_conclusion,
+                                                    RNA_conclusion,
+                                                    Mech_conclusion)) %>% 
   left_join(GSE84722_ST3 %>% dplyr::select(gene_id, Syn, Proc, Deg, CytNuc, PolyCyt, TrP, Copies)) %>% 
   mutate(utr3_mfe_nt = -utr3_mfe_nt) %>% 
   dplyr::select(gene_name,
@@ -2467,3 +2467,30 @@ save(boruta_fullParam_earlyUP_all_output,
                    "Boruta_data.rds")
 )
 
+## Export JSON for IGV web-pp -------------------------------------------
+library(jsonlite)
+
+# Select data
+NMDRHT.v1.2_MainTable_JSON <- NMDRHT.v1.2_MainTable %>% 
+  select(gene_id,
+         transcript_id, 
+         gene_name,
+         transcript_name,
+         structural_category, 
+         UIC_total_support,
+         NMD_tx_status, 
+         NMD_tx_reason, 
+         NMD_50nt_rule, 
+         stop_to_lastEJ,
+         DTE_cluster, t1, t2, NMD_n_sig_tx_perc, NMD_bin_tx, coordinates) %>% 
+  mutate(across(where(is.numeric), round, 2)) %>% 
+  separate(coordinates, into=c("chr", "start", "end", "strand")) %>% 
+  mutate(coordinates=paste0(chr,":",start,"-",end)) %>% 
+  dplyr::select(-c(chr,start,end,strand))
+
+# Export to JSON for import into IGV web-app
+jsonlite::toJSON(x = NMDRHT.v1.2_MainTable_JSON,
+                 auto_unbox = TRUE,
+                 na = "string",
+                 pretty = T) %>% 
+  write(file = "Resources/NMDRHT/NMDRHT.v1.2_MainTable_JSON.json")

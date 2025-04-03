@@ -34,11 +34,11 @@ print(unique(UPF1_cB_csv$sample))
 
 # Load Metadata file
 UPF1_metadf <- read_delim("Resources/bakR/metadf", 
-                     delim = "\t", escape_double = FALSE, 
-                     col_names = FALSE, trim_ws = TRUE) %>% 
+                          delim = "\t", escape_double = FALSE, 
+                          col_names = FALSE, trim_ws = TRUE) %>% 
   column_to_rownames(var="X1") %>% 
   dplyr::rename(tl = "X2",
-         Exp_ID = "X3")
+                Exp_ID = "X3")
 
 # Assemble bakR dataset
 UPF1_bakRData <- bakRData(UPF1_cB_csv, UPF1_metadf)
@@ -153,13 +153,13 @@ UPF1_4SU_Fit_stan_raw_mutrate <- UPF1_4SU_Fit_stan$Data_lists$Fast_df %>%
            sep=-2) %>% 
   mutate(replicate = parse_number(replicate)) %>% 
   mutate(sample = fct_rev(fct_relevel(sample,
-                              "Ctrl_0h_IAA_4SU",
-                              "Ctrl_12h_IAA_4SU",
-                              "Ctrl_24h_IAA_4SU",
-                              "Nter_0h_IAA",
-                              "Nter_0h_IAA_4SU",
-                              "Nter_12h_IAA_4SU",
-                              "Nter_24h_IAA_4SU")))
+                                      "Ctrl_0h_IAA_4SU",
+                                      "Ctrl_12h_IAA_4SU",
+                                      "Ctrl_24h_IAA_4SU",
+                                      "Nter_0h_IAA",
+                                      "Nter_0h_IAA_4SU",
+                                      "Nter_12h_IAA_4SU",
+                                      "Nter_24h_IAA_4SU")))
 
 # Raw Mutation rate Plot
 UPF1_4SU_Fit_stan_raw_mutrate %>% 
@@ -171,10 +171,10 @@ UPF1_4SU_Fit_stan_raw_mutrate %>%
   geom_tile(color = "black",
             lwd = 0.1,
             linetype = 1) +
- scale_fill_viridis(option="rocket",
-                    direction=1,
-                    begin=0.2,
-                    end=0.8) +
+  scale_fill_viridis(option="rocket",
+                     direction=1,
+                     begin=0.2,
+                     end=0.8) +
   geom_text(aes(label=round(mean_mutrate*100,1)),
             size = 5*0.36,
             hjust=-0.8) +
@@ -214,8 +214,8 @@ UPF1_4SU_Fit_stan_raw_mutrate %>%
   #                            title.position = "top",
   #                            label.position = "bottom")) +
   # theme(axis.text.y=element_blank(),
-  #       axis.ticks.y = element_blank()) +
-  theme(aspect.ratio = 1) +
+#       axis.ticks.y = element_blank()) +
+theme(aspect.ratio = 1) +
   force_panelsizes(rows = unit(20, "mm"),
                    cols = unit(4, "mm"))
 
@@ -367,18 +367,18 @@ reso_Ctrl_12h_vs_0h <- as.data.frame(reso_Ctrl_12h_vs_0h)
 
 # Make data frame
 DE_df_Ctrl_12h_vs_0h <- data.frame(XF = row.names(reso_Ctrl_12h_vs_0h),
-                             L2FC_RNA = reso_Ctrl_12h_vs_0h$log2FoldChange,
-                             DE_score = reso_Ctrl_12h_vs_0h$stat,
-                             DE_se = reso_Ctrl_12h_vs_0h$lfcSE,
-                             DE_pval = reso_Ctrl_12h_vs_0h$pval,
-                             DE_padj = reso_Ctrl_12h_vs_0h$padj)
+                                   L2FC_RNA = reso_Ctrl_12h_vs_0h$log2FoldChange,
+                                   DE_score = reso_Ctrl_12h_vs_0h$stat,
+                                   DE_se = reso_Ctrl_12h_vs_0h$lfcSE,
+                                   DE_pval = reso_Ctrl_12h_vs_0h$pval,
+                                   DE_padj = reso_Ctrl_12h_vs_0h$padj)
 
 # mechanistic dissection
 Mechs_Ctrl_12h <- DissectMechanism(UPF1_4SU_Fit_stan, 
-                                  DE_df_Ctrl_12h_vs_0h,
-                                  bakRModel = "Hybrid",
-                                  Exp_ID = 2,
-                                  sims = 1000000)
+                                   DE_df_Ctrl_12h_vs_0h,
+                                   bakRModel = "Hybrid",
+                                   Exp_ID = 2,
+                                   sims = 1000000)
 
 # Extract data frame
 Mechs_Ctrl_12h_df <- Mechs_Ctrl_12h$Mechanism_df 
@@ -445,18 +445,18 @@ reso_0h_vs_0h <- as.data.frame(reso_0h_vs_0h)
 
 # Make data frame
 DE_df_0h_vs_0h <- data.frame(XF = row.names(reso_0h_vs_0h),
-                              L2FC_RNA = reso_0h_vs_0h$log2FoldChange,
-                              DE_score = reso_0h_vs_0h$stat,
-                              DE_se = reso_0h_vs_0h$lfcSE,
-                              DE_pval = reso_0h_vs_0h$pval,
-                              DE_padj = reso_0h_vs_0h$padj)
+                             L2FC_RNA = reso_0h_vs_0h$log2FoldChange,
+                             DE_score = reso_0h_vs_0h$stat,
+                             DE_se = reso_0h_vs_0h$lfcSE,
+                             DE_pval = reso_0h_vs_0h$pval,
+                             DE_padj = reso_0h_vs_0h$padj)
 
 # mechanistic dissection
 Mechs_0h_UPF1 <- DissectMechanism(UPF1_4SU_Fit_stan, 
-                                   DE_df_0h_vs_0h,
-                                   bakRModel = "Hybrid",
-                                   Exp_ID = 4,
-                                   sims = 1000000)
+                                  DE_df_0h_vs_0h,
+                                  bakRModel = "Hybrid",
+                                  Exp_ID = 4,
+                                  sims = 1000000)
 
 # Extract data frame
 Mechs_0h_UPF1_df <- Mechs_0h_UPF1$Mechanism_df 
@@ -484,18 +484,18 @@ reso_12h_vs_0h <- as.data.frame(reso_12h_vs_0h)
 
 # Make data frame
 DE_df_12h_vs_0h <- data.frame(XF = row.names(reso_12h_vs_0h),
-                    L2FC_RNA = reso_12h_vs_0h$log2FoldChange,
-                    DE_score = reso_12h_vs_0h$stat,
-                    DE_se = reso_12h_vs_0h$lfcSE,
-                    DE_pval = reso_12h_vs_0h$pval,
-                    DE_padj = reso_12h_vs_0h$padj)
+                              L2FC_RNA = reso_12h_vs_0h$log2FoldChange,
+                              DE_score = reso_12h_vs_0h$stat,
+                              DE_se = reso_12h_vs_0h$lfcSE,
+                              DE_pval = reso_12h_vs_0h$pval,
+                              DE_padj = reso_12h_vs_0h$padj)
 
 # mechanistic dissection
 Mechs_12h_UPF1 <- DissectMechanism(UPF1_4SU_Fit_stan, 
                                    DE_df_12h_vs_0h,
-                          bakRModel = "Hybrid",
-                          Exp_ID = 5,
-                          sims = 1000000)
+                                   bakRModel = "Hybrid",
+                                   Exp_ID = 5,
+                                   sims = 1000000)
 
 # Extract data frame
 Mechs_12h_UPF1_df <- Mechs_12h_UPF1$Mechanism_df 
@@ -551,10 +551,10 @@ Mechs_24h_UPF1_df_anot %>%
 
 ## Combined Mechanism ------------------------------------------------------
 Mechs_UPF1_combined <- bind_rows(Mechs_Ctrl_12h_df_anot,
-          Mechs_Ctrl_24h_df_anot,
-          Mechs_0h_UPF1_df_anot,
-          Mechs_12h_UPF1_df_anot,
-          Mechs_24h_UPF1_df_anot) %>% 
+                                 Mechs_Ctrl_24h_df_anot,
+                                 Mechs_0h_UPF1_df_anot,
+                                 Mechs_12h_UPF1_df_anot,
+                                 Mechs_24h_UPF1_df_anot) %>% 
   mutate(Mech_score = log10(abs(mech_stat) + 1)*sign(mech_stat)) %>% 
   mutate(kdeg_conclusion = ifelse(bakR_padj < 0.01, case_when(L2FC_kdeg < -1 ~ "Stabilized",
                                                               L2FC_kdeg > 1 ~ "Destabilized",
@@ -594,21 +594,21 @@ Rev_1_F2_GO_DGE_bg_full <- DESeq2_DGE_combined %>%
 
 # Make lists
 Mechs_UPF1_combined_Syn_GO_list <- split(Mechs_UPF1_combined_generalConclusion %>% 
-                                                                 filter(general_conclusion %in% c("Decreased Syn.", "Increased Syn.")) %>% 
-                                                                 filter(condition == "Nter_12h") %>% 
-                                                                 dplyr::rename("gene_id" = "XF") %>% 
-                                                                 arrange((ksyn_padj)) %>% 
-                                                                 distinct(gene_id, general_conclusion) %>% 
-                                                                 separate(gene_id, c("gene_id", "Version")) %>% 
-                                                                 pull(gene_id),
-                                                               Mechs_UPF1_combined_generalConclusion %>% 
-                                                                 filter(general_conclusion %in% c("Decreased Syn.", "Increased Syn.")) %>% 
-                                                                 filter(condition == "Nter_12h") %>% 
-                                                                 dplyr::rename("gene_id" = "XF") %>% 
-                                                                 arrange((ksyn_padj)) %>% 
-                                                                 distinct(gene_id, general_conclusion) %>% 
-                                                                 separate(gene_id, c("gene_id", "Version")) %>% 
-                                                                 pull(general_conclusion))
+                                           filter(general_conclusion %in% c("Decreased Syn.", "Increased Syn.")) %>% 
+                                           filter(condition == "Nter_12h") %>% 
+                                           dplyr::rename("gene_id" = "XF") %>% 
+                                           arrange((ksyn_padj)) %>% 
+                                           distinct(gene_id, general_conclusion) %>% 
+                                           separate(gene_id, c("gene_id", "Version")) %>% 
+                                           pull(gene_id),
+                                         Mechs_UPF1_combined_generalConclusion %>% 
+                                           filter(general_conclusion %in% c("Decreased Syn.", "Increased Syn.")) %>% 
+                                           filter(condition == "Nter_12h") %>% 
+                                           dplyr::rename("gene_id" = "XF") %>% 
+                                           arrange((ksyn_padj)) %>% 
+                                           distinct(gene_id, general_conclusion) %>% 
+                                           separate(gene_id, c("gene_id", "Version")) %>% 
+                                           pull(general_conclusion))
 
 # Perform GO analysis
 # Ordered query set to true (more significant genes contribute more!)
@@ -634,31 +634,31 @@ gostres_Mechs_UPF1_combined_Syn_GO_result <- gostres_Mechs_UPF1_combined_Syn_GO$
 # sim Matrix
 ##
 simMatrix_Mechs_UPF1_combined_Syn_GO <- rrvgo::calculateSimMatrix(gostres_Mechs_UPF1_combined_Syn_GO_result %>% 
-                                                          distinct(term_id) %>% 
-                                                          pull(term_id),
-                                                        orgdb="org.Hs.eg.db",
-                                                        ont="BP",
-                                                        method="Rel")
+                                                                    distinct(term_id) %>% 
+                                                                    pull(term_id),
+                                                                  orgdb="org.Hs.eg.db",
+                                                                  ont="BP",
+                                                                  method="Rel")
 
 ##
 # scores
 ##
 
 scores_Mechs_UPF1_combined_Syn_GO <- setNames(-log10(gostres_Mechs_UPF1_combined_Syn_GO_result %>% 
-                                                    distinct(term_id, .keep_all = TRUE) %>% 
-                                                    pull(p_value)), 
+                                                       distinct(term_id, .keep_all = TRUE) %>% 
+                                                       pull(p_value)), 
                                               gostres_Mechs_UPF1_combined_Syn_GO_result %>% 
-                                             distinct(term_id) %>% 
-                                             pull(term_id))
+                                                distinct(term_id) %>% 
+                                                pull(term_id))
 
 ##
 # reduced terms
 ##
 
 reducedTerms_Mechs_UPF1_combined_Syn_GO <-  rrvgo::reduceSimMatrix(simMatrix_Mechs_UPF1_combined_Syn_GO,
-                                                        scores_Mechs_UPF1_combined_Syn_GO,
-                                                        threshold=0.7,
-                                                        orgdb="org.Hs.eg.db")
+                                                                   scores_Mechs_UPF1_combined_Syn_GO,
+                                                                   threshold=0.7,
+                                                                   orgdb="org.Hs.eg.db")
 
 # Combine G:profiler output with combined&reduced GO IDs
 gostres_Mechs_UPF1_combined_Syn_GO_result_reduced <- gostres_Mechs_UPF1_combined_Syn_GO_result %>% 
