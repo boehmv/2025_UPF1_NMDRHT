@@ -2470,6 +2470,9 @@ save(boruta_fullParam_earlyUP_all_output,
 ## Export JSON for IGV web-pp -------------------------------------------
 library(jsonlite)
 
+# Load EZbakR combined results
+UPF1_NMDRHT_EZbakR_TEC_combined <- read_csv(file=file.path("Resources/EZbakR_NMDRHT/UPF1_NMDRHT_EZbakR_TEC_combined_TPM02.csv"))
+
 # Select data
 NMDRHT.v1.2_MainTable_JSON <- NMDRHT.v1.2_MainTable %>% 
   select(gene_id,
@@ -2486,7 +2489,23 @@ NMDRHT.v1.2_MainTable_JSON <- NMDRHT.v1.2_MainTable %>%
   mutate(across(where(is.numeric), round, 2)) %>% 
   separate(coordinates, into=c("chr", "start", "end", "strand")) %>% 
   mutate(coordinates=paste0(chr,":",start,"-",end)) %>% 
-  dplyr::select(-c(chr,start,end,strand))
+  dplyr::select(-c(chr,start,end,strand)) %>% 
+  left_join(edgeR_DTE_NMDRHT_combined %>% 
+              filter(condition_2 == "UPF1_Nter_12h") %>% 
+              dplyr::select(transcript_id, logFC, FDR) %>% 
+              dplyr::rename("DTE-log2FC N-AID-UPF1 12h-IAA" = "logFC",
+                            "DTE-FDR N-AID-UPF1 12h-IAA" = "FDR")) %>% 
+  left_join(ISAR_DTU_NMDRHT_combined %>% 
+              filter(condition_2 == "UPF1_Nter_12h") %>% 
+              dplyr::select(isoform_id, dIF, isoform_switch_q_value) %>% 
+              dplyr::rename("transcript_id" = "isoform_id",
+                            "DTU-dIF N-AID-UPF1 12h-IAA" = "dIF",
+                            "DTU-padj N-AID-UPF1 12h-IAA" = "isoform_switch_q_value")) %>% 
+  left_join(UPF1_NMDRHT_EZbakR_TEC_combined %>% 
+              filter(condition == "UPF1_12h") %>% 
+              dplyr::select(transcript_id, L2FC_kdeg_tx, padj_kdeg_tx) %>% 
+              dplyr::rename("EZbakR-log2FC-kdeg N-AID-UPF1 12h-IAA" = "L2FC_kdeg_tx",
+                            "EZbakR-padj-kdeg N-AID-UPF1 12h-IAA" = "padj_kdeg_tx"))
 
 # Export to JSON for import into IGV web-app
 jsonlite::toJSON(x = NMDRHT.v1.2_MainTable_JSON,
