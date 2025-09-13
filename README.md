@@ -2,7 +2,7 @@
 
 ------------------------------------------------------------------------
 
-This repository contains the scripts for the project: <br/> [**Rapid UPF1 depletion illuminates the temporal dynamics of the NMD-regulated human transcriptome**](https://doi.org/10.1101/2024.03.04.583328) <br/> (available as bioRxiv preprint)
+This repository contains the scripts for the project: <br/> [**Rapid UPF1 depletion illuminates the temporal dynamics of the NMD-regulated human transcriptome**](https://doi.org/10.1016/j.molcel.2025.08.015) <br/> (now published in Molecular Cell)
 
 
 ## Graphical abstract
@@ -92,7 +92,7 @@ Feedback is welcome! For any question, please email: [boehmv\@uni.koeln.de](mail
 
 ### Journal article
 
-TBD
+Volker Boehm, Damaris Wallmeroth, Paul O. Wulf, Oliver Popp, Luiz Gustavo Teixeira Alves, Lucie Reinecke, Maximilian Riedel, Emanuel Wyler, Marek Franitza, Kerstin Becker, Karina Polkovnychenko, Simone Del Giudice, Nouhad Benlasfer, Philipp Mertins, Markus Landthaler, Niels H. Gehring (2025) **Rapid UPF1 depletion illuminates the temporal dynamics of the NMD-regulated human transcriptome**. Mol Cell. 2025 Sep 10:S1097-2765(25)00700-2; doi: [https://doi.org/10.1016/j.molcel.2025.08.015](https://doi.org/10.1016/j.molcel.2025.08.015)
 
 ### bioRxiv preprint
 
